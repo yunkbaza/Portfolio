@@ -54,6 +54,8 @@ cd Portfolio
 # 3. Abra o arquivo `index.html` no seu navegador
 #    (Recomendado usar a extensão "Live Server" do VSCode para melhor experiência)
 
+---
+
 📫 Contato
 Vamos nos conectar! Fique à vontade para entrar em contato.
 
