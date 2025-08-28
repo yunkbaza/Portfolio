@@ -1,0 +1,7 @@
+:root {
+  --primaria: #DC2626;     /* Vermelho Vibrante */
+  --secundaria: #FBBF24;  /* Dourado/Âmbar (para complementar o amarelado da foto) */
+  --maisEscuro: #1A1A1A;  /* Um cinza muito escuro, quase preto */
+  --vidro: rgba(255, 255, 255, 0.08); /* Borda do card mais sutil */
+  --sombra-primaria: rgba(220, 38, 38, 0.25); /* Sombra do card com o vermelho */
+}

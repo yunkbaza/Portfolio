@@ -1,0 +1,49 @@
+/* Reset e global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    height: 100%;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--maisEscuro); /* fundo preto da paleta */
+    color: #fff; /* texto branco */
+}
+
+/* Imagens e mídia */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Formulários e botões */
+button, input, textarea, select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Seções */
+section {
+    height: 100vh;
+    padding: 6rem 2rem;
+}
+
+/* Lista */
+li {
+    list-style: none;
+}

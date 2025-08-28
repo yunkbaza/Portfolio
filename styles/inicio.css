@@ -1,0 +1,67 @@
+#inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foto-perfil {
+    width: 350px;
+    height: 350px;
+    box-shadow: 0 0 30px rgba(230, 57, 70, 0.6); /* glow vermelho */
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    animation: flutuar 5s ease-in-out infinite;
+    background-color: rgba(255,255,255,0.05); /* leve vidro */
+}
+
+.nomeCompleto {
+    font-size: 3.5rem;
+    color: var(--primaria); /* vermelho */
+    font-weight: bold;
+    margin: 20px;
+    text-shadow: 0 0 5px rgba(230, 57, 70, 0.5); /* brilho sutil */
+}
+
+.profissao {
+    font-size: 1.5rem;
+    color: var(--secundaria); /* amarelo quente */
+    margin-bottom: 10px;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .foto-perfil {
+        width: 200px;
+        height: 200px;
+        border: 2px solid var(--vidro);
+        box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+    }
+
+    .nomeCompleto {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+        border: 1px solid var(--vidro);
+        box-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+    }
+
+    .nomeCompleto {
+        text-align: center;
+        font-size: 2rem;
+    }
+}

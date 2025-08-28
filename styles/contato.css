@@ -1,0 +1,46 @@
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+    color: #fff; /* texto branco para contraste */
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--vidro);
+    border-radius: 8px;
+    color: #fff; /* texto branco */
+    outline: none;
+}
+
+.campo-form:focus {
+    border-color: var(--primaria); /* vermelho */
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.3); /* sombra vermelha suave */
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.botao-form {
+    color: #0b0b0b; /* texto preto para contraste com o gradiente */
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria)); /* vermelho -> amarelo */
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.botao-form:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4); /* sombra vermelha */
+}

@@ -1,0 +1,56 @@
+.lista-habilidades {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.habilidade-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 50px;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05); /* efeito vidro */
+    border-radius: 12px;
+    border: 1px solid var(--vidro);
+    color: #fff; /* texto branco */
+    transition: all 0.3s ease;
+}
+
+.habilidade-item:hover {
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4); /* sombra vermelha */
+    transform: translateY(-3px) scale(1.02);
+}
+
+.indentificador {
+    display: block;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 100%;
+}
+
+
+/* --- Cores das Habilidades --- */
+
+.indentificador.HTML { background-color: #E34F26; }
+.indentificador.CSS { background-color: #1572B6; }
+.indentificador.JavaScript { background-color: #F7DF1E; }
+.indentificador.Java { background-color: #f89820; } /* Laranja da Oracle/Java */
+.indentificador.Python { background-color: #3776AB; }
+.indentificador.Swift { background-color: #F05138; }
+.indentificador.Kotlin { background-color: #7F52FF; }
+.indentificador.TypeScript { background-color: #3178C6; }
+.indentificador.PHP { background-color: #777BB4; }
+.indentificador.PostgreSQL { background-color: #336791; }
+
+/* Frameworks e outros (atenção aos nomes com . e espaços) */
+.indentificador.React\.js { background-color: #61DAFB; } /* React.js */
+.indentificador.React.Native { background-color: #61DAFB; } /* React Native */
+.indentificador.Node\.js { background-color: #339933; } /* Node.js */
+.indentificador\.NET { background-color: #512BD4; } /* .NET */
+.indentificador.Next\.js { background-color: #ffffff; } /* Next.js (usei branco) */
