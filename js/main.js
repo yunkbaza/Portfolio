@@ -17,3 +17,4 @@ btnTopo.addEventListener('click', () => {
         behavior: 'smooth' // Rola suavemente
     });
 });
+
