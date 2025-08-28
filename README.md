@@ -1,7 +1,7 @@
 # Portfólio Pessoal | Allan Gabriel Baeza
 
 <p align="center">
-  <img src="img\Portifolio.png" alt="Preview do Portfólio" width="800"/>
+  <img src="img/Portifolio.png" alt="Preview do Portfólio" width="800"/>
 </p>
 
 <p align="center">
@@ -13,6 +13,7 @@
   <a href="#-funcionalidades">Funcionalidades</a> •
   <a href="#-tecnologias">Tecnologias</a> •
   <a href="#-como-executar">Como Executar</a> •
+  <a href="#-licença">Licença</a> •
   <a href="#-contato">Contato</a>
 </p>
 
@@ -27,10 +28,11 @@ O design foi pensado para ser moderno e responsivo, utilizando efeitos de *glass
 ## ✨ Funcionalidades
 
 * **Design Responsivo:** Totalmente adaptado para uma navegação fluida em desktops, tablets e celulares.
-* **Animações de Scroll:** Elementos da página surgem de forma suave conforme o usuário navega, tornando a experiência mais interativa.
+* **Animações de Scroll:** Elementos da página surgem de forma suave conforme o usuário navega.
 * **Seções Detalhadas:** Apresentação clara das seções "Sobre mim", "Habilidades", "Projetos" e "Contato".
 * **Menu Mobile:** Menu "hamburger" funcional para uma navegação intuitiva em telas menores.
-* **Formulário de Contato Funcional:** Integração direta com WhatsApp para um contato rápido e eficiente.
+* **Formulário de Contato Profissional:** Integração com **EmailJS** para envio direto de mensagens para minha caixa de entrada.
+* **Botão Voltar ao Topo:** Melhora a experiência de navegação em páginas mais longas.
 
 ## 💻 Tecnologias
 
@@ -53,3 +55,13 @@ cd Portfolio
 
 # 3. Abra o arquivo `index.html` no seu navegador
 #    (Recomendado usar a extensão "Live Server" do VSCode para melhor experiência)
+```
+
+## 📜 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 📫 Contato
+**Allan Gabriel Baeza** - allanbamirati@live.com

@@ -48,6 +48,27 @@
     display: none;
 }
 
+/* Estilos do Botão de Tema */
+.theme-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--texto);
+    position: absolute;
+    right: 60px; /* Ajuste a posição conforme necessário */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5rem;
+}
+
+.theme-toggle-button svg {
+    transition: color 0.3s ease;
+}
+
+.theme-toggle-button:hover svg {
+    color: var(--primaria);
+}
+
 @media (max-width: 1024px) {
     .navegacao {
         justify-content: flex-end;
@@ -117,5 +138,8 @@
     .navegacao.active #hamburger::after {
         transform: rotate(-135deg);
         top: -7px;
+    }
+        .theme-toggle-button {
+        right: 80px; /* Posição ao lado do hamburger */
     }
 }
