@@ -21,7 +21,7 @@
     height: 100%;
     z-index: -1;
     opacity: 0.6;
-    background: 
+    background:
         radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 25%),
         radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 25%),
         var(--maisEscuro);
@@ -33,7 +33,7 @@
     font-size: 3rem;
     text-align: center;
     margin-bottom: 50px;
-    color: var(--secundaria);
+    color: var(--primaria); /* Cor alterada para maior destaque */
 }
 
 .card {
@@ -53,9 +53,23 @@
     border: 1px solid var(--primaria);
 }
 
+/* Animação de Scroll */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 @media (max-width: 1024px) {
     section {
         height: auto;
+        padding: 4rem 2rem;
     }
 
     .titulo {

@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="Styles/reset.css">
     <link rel="stylesheet" href="Styles/index.css">
     <title>Allan Gabriel Baeza | Portfólio</title>
 </head>
 <body>
-    
+
     <div class="particulas"></div>
 
     <nav class="navegacao">
-        <ul class="menu">
+        <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+        <ul class="menu" id="menu" role="menu">
             <li>
                 <a class="menu-link" href="#inicio">Início</a>
             </li>
@@ -23,7 +27,7 @@
                 <a class="menu-link" href="#habilidades">Habilidades</a>
             </li>
             <li>
-                <a class="menu-link" href="#projetos">Projeto</a>
+                <a class="menu-link" href="#projetos">Projetos</a>
             </li>
             <li>
                 <a class="menu-link" href="#contato">Contato</a>
@@ -34,7 +38,7 @@
     <main class="principal">
 
         <section id="inicio" class="inicio">
-            <img src="img/Foto_Allan.jpg" class="foto-perfil">
+            <img src="img/Foto_Allan.jpg" class="foto-perfil" alt="Foto de perfil de Allan Gabriel Baeza">
             <h1 class="nomeCompleto">Allan Gabriel Baeza</h1>
             <p class="profissao">Desenvolvedor FullStack</p>
         </section>
@@ -67,10 +71,10 @@
                         </li>
                         <li class="dados-pessoais">
                             <h4 class="dados-pessoais-titulo">GitHub</h4>
-                            <a class="dados-pessoais-link"  href="https://github.com/yunkbaza" target="_blank">https://github.com/yunkbaza</a>
+                            <a class="dados-pessoais-link"  href="https://github.com/yunkbaza" target="_blank">github.com/yunkbaza</a>
                         </li>
-
                     </ul>
+                    <a href="assets\AllanGabrielBaeza.pdf" download class="botao-cv">Download CV</a>
                 </aside>
                 <div class="caixa-sobre">
                     <p class="paragrafo-sobre">Olá! Sou Allan Gabriel Baeza, um desenvolvedor dedicado, detalhista, versátil e curioso, sempre em busca de aprender e criar soluções inovadoras. Atualmente curso Análise e Desenvolvimento de Sistemas na FIAP e estou mergulhando cada vez mais no universo da programação.</p>
@@ -150,10 +154,10 @@
         <section id="projetos">
             <h2 class="titulo">Meus Projetos</h2>
             <div class="caixas-projetos">
-                                <a href="#" target="_blank" class="card" >
-                    <img class="foto-projeto" src="img/App_Emergencia.png" alt="Foto do projeto BirdCare">
+                <a href="https://github.com/yunkbaza/BirdCare" target="_blank" class="card" >
+                    <img class="foto-projeto" src="img/App_Emergencia.png" alt="Interface do aplicativo App de Emergência, mostrando telas de alerta e contatos.">
                     <div class="info-projeto">
-                        <h3 class="titulo-projeto">BirdCare</h3>
+                        <h3 class="titulo-projeto">App de Emergência</h3>
                         <div>
                             <ul class="descricao-projeto">
                                 <li class="habilidade-item">
@@ -164,10 +168,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" target="_blank" class="card" >
-                    <img class="foto-projeto" src="img/Dashboard_IFood.jpg" alt="Foto do projeto IFood">
+                <a href="https://github.com/yunkbaza/Dashboard_IFood" target="_blank" class="card" >
+                    <img class="foto-projeto" src="img/Dashboard_IFood.jpg" alt="Dashboard do projeto iFood com gráficos de faturamento e produtos mais vendidos.">
                     <div class="info-projeto">
-                        <h3 class="titulo-projeto">Dashboard IFood</h3>
+                        <h3 class="titulo-projeto">Dashboard iFood</h3>
                         <div>
                             <ul class="descricao-projeto">
                                 <li class="habilidade-item">
@@ -178,11 +182,11 @@
                                     <span class="indentificador TypeScript"></span>
                                     TypeScript
                                 </li>
-                                <li class="habilidade-item"> 
+                                <li class="habilidade-item">
                                     <span class="indentificador Node.js"></span>
                                     Node.js
                                 </li>
-                                <li class="habilidade-item"> 
+                                <li class="habilidade-item">
                                     <span class="indentificador PostgreSQL"></span>
                                     PostgreSQL
                                 </li>
@@ -197,10 +201,10 @@
             <h2 class="titulo">Entre em Contato</h2>
             <form class="formulario-contato" onsubmit="enviarWhats(event)">
                 <div class="grupo-form">
-                    <input id="nome" class="campo-form" placeholder="Nome">
+                    <input id="nome" class="campo-form" placeholder="Nome" required>
                 </div>
                 <div class="grupo-form">
-                    <textarea id="mensagem" class="campo-form" placeholder="Digite sua Mensagem" rows="6"></textarea>
+                    <textarea id="mensagem" class="campo-form" placeholder="Digite sua Mensagem" rows="6" required></textarea>
                 </div>
                 <button class="botao-form" type="submit">Enviar WhatsApp</button>
             </form>
@@ -208,7 +212,9 @@
 
     </main>
 
-    <script src="JS/contato.js"></script>
+    <script src="js/contato.js"></script>
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/animacoes.js"></script>
 
 </body>
 </html>

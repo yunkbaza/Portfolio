@@ -1,6 +1,6 @@
 .container-sobre {
     display: flex;
-    justify-content: space-evenly;   
+    justify-content: space-evenly;
 }
 
 .caixa-sobre {
@@ -34,10 +34,34 @@
     color: var(--primaria);
 }
 
+/* --- ALTERAÇÃO APLICADA AQUI --- */
 .paragrafo-sobre {
     text-indent: 5%;
     font-size: 1.2rem;
+    margin-bottom: 1.2rem; /* Adiciona espaço ENTRE os parágrafos */
+    line-height: 1.6;    /* Adiciona espaço ENTRE as linhas de um mesmo parágrafo */
 }
+
+.botao-cv {
+    color: #0b0b0b;
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.botao-cv:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
+
 
 @media (max-width: 1024px) {
 
