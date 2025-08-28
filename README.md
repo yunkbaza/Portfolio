@@ -53,22 +53,3 @@ cd Portfolio
 
 # 3. Abra o arquivo `index.html` no seu navegador
 #    (Recomendado usar a extensão "Live Server" do VSCode para melhor experiência)
-
-## 📫 Contato
-
-Vamos nos conectar! Fique à vontade para entrar em contato.
-
-<p>
-  <a href="https://www.linkedin.com/in/allan-gabriel-baeza-a281b1233/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
-  <a href="mailto:allanbamirati@live.com">
-    <img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" alt="Email">
-  </a>
-</p>
-
----
-
-<p align="center">
-  Feito com ❤️ por Allan Gabriel Baeza
-</p>
