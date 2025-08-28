@@ -1,7 +1,7 @@
 # Portfólio Pessoal | Allan Gabriel Baeza
 
 <p align="center">
-  <img src="img/Dashboard_IFood.jpg" alt="Preview do Portfólio" width="800"/>
+  <img src="img\Portifolio.png" alt="Preview do Portfólio" width="800"/>
 </p>
 
 <p align="center">
