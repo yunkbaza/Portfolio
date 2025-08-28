@@ -15,12 +15,14 @@ html {
 body {
     background-color: var(--maisEscuro); /* fundo preto da paleta */
     color: #fff; /* texto branco */
+    line-height: 1.5; /* Melhora a legibilidade */
 }
 
 /* Imagens e mídia */
 img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
+    height: auto; /* Garante que a proporção da imagem seja mantida */
 }
 
 /* Formulários e botões */
@@ -39,8 +41,10 @@ a {
 
 /* Seções */
 section {
-    height: 100vh;
+    min-height: 100vh; /* Usa min-height para permitir que a secção cresça */
+    height: auto;
     padding: 6rem 2rem;
+    width: 100%;
 }
 
 /* Lista */

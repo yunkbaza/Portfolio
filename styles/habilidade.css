@@ -3,26 +3,27 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    max-width: 800px;
+    max-width: 900px; /* Aumentado para melhor distribuição */
     margin: 0 auto;
 }
 
 .habilidade-item {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px; /* Aumentado ligeiramente */
     height: 50px;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.2rem; /* Mais padding horizontal */
     text-align: center;
-    background: rgba(255, 255, 255, 0.05); /* efeito vidro */
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     border: 1px solid var(--vidro);
-    color: #fff; /* texto branco */
+    color: #fff;
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 .habilidade-item:hover {
-    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4); /* sombra vermelha */
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
     transform: translateY(-3px) scale(1.02);
 }
 
@@ -34,9 +35,7 @@
     border-radius: 100%;
 }
 
-
-/* --- Cores das Habilidades --- */
-
+/* --- Cores das Habilidades (sem alterações) --- */
 .indentificador.HTML { background-color: #E34F26; }
 .indentificador.CSS { background-color: #1572B6; }
 .indentificador.JavaScript { background-color: #F7DF1E; }
@@ -53,4 +52,17 @@
 .indentificador.React.Native { background-color: #61DAFB; } /* React Native */
 .indentificador.Node\.js { background-color: #339933; } /* Node.js */
 .indentificador\.NET { background-color: #512BD4; } /* .NET */
-.indentificador.Next\.js { background-color: #ffffff; } /* Next.js (usei branco) */
+.indentificador.Next\.js { background-color: #ffffff; } /* Next.js */
+
+/* Tablet e Telemóvel */
+@media (max-width: 768px) {
+    .lista-habilidades {
+        gap: 15px;
+    }
+
+    .habilidade-item {
+        height: 45px;
+        padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+}
+}

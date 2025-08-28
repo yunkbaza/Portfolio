@@ -1,15 +1,22 @@
 .container-sobre {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center; /* Alterado para center */
+    gap: 2rem;
+    align-items: flex-start; /* Alinha os itens no topo */
 }
 
 .caixa-sobre {
     padding: 2rem;
-    max-width: 800px;
     border-radius: 16px;
     border: 1px solid var(--vidro);
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    max-width: 800px;
+}
+
+.sobre-sidebar-dados {
+    max-width: 400px;
+    flex-shrink: 0; /* Impede que o sidebar encolha */
 }
 
 .sidebar-titulo {
@@ -34,12 +41,15 @@
     color: var(--primaria);
 }
 
-/* --- ALTERAÇÃO APLICADA AQUI --- */
 .paragrafo-sobre {
-    text-indent: 5%;
+    text-indent: 1.5rem;
     font-size: 1.2rem;
-    margin-bottom: 1.2rem; /* Adiciona espaço ENTRE os parágrafos */
-    line-height: 1.6;    /* Adiciona espaço ENTRE as linhas de um mesmo parágrafo */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.paragrafo-sobre:last-child {
+    margin-bottom: 0;
 }
 
 .botao-cv {
@@ -62,53 +72,40 @@
     box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
 }
 
-
+/* Tablet */
 @media (max-width: 1024px) {
-
-    #sobre {
-        height: auto;
-        padding-top: 4rem;
-    }
-
     .container-sobre {
-        gap: 1rem;
+        flex-direction: column; /* Coloca os itens um debaixo do outro */
+        align-items: center;
+        gap: 2rem;
     }
 
+    .caixa-sobre,
     .sobre-sidebar-dados {
-        height: auto;
+        max-width: 700px; /* Permite que ocupem mais largura */
+        width: 100%;
     }
 
+    .paragrafo-sobre {
+        font-size: 1.1rem;
+    }
+}
+
+/* Telemóvel */
+@media (max-width: 768px) {
     .caixa-sobre {
-        padding: 1rem;
-    }
-
-    .sidebar-titulo {
-        font-size: 1.2rem;
-    }
-
-    .dados-pessoais-titulo {
-        font-size: 0.8rem;
-    }
-
-    .dados-pessoais {
-        font-size: 0.8rem;
-        margin-top: 1rem;
+        padding: 1.5rem;
     }
 
     .paragrafo-sobre {
         font-size: 1rem;
-        padding: 0.5rem;
-    }
-}
-
-@media (max-width: 540px) {
-    .container-sobre {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
     }
 
-    .caixa-sobre {
-        max-width: 500px;
+    .dados-pessoais-titulo {
+        font-size: 1rem;
+    }
+
+    .dados-pessoais p, .dados-pessoais a {
+        font-size: 0.9rem;
     }
 }

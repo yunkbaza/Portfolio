@@ -3,34 +3,35 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center; /* Garante o alinhamento em ecrãs pequenos */
 }
 
 .foto-perfil {
     width: 350px;
     height: 350px;
-    box-shadow: 0 0 30px rgba(230, 57, 70, 0.6); /* glow vermelho */
+    box-shadow: 0 0 30px rgba(230, 57, 70, 0.6);
     border-radius: 50%;
     border: 4px solid var(--vidro);
-    animation: flutuar 8s ease-in-out infinite; /* Animação mais lenta */
-    background-color: rgba(255,255,255,0.05); /* leve vidro */
+    animation: flutuar 8s ease-in-out infinite;
+    background-color: rgba(255,255,255,0.05);
     transition: transform 0.4s ease;
 }
 
 .foto-perfil:hover {
-    transform: scale(1.05); /* Efeito de hover */
+    transform: scale(1.05);
 }
 
 .nomeCompleto {
     font-size: 3.5rem;
-    color: var(--primaria); /* vermelho */
+    color: var(--primaria);
     font-weight: bold;
     margin: 20px;
-    text-shadow: 0 0 5px rgba(230, 57, 70, 0.5); /* brilho sutil */
+    text-shadow: 0 0 5px rgba(230, 57, 70, 0.5);
 }
 
 .profissao {
     font-size: 1.5rem;
-    color: var(--secundaria); /* amarelo quente */
+    color: var(--secundaria);
     margin-bottom: 10px;
 }
 
@@ -38,35 +39,41 @@
     0%, 100% {
         transform: translateY(0);
     }
-
     50% {
-        transform: translateY(-15px); /* Movimento mais sutil */
+        transform: translateY(-15px);
     }
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
+    .foto-perfil {
+        width: 250px;
+        height: 250px;
+        border-width: 3px;
+    }
+
+    .nomeCompleto {
+        font-size: 2.8rem;
+    }
+
+    .profissao {
+        font-size: 1.3rem;
+    }
+}
+
+/* Telemóvel */
+@media (max-width: 768px) {
     .foto-perfil {
         width: 200px;
         height: 200px;
-        border: 2px solid var(--vidro);
-        box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+        border-width: 2px;
     }
 
     .nomeCompleto {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 540px) {
-    .foto-perfil {
-        width: 150px;
-        height: 150px;
-        border: 1px solid var(--vidro);
-        box-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+        font-size: 2.2rem;
     }
 
-    .nomeCompleto {
-        text-align: center;
-        font-size: 2rem;
+    .profissao {
+        font-size: 1.1rem;
     }
 }

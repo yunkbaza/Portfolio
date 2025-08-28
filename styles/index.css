@@ -68,11 +68,21 @@ section.animate {
 
 @media (max-width: 1024px) {
     section {
-        height: auto;
         padding: 4rem 2rem;
     }
 
     .titulo {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo {
         font-size: 2rem;
+    }
+
+    section {
+        padding: 4rem 1rem; /* Menos padding lateral em telemóveis */
     }
 }
