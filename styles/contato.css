@@ -6,7 +6,7 @@
     padding: 2rem;
     border: 1px solid var(--vidro);
     border-radius: 16px;
-    color: #fff; /* texto branco para contraste */
+    color: var(--texto); /* cor do texto conforme o tema */
 }
 
 .campo-form {
@@ -15,7 +15,7 @@
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--vidro);
     border-radius: 8px;
-    color: #fff; /* texto branco */
+    color: var(--texto); /* cor do texto conforme o tema */
     outline: none;
 }
 

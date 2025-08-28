@@ -29,6 +29,7 @@ O design foi pensado para ser moderno e responsivo, utilizando efeitos de *glass
 
 * **Design Responsivo:** Totalmente adaptado para uma navegação fluida em desktops, tablets e celulares.
 * **Animações de Scroll:** Elementos da página surgem de forma suave conforme o usuário navega.
+* **Tema Claro/Escuro:** Alternância de tema com preferência salva no navegador.
 * **Seções Detalhadas:** Apresentação clara das seções "Sobre mim", "Habilidades", "Projetos" e "Contato".
 * **Menu Mobile:** Menu "hamburger" funcional para uma navegação intuitiva em telas menores.
 * **Formulário de Contato Profissional:** Integração com **EmailJS** para envio direto de mensagens para minha caixa de entrada.

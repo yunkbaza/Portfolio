@@ -39,7 +39,7 @@
     overflow: hidden;
     transition: all 0.4s ease;
     cursor: pointer;
-    color: #fff;
+    color: var(--texto);
 }
 
 .card:hover {

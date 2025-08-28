@@ -13,8 +13,8 @@ html {
 }
 
 body {
-    background-color: var(--maisEscuro); /* fundo preto da paleta */
-    color: #fff; /* texto branco */
+    background-color: var(--maisEscuro); /* fundo da paleta */
+    color: var(--texto); /* cor do texto conforme o tema */
     line-height: 1.5; /* Melhora a legibilidade */
 }
 

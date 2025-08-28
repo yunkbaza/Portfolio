@@ -20,7 +20,7 @@
     font-weight: 500;
     position: relative;
     padding: 0.5rem 0;
-    color: #fff; /* texto branco */
+    color: var(--texto); /* cor do texto */
     transition: color 0.3s ease;
 }
 
@@ -67,6 +67,11 @@
 
 .theme-toggle-button:hover svg {
     color: var(--primaria);
+}
+
+/* Ícone da lua oculto por padrão (modo escuro) */
+.icon-moon {
+    display: none;
 }
 
 @media (max-width: 1024px) {

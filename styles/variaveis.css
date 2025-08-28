@@ -2,6 +2,15 @@
   --primaria: #DC2626;     /* Vermelho Vibrante */
   --secundaria: #FBBF24;  /* Dourado/Âmbar */
   --maisEscuro: #0b0b0b;   /* Fundo preto suave */
+  --texto: #ffffff;        /* Texto padrão no tema escuro */
   --vidro: rgba(255, 255, 255, 0.08); /* Borda do card mais sutil */
   --sombra-primaria: rgba(220, 38, 38, 0.25); /* Sombra do card com o vermelho */
+}
+
+/* Variáveis para o tema claro */
+body.light-mode {
+  --maisEscuro: #fdf6e3; /* Fundo claro com tom quente */
+  --texto: #0b0b0b;      /* Texto escuro para contraste */
+  --vidro: rgba(0, 0, 0, 0.08); /* Ajuste da borda no modo claro */
+  --sombra-primaria: rgba(220, 38, 38, 0.15);
 }
