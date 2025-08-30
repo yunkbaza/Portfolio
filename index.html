@@ -1,169 +1,230 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+﻿<!doctype html>
+<html lang="pt-br" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <title>Allan Gabriel Baeza | Portfólio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#FACC15"/>
+  <meta name="description" content="Portfólio de Allan Gabriel Baeza Amirati Silva — Desenvolvedor Mobile (iOS) e Full Stack. Projetos, currículo e contato."/>
+  <meta property="og:title" content="Allan Gabriel Baeza — Portfólio"/>
+  <meta property="og:description" content="Desenvolvedor iOS e Full Stack. Projetos, CV e contato."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="img/Portifolio.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" href="./assets/logo.svg"/>
+  <link rel="manifest" href="manifest.webmanifest"/>
+  <meta name="color-scheme" content="light dark"/>
+  <link rel="preload" href="styles/style.css" as="style" />
+  <link rel="stylesheet" href="styles/style.css"/>
+  <style>
+    /* Ajustes do grid de contato nesta página */
+    #contato .contact-grid { display:grid; gap:28px; }
+    @media (min-width: 800px) {
+      #contato .contact-grid { grid-template-columns: repeat(2, minmax(0,1fr)); align-items:stretch; }
+    }
+    #contato .contact-card { display:flex; flex-direction:column; gap:16px; align-items:stretch; height:100%; }
+    #contato .contact-card .content{ display:grid; gap:12px; }
+    #contato .contact-card h3 { margin:0 0 8px 0; }
+    #contato .contact-card .desc { margin:0 0 12px 0; color: var(--muted); }
+    #contato .contact-card .actions{ margin-top:auto; }
+    #contato .contact-card .btn{ width:100%; justify-content:center; }
+    #contato .field { display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+  </style>
+  <title>Allan Gabriel Baeza — Portfólio</title>
+  <meta name="robots" content="index,follow"/>
 </head>
 <body>
+  <a class="skip-link" href="#inicio">Pular para conteúdo</a>
+  <header class="navbar">
+    <div class="container inner">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="Logo" class="logo"/></a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="pages/certificados.html">Certificados</a>
+        <a href="#contato">Contato</a>
+        <a href="pages/curriculo.html">CV</a>
+        <button id="theme-toggle" class="icon-btn theme-toggle" aria-label="Alternar tema"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+      </nav>
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Abrir menu">Menu</button>
+    </div>
+  </header>
 
-    <div class="particulas"></div>
-
-    <nav class="navegacao">
-        <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-            <span id="hamburger"></span>
-        </button>
-        <button id="theme-toggle" class="theme-toggle-button" aria-label="Alternar tema">
-            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M6.05 6.05l-1.414-1.414M18.364 5.636l-1.414 1.414M6.05 17.95l-1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z"/>
-            </svg>
-            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="24" height="24">
-                <path d="M17.293 13.293A8 8 0 116.707 2.707a8.013 8.013 0 0010.586 10.586z"/>
-            </svg>
-        </button>
-        <ul class="menu" id="menu" role="menu">
-            <li><a class="menu-link" href="#inicio">Início</a></li>
-            <li><a class="menu-link" href="#sobre">Sobre</a></li>
-            <li><a class="menu-link" href="#habilidades">Habilidades</a></li>
-            <li><a class="menu-link" href="#projetos">Projetos</a></li>
-            <li><a class="menu-link" href="#contato">Contato</a></li>
+<main>
+  <section id="inicio" class="hero container">
+    <div class="reveal intro">
+      <span class="tag">Disponível para projetos</span>
+      <h1>Desenvolvedor Mobile (iOS) e Full Stack</h1>
+      <p>Estudante de ADS na FIAP (conclusão em 2025), apaixonado por desenvolvimento iOS e com experiência prática em front-end, back-end e ciência de dados. Atuo em projetos próprios e acadêmicos com foco em Swift/SwiftUI, React.js, Node.js e Power BI.</p>
+      
+      <div class="kpis">
+        <div class="kpi">+50 cursos</div>
+        <div class="kpi">FIAP — ADS 2024–2025</div>
+        <div class="kpi">iOS — Swift/SwiftUI</div>
+      </div>
+    </div>
+    <aside class="hero-side reveal">
+      <div class="avatar" aria-hidden="false">
+        <img src="./img/Foto_Allan.jpg" alt="Foto de Allan Gabriel Baeza" loading="lazy" decoding="async" width="220" height="220"/>
+      </div>
+      <div class="card reveal">
+        <h3>Foco atual</h3>
+        <ul>
+          <li>Swift/SwiftUI (iOS)</li>
+          <li>React.js (Front-end)</li>
+          <li>Node.js/Express (Back-end)</li>
+          <li>Power BI (Dashboards e DAX)</li>
         </ul>
-    </nav>
+      </div>
+    </aside>
+  </section>
 
-    <main class="principal">
+  <section id="sobre" class="section">
+    <div class="container">
+      <h2 class="reveal">Sobre mim</h2>
+      <p class="sub reveal">Estudante de Análise e Desenvolvimento de Sistemas na FIAP, com projetos que unem inovação tecnológica e impacto social. Busco crescer como desenvolvedor mobile e full stack, com foco em me tornar Sênior em iOS.</p>
+      <div class="grid cards">
+        <div class="card reveal">
+          <strong>Formação (FIAP — ADS)</strong><br/>
+          1º ano: Python, Java, JavaScript, React, HTML/CSS, Machine Learning, Data Science, Engenharia de Software.<br/>
+          2º ano: Swift, React Native, Kotlin, SQL/NoSQL, Big Data, frameworks (Java e .NET).
+        </div>
+        <div class="card reveal">
+          <strong>Habilidades Técnicas</strong><br/>
+          Linguagens: Python, Swift, Kotlin, Java, JavaScript, SQL.<br/>
+          Front-end & Mobile: React.js, React Native, HTML/CSS, Flutter, SwiftUI, Android (Kotlin), iOS (Swift).<br/>
+          Back-end & Dados: Node.js, Express, MySQL, MongoDB, ETL, Power BI, Apache Airflow.
+        </div>
+        <div class="card reveal">
+          <strong>Ferramentas & Metodologias</strong><br/>
+          AWS, Git/GitHub, Figma, Jupyter, .NET • TDD, UX, Ágil (Scrum/Kanban), IA Generativa, IoT.
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section id="inicio" class="inicio">
-            <img src="img/Foto_Allan.jpg" class="foto-perfil" alt="Foto de perfil de Allan Gabriel Baeza, um jovem de cabelo castanho olhando para o lado em um ambiente interno.">
-            <h1 class="nomeCompleto">Allan Gabriel Baeza</h1>
-            <p class="profissao">Desenvolvedor FullStack</p>
-        </section>
+  <section id="projetos" class="section">
+    <div class="container">
+      <h2 class="reveal">Projetos</h2>
+      <p class="sub reveal">Alguns destaques recentes.</p>
+      <div class="grid cards">
+        <article class="card project-card reveal" data-project data-tags="mobile">
+          <img src="./img/App_Emergencia.jpg" alt="BirdCare — App de Chamadas de Emergência" loading="lazy" decoding="async" width="400" height="160"/>
+          <h3>BirdCare (Chamadas de Emergência)</h3>
+          <div class="project-meta">
+            <span class="tag skill indentificador Swift">Swift</span>
+            <span class="tag skill indentificador SwiftUI">SwiftUI</span>
+            <span class="tag skill">UI/UX</span>
+          </div>
+          <a class="btn secondary" href="pages/projetos.html" rel="noopener">Detalhes</a>
+        </article>
+        <article class="card project-card reveal" data-project data-tags="data">
+          <img src="./img/Dashboard_IFood.jpg" alt="Dashboard de Análise de Dados" loading="lazy" decoding="async" width="400" height="160"/>
+          <h3>API de Integração com iFood</h3>
+          <div class="project-meta">
+            <span class="tag skill indentificador Python">Python (ETL)</span>
+            <span class="tag skill indentificador PowerBI">Power BI</span>
+            <span class="tag skill indentificador MySQL">MySQL</span>
+          </div>
+          <a class="btn secondary" href="pages/projetos.html" rel="noopener">Detalhes</a>
+        </article>
+        <article class="card project-card reveal" data-project data-tags="frontend backend">
+          <img src="./img/Porto_Projeto.jpg" alt="Challenge Porto Seguro — Site + Chat de IA" loading="lazy" decoding="async" width="400" height="160"/>
+          <h3>Challenge Porto Seguro</h3>
+          <div class="project-meta">
+            <span class="tag skill indentificador React js">React.js</span>
+            <span class="tag skill indentificador TypeScript">Typescript</span>
+            <span class="tag skill indentificador Vite">Vite</span>
+            <span class="tag skill indentificador SQL">SQL</span>
+          </div>
+          <a class="btn secondary" href="pages/projetos.html" rel="noopener">Detalhes</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <section id="sobre">
-            <h2 class="titulo">Sobre mim</h2>
-            <div class="container-sobre">
-                <aside class="sobre-sidebar-dados caixa-sobre">
-                    <h3 class="sidebar-titulo">Dados Pessoais</h3>
-                    <ul class="lista-dados-pessoais">
-                        <li class="dados-pessoais">
-                            <h4 class="dados-pessoais-titulo">Nome</h4>
-                            <p>Allan Gabriel Baeza</p>
-                        </li>
-                        <li class="dados-pessoais">
-                            <h4 class="dados-pessoais-titulo">Email</h4>
-                            <p>allanbamirati@live.com</p>
-                        </li>
-                        <li class="dados-pessoais">
-                            <h4 class="dados-pessoais-titulo">Telefone</h4>
-                            <p>(55) 11947573410</p>
-                        </li>
-                        <li class="dados-pessoais">
-                            <h4 class="dados-pessoais-titulo">Endereço</h4>
-                            <p>Rua Dionisio 15 - Parque Penha</p>
-                        </li>
-                        <li class="dados-pessoais">
-                            <h4 class="dados-pessoais-titulo">LinkedIn</h4>
-                            <a class="dados-pessoais-link" href="https://www.linkedin.com/in/allan-gabriel-baeza-a281b1233/" target="_blank">linkedin.com/in/allan-gabriel-baeza</a>
-                        </li>
-                        <li class="dados-pessoais">
-                            <h4 class="dados-pessoais-titulo">GitHub</h4>
-                            <a class="dados-pessoais-link"  href="https://github.com/yunkbaza" target="_blank">github.com/yunkbaza</a>
-                        </li>
-                    </ul>
-                    <a href="assets/AllanGabrielBaeza.pdf" download class="botao-cv">Download CV</a>
-                </aside>
-                <div class="caixa-sobre">
-                    <p class="paragrafo-sobre">Olá! Sou Allan Gabriel Baeza, um desenvolvedor dedicado, detalhista, versátil e curioso, sempre em busca de aprender e criar soluções inovadoras. Atualmente curso Análise e Desenvolvimento de Sistemas na FIAP e estou mergulhando cada vez mais no universo da programação.</p>
-                    <p class="paragrafo-sobre">Minha paixão por codar começou com a vontade de transformar ideias em ferramentas digitais que realmente funcionam. Desde então, desenvolvi diversos projetos, como aplicações integradas com a API do iFood, um app de chamadas de emergência para minha iniciação científica e um aplicativo de saúde mental. Além disso, já completei mais de 50 cursos na área, aprimorando constantemente minhas habilidades.</p>
-                    <p class="paragrafo-sobre">Meu objetivo é crescer profissionalmente e me tornar um desenvolvedor iOS sênior, criando experiências digitais que encantem os usuários. Fora do mundo da programação, sou apaixonado por escrever, cantar e compor, atividades que estimulam minha criatividade e me ajudam a enxergar soluções inovadoras também na tecnologia.</p>
-                    <p class="paragrafo-sobre">Estou sempre aberto a novas oportunidades, desafios e conexões com pessoas que compartilham a mesma paixão por tecnologia e inovação.</p>
-                </div>
+  <section id="contato" class="section">
+    <div class="container">
+      <h2 class="reveal">Contato</h2>
+      <p class="sub reveal">Me mande uma mensagem — respondo rapidinho.</p>
+      <div class="contact-grid reveal">
+        <aside class="card contact-card" id="whats-card" data-whatsapp="550000000000">
+          <div class="content">
+            <h3>WhatsApp</h3>
+            <p class="desc">Envie uma mensagem direta pelo WhatsApp.</p>
+            <div class="field">
+              <label for="whats-message">Mensagem</label>
+              <textarea id="whats-message" rows="5" placeholder="Olá Allan, vim pelo portfólio e..."></textarea>
             </div>
-        </section>
+          </div>
+          <div class="actions">
+            <button class="btn" id="whats-send" type="button">Enviar no WhatsApp</button>
+          </div>
+        </aside>
 
-        <section id="habilidades">
-            <h2 class="titulo">Habilidades</h2>
-            <ul class="lista-habilidades">
-                 <li class="habilidade-item card"><span class="indentificador HTML"></span>HTML</li>
-                 <li class="habilidade-item card"><span class="indentificador CSS"></span>CSS</li>
-                 <li class="habilidade-item card"><span class="indentificador JavaScript"></span>JavaScript</li>
-                 <li class="habilidade-item card"><span class="indentificador Java"></span>Java</li>
-                 <li class="habilidade-item card"><span class="indentificador Python"></span>Python</li>
-                 <li class="habilidade-item card"><span class="indentificador Swift"></span>Swift</li>
-                 <li class="habilidade-item card"><span class="indentificador Kotlin"></span>Kotlin</li>
-                 <li class="habilidade-item card"><span class="indentificador TypeScript"></span>TypeScript</li>
-                 <li class="habilidade-item card"><span class="indentificador React.js"></span>React.js</li>
-                 <li class="habilidade-item card"><span class="indentificador React Native"></span>React Native</li>
-                 <li class="habilidade-item card"><span class="indentificador PHP"></span>PHP</li>
-                 <li class="habilidade-item card"><span class="indentificador Node.js"></span>Node.js</li>
-                 <li class="habilidade-item card"><span class="indentificador .NET"></span>.NET</li>
-                 <li class="habilidade-item card"><span class="indentificador Next.js"></span>Next.js</li>
-                 <li class="habilidade-item card"><span class="indentificador PostgreSQL"></span>PostgreSQL</li>
-            </ul>
-        </section>
-
-        <section id="projetos">
-            <h2 class="titulo">Meus Projetos</h2>
-            <div class="caixas-projetos">
-                <a href="https://github.com/yunkbaza/BirdCare" target="_blank" class="card" >
-                    <img class="foto-projeto" src="img/App_Emergencia.jpg" alt="Interface do aplicativo App de Emergência, mostrando telas de alerta, menu e contatos.">
-                    <div class="info-projeto">
-                        <h3 class="titulo-projeto">App de Emergência</h3>
-                        <div>
-                            <ul class="descricao-projeto">
-                                <li class="habilidade-item"><span class="indentificador Swift"></span>Swift</li>
-                            </ul>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://github.com/yunkbaza/Dashboard_IFood" target="_blank" class="card" >
-                    <img class="foto-projeto" src="img/Dashboard_IFood.jpg" alt="Dashboard do projeto iFood com gráficos de faturamento, produtos mais vendidos e KPIs.">
-                    <div class="info-projeto">
-                        <h3 class="titulo-projeto">Dashboard iFood</h3>
-                        <div>
-                            <ul class="descricao-projeto">
-                                <li class="habilidade-item"><span class="indentificador Next.js"></span>Next.js</li>
-                                <li class="habilidade-item"><span class="indentificador TypeScript"></span>TypeScript</li>
-                                <li class="habilidade-item"><span class="indentificador Node.js"></span>Node.js</li>
-                                <li class="habilidade-item"><span class="indentificador PostgreSQL"></span>PostgreSQL</li>
-                            </ul>
-                        </div>
-                    </div>
-                </a>
+        <form id="contact-form" class="card contact-card reveal" novalidate data-email-to="seu-email@exemplo.com">
+          <div class="content">
+            <h3>Email</h3>
+            <p class="desc">Prefere e-mail? Respondo em breve.</p>
+            <div class="field">
+              <label for="name">Nome</label>
+              <input id="name" name="name" required aria-required="true" aria-invalid="false" aria-describedby="contact-error" placeholder="Seu nome"/>
             </div>
-        </section>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required aria-required="true" aria-invalid="false" aria-describedby="contact-error" placeholder="voce@email.com"/>
+            </div>
+            <div class="field">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" required aria-required="true" aria-invalid="false" aria-describedby="contact-error" placeholder="Como posso ajudar?"></textarea>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn" type="submit">Enviar</button>
+            <div class="status">
+              <div class="success" id="contact-success" role="status" aria-live="polite">Mensagem enviada!</div>
+              <div class="error" id="contact-error" role="alert">Erro ao enviar.</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
 
-        <section id="contato">
-            <h2 class="titulo">Entre em Contato</h2>
-            <form id="form-contato" class="formulario-contato">
-                <div class="grupo-form">
-                    <input type="text" id="nome" name="nome" class="campo-form" placeholder="Nome" required>
-                </div>
-                <div class="grupo-form">
-                    <input type="email" id="email" name="email" class="campo-form" placeholder="Seu melhor e-mail" required>
-                </div>
-                <div class="grupo-form">
-                    <textarea id="mensagem" name="mensagem" class="campo-form" placeholder="Digite sua Mensagem" rows="6" required></textarea>
-                </div>
-                <button class="botao-form" type="submit">Enviar Mensagem</button>
-            </form>
-        </section>
-    </main>
+  <footer class="footer">
+    <div class="container top">
+      <div class="cta">
+        <h3>Vamos trabalhar juntos?</h3>
+        <p>Aberto a projetos e oportunidades. Respondo rapidinho.</p>
+        <div class="links">
+          <a class="btn light" href="#contato">Fale comigo</a>
+          <a class="btn secondary" href="pages/curriculo.html">Ver CV</a>
+        </div>
+      </div>
+      <nav class="sitemap" aria-label="Mapa do site">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="pages/certificados.html">Certificados</a>
+        <a href="pages/curriculo.html">CV</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="social" aria-label="Redes sociais">
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.79-1.35-1.79-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.47-2.36 1.25-3.19-.13-.3-.54-1.52.12-3.16 0 0 1.02-.33 3.34 1.22a11.6 11.6 0 0 1 6.08 0c2.31-1.55 3.33-1.22 3.33-1.22.67 1.64.26 2.86.13 3.16.78.83 1.25 1.89 1.25 3.19 0 4.58-2.81 5.59-5.49 5.89.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.84v2.18h.05c.54-1.02 1.87-2.18 3.86-2.18 4.13 0 4.89 2.72 4.89 6.27V24h-4v-7.15c0-1.7-.03-3.9-2.38-3.9-2.39 0-2.76 1.86-2.76 3.78V24h-4V8z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container bottom">
+      <small>© <span data-year></span> Allan Gabriel Baeza Amirati Silva — Feito com HTML, CSS e JS puro.</small>
+      <small><a href="#inicio" class="back-top">Voltar ao topo</a></small>
+    </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Allan Gabriel Baeza. Todos os direitos reservados.</p>
-    </footer>
-
-    <button id="btn-topo" aria-label="Voltar ao topo">&#9650;</button>
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <script src="js/contato.js"></script>
-    <script src="js/menu-mobile.js"></script>
-    <script src="js/animacoes.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/theme-toggle.js"></script>
+<script src="scripts/app.js" defer></script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js");}</script>
 </body>
 </html>

@@ -1,68 +1,106 @@
-# Portfólio Pessoal | Allan Gabriel Baeza
+# Portfólio Pessoal — Allan Gabriel Baeza
 
-<p align="center">
-  <img src="img/Portifolio.jpg" alt="Preview do Portfólio" width="800"/>
-</p>
+<div align="center">
+  <img src="./img/Portfolio.jpg" alt="Preview do Portfólio" width="860" />
 
-<p align="center">
-  <strong><a href="https://yunkbaza.github.io/Portfolio/" target="_blank">Ver Demonstração ao Vivo »</a></strong>
-</p>
-
-<p align="center">
-  <a href="#-sobre-o-projeto">Sobre</a> •
-  <a href="#-funcionalidades">Funcionalidades</a> •
-  <a href="#-tecnologias">Tecnologias</a> •
-  <a href="#-como-executar">Como Executar</a> •
-  <a href="#-licença">Licença</a> •
-  <a href="#-contato">Contato</a>
-</p>
+  <p>
+    <a href="#-sobre">Sobre</a> •
+    <a href="#-funcionalidades">Funcionalidades</a> •
+    <a href="#-estrutura">Estrutura</a> •
+    <a href="#-como-rodar">Como rodar</a> •
+    <a href="#-pwa">PWA</a> •
+    <a href="#-comentarios-no-codigo">Comentários no código</a> •
+    <a href="#-contato">Contato</a>
+  </p>
+</div>
 
 ---
 
-## 🚀 Sobre o Projeto
+## 🔎 Sobre
 
-Este é o meu portfólio pessoal, uma landing page desenvolvida para ser o ponto central da minha jornada como desenvolvedor. O objetivo é apresentar minha identidade profissional, centralizar meus projetos mais relevantes e compartilhar um pouco sobre minhas habilidades e paixões.
+Site pessoal em HTML, CSS e JavaScript puro, com foco em performance, acessibilidade e experiência em mobile/desktop. É onde concentro meus projetos, currículo, certificados e formas de contato.
 
-O design foi pensado para ser moderno e responsivo, utilizando efeitos de *glassmorphism* e animações sutis para criar uma experiência de usuário agradável e dinâmica. A estrutura do código é modular e organizada, refletindo as boas práticas de desenvolvimento que aplico no meu dia a dia.
+### Capturas do site
+
+<p align="center">
+  <img src="./img/Portfolio.jpg" alt="Home" width="720" />
+</p>
+
+<p align="center">
+  <img src="./img/Portfolio_projeto.jpg" alt="Projetos" width="320" />
+  <img src="./img/Portfolio_certificados.jpg" alt="Certificados" width="320" />
+  <img src="./img/Portfolio_curriculo.jpg" alt="Currículo" width="320" />
+</p>
 
 ## ✨ Funcionalidades
 
-* **Design Responsivo:** Totalmente adaptado para uma navegação fluida em desktops, tablets e celulares.
-* **Animações de Scroll:** Elementos da página surgem de forma suave conforme o usuário navega.
-* **Tema Claro/Escuro:** Alternância de tema com preferência salva no navegador.
-* **Seções Detalhadas:** Apresentação clara das seções "Sobre mim", "Habilidades", "Projetos" e "Contato".
-* **Menu Mobile:** Menu "hamburger" funcional para uma navegação intuitiva em telas menores.
-* **Formulário de Contato Profissional:** Integração com **EmailJS** para envio direto de mensagens para minha caixa de entrada.
-* **Botão Voltar ao Topo:** Melhora a experiência de navegação em páginas mais longas.
+- Responsivo: layout fluido do mobile ao desktop.
+- Acessível: ARIA no menu, foco visível e skip link.
+- Tema claro/escuro com persistência (localStorage).
+- Navegação suave, destaque de seção ativa e micro‑interações.
+- PWA (service worker cache‑first) para navegação offline básica.
+- Contato: formulário com fallback mailto e WhatsApp direto.
+- Páginas internas com cabeçalho/rodapé padronizados e currículo com grid otimizado.
 
-## 💻 Tecnologias
+## 🧱 Estrutura
 
-Este projeto foi construído do zero utilizando as seguintes tecnologias:
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-## 🛠 Como Executar
-
-Se você deseja executar este projeto localmente, siga os passos abaixo:
-
-```bash
-# 1. Clone este repositório
-git clone [https://github.com/yunkbaza/Portfolio.git](https://github.com/yunkbaza/Portfolio.git)
-
-# 2. Navegue até o diretório do projeto
-cd Portfolio
-
-# 3. Abra o arquivo `index.html` no seu navegador
-#    (Recomendado usar a extensão "Live Server" do VSCode para melhor experiência)
+```
+Portfolio_Merged/Portfolio_Merged
+├── index.html               # Home (sobre, projetos, contato)
+├── pages/
+│   ├── sobre.html           # Sobre (detalhado)
+│   ├── projetos.html        # Projetos (destaques)
+│   ├── certificados.html    # Certificados (render dinâmico)
+│   └── curriculo.html       # Currículo (grid com áreas)
+├── scripts/
+│   └── app.js               # Navegação, tema, scroll, contato, etc.
+├── styles/
+│   └── style.css            # Tema, layout e componentes
+├── img/                     # Imagens de projetos e avatar
+├── assets/                  # Ícones e PDF
+├── sw.js                    # Service Worker (cache-first)
+└── manifest.webmanifest     # Manifesto PWA
 ```
 
-## 📜 Licença
+## ▶️ Como rodar
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Por ser um site estático, sirva a pasta para que o Service Worker funcione (o protocolo `file://` não registra SW).
 
----
+Opções rápidas:
 
-## 📫 Contato
-**Allan Gabriel Baeza** - allanbamirati@live.com
+- VS Code: extensão “Live Server” e abrir `index.html`.
+- Node: `npx serve` na raiz `Portfolio_Merged/Portfolio_Merged`.
+- Python: `python -m http.server 8080` e abrir `http://localhost:8080`.
+
+Configurar e‑mail do formulário (opcional):
+
+- Em `index.html`, defina no formulário `data-email-to="seu-email@exemplo.com"`.
+- Alternativamente, em `scripts/app.js`, configure EmailJS ou GAS (ver abaixo).
+
+## 📱 PWA
+
+- Estratégia: cache‑first para `index.html`, CSS/JS, logo e páginas internas (veja `ASSETS` em `sw.js`).
+- Instalação: o navegador pode sugerir “instalar” no desktop/mobile; funciona melhor em HTTPS.
+- Offline: páginas e assets listados continuam acessíveis sem rede.
+
+## 🧩 Comentários no código
+
+Adicionados comentários JSDoc nas funções principais para facilitar manutenção:
+
+- `scripts/app.js`
+  - Menu mobile: `closeMenu()` e `openMenu()` (sincronia de ARIA e efeitos colaterais).
+  - Tema: `syncThemeButtonA11y()` e `toggleTheme()` (persistência e acessibilidade).
+  - Contato: `sendEmailJS()`, `sendGAS()`, `getToEmail()`, `sendMailto()`, `isEmailJsReady()`, `isGasReady()` (contratos e comportamento).
+- `sw.js`
+  - Blocos `install`, `activate` e `fetch` explicados com a estratégia cache‑first e limpeza de versões antigas.
+
+Pontos de extensão úteis:
+
+- Habilitar EmailJS: preencha `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID` e `EMAILJS_PUBLIC_KEY` em `scripts/app.js`.
+- Usar GAS: defina `GAS_URL` para receber os dados do formulário.
+- Ajustar o currículo: altere as áreas do grid em `#cv-grid` (style.css) para reorganizar os cards.
+
+## 📬 Contato
+
+Allan Gabriel Baeza — allanbamirati@live.com
+
