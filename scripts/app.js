@@ -1,3 +1,144 @@
+// ========== Adicionar Projeto (dinâmico) ==========
+(() => {
+  const btn = document.getElementById('add-project-btn');
+  const grid = document.querySelector('.grid.cards');
+  if(!btn || !grid) return;
+  // Carregar projetos do localStorage
+  function loadProjects(){
+    const saved = JSON.parse(localStorage.getItem('portfolio_projects')||'[]');
+    saved.forEach(p => addProjectCard(p, false));
+  }
+  // Adiciona card de projeto
+  function addProjectCard(data, save=true){
+    const el = document.createElement('article');
+    el.className = 'card project-card reveal visible';
+    el.setAttribute('data-project','');
+    el.setAttribute('data-tags', data.tags);
+    el.innerHTML = `
+      <img loading="lazy" decoding="async" width="400" height="160" src="${data.img}" alt="${data.nome}"/>
+      <h3>${data.nome}</h3>
+      <div class="project-meta">
+        ${(data.tags||'').split(',').map(t => `<span class="tag skill">${t.trim()}</span>`).join('')}
+      </div>
+      <a class="btn secondary" href="#" rel="noopener">Case</a>
+    `;
+    grid.appendChild(el);
+    if(save){
+      const arr = JSON.parse(localStorage.getItem('portfolio_projects')||'[]');
+      arr.push(data); localStorage.setItem('portfolio_projects', JSON.stringify(arr));
+    }
+  }
+  btn.addEventListener('click', function(){
+    let modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.background = 'rgba(0,0,0,0.45)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '9999';
+    modal.innerHTML = `
+      <div style="background:var(--card);padding:32px 24px;border-radius:18px;max-width:380px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);text-align:center;">
+        <h2 style="margin-bottom:18px;">Adicionar Projeto</h2>
+        <input type="text" id="novoProjetoNome" placeholder="Nome do projeto" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <input type="text" id="novoProjetoTag" placeholder="Tags (ex: mobile, backend)" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <input type="text" id="novoProjetoImg" placeholder="URL da imagem" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <button id="confirmAddProject" class="btn" style="margin-top:10px;">Adicionar</button>
+        <button id="closeModalProject" class="btn secondary" style="margin-top:10px;">Cancelar</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    document.getElementById('closeModalProject').onclick = function(){
+      modal.remove();
+    };
+    document.getElementById('confirmAddProject').onclick = function(){
+      const nome = document.getElementById('novoProjetoNome').value.trim();
+      const tags = document.getElementById('novoProjetoTag').value.trim();
+      const img = document.getElementById('novoProjetoImg').value.trim();
+      if(!nome || !tags || !img){ alert('Preencha todos os campos!'); return; }
+      addProjectCard({nome, tags, img});
+      modal.remove();
+    };
+  });
+  loadProjects();
+})();
+
+// ========== Adicionar Certificado (dinâmico) ==========
+(() => {
+  const btn = document.getElementById('add-cert-btn');
+  const grid = document.querySelector('.certs-grid');
+  if(!btn || !grid) return;
+  // Carregar certificados do localStorage
+  function loadCerts(){
+    const saved = JSON.parse(localStorage.getItem('portfolio_certs')||'[]');
+    saved.forEach(c => addCertCard(c, false));
+  }
+  // Adiciona card de certificado
+  function addCertCard(data, save=true){
+    const el = document.createElement('article');
+    el.className = 'card reveal visible';
+    el.innerHTML = `
+      <h3>${data.titulo}</h3>
+      <div class="credential-meta">
+        <span class="tag">Emissor: ${data.emissor}</span>
+        <span class="tag">Emitido: ${data.emitido}</span>
+        ${(data.categorias||'').split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('')}
+      </div>
+      <p class="credential-code">Código: ${data.codigo}</p>
+      <div class="actions">
+        <a class="btn secondary" href="${data.url}" target="_blank" rel="noopener">Exibir credencial</a>
+      </div>
+    `;
+    grid.appendChild(el);
+    if(save){
+      const arr = JSON.parse(localStorage.getItem('portfolio_certs')||'[]');
+      arr.push(data); localStorage.setItem('portfolio_certs', JSON.stringify(arr));
+    }
+  }
+  btn.addEventListener('click', function(){
+    let modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.background = 'rgba(0,0,0,0.45)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+  modal.style.zIndex = '10001';
+    modal.innerHTML = `
+      <div style="background:var(--card);padding:32px 24px;border-radius:18px;max-width:380px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);text-align:center;">
+        <h2 style="margin-bottom:18px;">Adicionar Certificado</h2>
+        <input type="text" id="novoCertTitulo" placeholder="Título do certificado" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <input type="text" id="novoCertEmissor" placeholder="Emissor" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <input type="text" id="novoCertEmitido" placeholder="Data de emissão" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <input type="text" id="novoCertCategorias" placeholder="Categorias (ex: Python, SQL)" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <input type="text" id="novoCertCodigo" placeholder="Código da credencial" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <input type="text" id="novoCertUrl" placeholder="URL da credencial" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
+        <button id="confirmAddCert" class="btn" style="margin-top:10px;">Adicionar</button>
+        <button id="closeModalCert" class="btn secondary" style="margin-top:10px;">Cancelar</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  document.getElementById('closeModalCert').onclick = function(){ window.location.href = 'certificados.html'; };
+    document.getElementById('confirmAddCert').onclick = function(){
+      const titulo = document.getElementById('novoCertTitulo').value.trim();
+      const emissor = document.getElementById('novoCertEmissor').value.trim();
+      const emitido = document.getElementById('novoCertEmitido').value.trim();
+      const categorias = document.getElementById('novoCertCategorias').value.trim();
+      const codigo = document.getElementById('novoCertCodigo').value.trim();
+      const url = document.getElementById('novoCertUrl').value.trim();
+      if(!titulo || !emissor || !emitido || !categorias || !codigo || !url){ alert('Preencha todos os campos!'); return; }
+      addCertCard({titulo, emissor, emitido, categorias, codigo, url});
+      modal.remove();
+    };
+  });
+  loadCerts();
+})();
 "use strict";
 // app.js — consolidado: menu, tema, efeitos, projetos, contato, cursor, certificados
 
@@ -272,6 +413,7 @@ document.querySelectorAll('[data-year]')
   const dot = document.createElement('div');
   const ring = document.createElement('div');
   dot.className = 'cursor-dot'; ring.className = 'cursor-ring';
+  dot.style.zIndex = '10002'; ring.style.zIndex = '10002';
   document.body.append(dot, ring);
   window.addEventListener('mousemove', e => {
     dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';

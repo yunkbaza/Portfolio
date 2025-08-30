@@ -1,4 +1,7 @@
 
+/* ============================= */
+/* Variáveis globais do tema     */
+/* ============================= */
 :root{
   --bg: #1f1d0f;
   --bg-soft: #26230f;
@@ -14,6 +17,9 @@
   --shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
+/* ============================= */
+/* Tema claro                    */
+/* ============================= */
 :root[data-theme="light"]{
   --bg: #FFFDE7;
   --bg-soft: #FFFFFF;
@@ -24,11 +30,14 @@
   --border: rgba(0,0,0,0.15);
 }
 
+/* ============================= */
+/* Reset e base                  */
+/* ============================= */
 * { box-sizing: border-box; }
 html, body { height: 100%; scroll-behavior: smooth; }
 body{
   margin:0;
-  /* Softer, non-fixed background with a large, subtle glow */
+  /* Fundo suave com brilho sutil */
   background-color: var(--bg);
   background-image:
     radial-gradient(1200px 700px at 50% -200px, color-mix(in srgb, var(--primary) 18%, transparent), transparent 70%),
@@ -40,13 +49,18 @@ body{
   font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
 }
 
+/* Sombra de texto no tema claro */
 :root[data-theme="light"] body{
   text-shadow:0 0 1px rgba(0,0,0,0.3);
 }
 
+/* Container centralizado */
 .container{ width: min(1100px, 92%); margin: 0 auto; }
 
-/* Navigation */
+
+/* ============================= */
+/* Navegação                     */
+/* ============================= */
 .navbar{
   position: sticky; top:0; z-index:50;
   backdrop-filter: blur(10px);
@@ -59,7 +73,7 @@ body{
 .nav-links{ display:flex; gap:22px; align-items:center; }
 .nav-links a{ position:relative; color:var(--muted); text-decoration:none; font-weight:600; padding:6px 0; transition: color .25s ease; }
 .nav-links a:hover{ color:var(--text); }
-/* Animated underline (hover/active) */
+/* Sublinhado animado no hover/ativo */
 .nav-links a::after{
   content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; border-radius:999px;
   background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
@@ -67,11 +81,11 @@ body{
 }
 .nav-links a:hover::after, .nav-links a:focus-visible::after, .nav-links a.active::after{ transform: scaleX(1); }
 .nav-links a.active{ color:var(--text); }
-/* Give the theme toggle a bit of extra separation on the right side */
+/* Espaço extra para o botão de tema */
 .nav-links .theme-toggle{ margin-left: 14px; }
 .nav-links a:focus-visible{ outline:2px solid var(--primary); outline-offset:4px; border-radius:6px; }
 
-/* Mobile toggle visibility default */
+/* Toggle mobile padrão: escondido */
 .nav-toggle{ display:none; }
 
 @media (max-width: 820px){
@@ -80,16 +94,19 @@ body{
   .nav-links.open{ display:flex; }
 }
 
-/* Hero */
+
+/* ============================= */
+/* Hero principal                */
+/* ============================= */
 .hero{ padding:32px 0 44px; display:grid; grid-template-columns: minmax(0, 1fr) 420px; gap:48px; align-items:stretch; }
 .hero h1{ font-size: clamp(32px, 6.5vw, 64px); line-height:1.1; margin:0 0 12px; }
 .hero p{ color:var(--muted); margin:0 0 22px; }
 .hero .intro p{ max-width: 70ch; }
 .hero .intro{ max-width: 820px; }
-/* Avatar at the top of the hero */
+/* Avatar no topo do hero */
 .hero .avatar{ width:220px; height:220px; border-radius:50%; padding:6px; border:2px solid var(--border); background: radial-gradient(140px 140px at 50% 50%, color-mix(in srgb, var(--primary) 22%, transparent), transparent 75%); box-shadow:0 12px 34px rgba(0,0,0,.42); margin:0 0 16px 0; overflow:hidden; }
 .hero .avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50%; display:block; }
-.hero-side{ display:flex; flex-direction:column; gap:16px; align-items:stretch; justify-content:space-between; }
+.hero-side{ display:flex; flex-direction:column; gap:16px; align-items:stretch; }
 .hero-side .avatar{ align-self:center; }
 .hero .stack{ width:100%; }
 .kpis{ display:flex; gap:22px; flex-wrap:wrap; margin-bottom: 14px; }
@@ -111,16 +128,19 @@ body{
   .hero .avatar{ margin:0 auto 14px; width:180px; height:180px; }
 }
 
-/* Sections */
+
+/* ============================= */
+/* Seções principais             */
+/* ============================= */
 .section{ padding:64px 0; }
-/* Internal pages use <main class="section">. Make spacing tighter here */
+/* Espaçamento mais compacto para páginas internas */
 main.section{ padding-top:40px; padding-bottom:60px; }
 main.section h1{ font-size: clamp(26px, 4.5vw, 40px); margin:0 0 6px; }
 main.section .sub{ margin-bottom:18px; }
 main.section .actions{ margin:10px 0 20px; }
 .section h2{ font-size: clamp(22px, 4vw, 34px); margin:0 0 10px; }
 .section .sub{ color:var(--muted); margin-bottom:26px; }
-/* Sobre: melhorar cartões e grid */
+/* Sobre: cartões e grid responsivo */
 #sobre .cards{ grid-template-columns: 1fr; }
 @media (min-width: 720px){
   #sobre .cards{ grid-template-columns: repeat(2, minmax(260px,1fr)); }
@@ -131,16 +151,21 @@ main.section .actions{ margin:10px 0 20px; }
 #sobre .card{ cursor:default; transition:none; min-height:220px; display:grid; grid-template-rows:auto 1fr; gap:8px; }
 #sobre .card strong{ display:block; margin-bottom:6px; }
 #sobre .card:hover{ transform:none; box-shadow: var(--shadow); }
-/* Tweak spacing/alignment for the projects section */
+/* Ajuste de espaçamento/alinhamento para projetos */
 #projetos{ padding-top:48px; }
 #projetos h2, #projetos .sub{ text-align:center; }
 #project-filters.actions{ margin-top:12px; }
+.project-actions{ margin-top:32px; }
 .grid.cards{ margin-top:6px; }
 
+/* Grid responsivo */
 .grid{ display:grid; gap:28px; }
 .grid.cards{ grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 
-/* CV – Masonry layout to avoid big vertical gaps */
+
+/* ============================= */
+/* CV – Layout tipo Masonry      */
+/* ============================= */
 #cv-grid{ display:grid; gap:22px; grid-template-columns: 1fr; }
 #cv-grid .card{ margin:0; }
 @media (max-width: 980px){ #cv-grid{ column-width: 300px; } }
@@ -179,7 +204,10 @@ main.section .actions{ margin:10px 0 20px; }
 /* aumente levemente o contraste do contorno das tags no tema escuro */
 :root[data-theme="dark"] .tag{ border-color: color-mix(in srgb, #fff 18%, var(--border)); }
 
-/* Skills: chip com pin colorido por tecnologia */
+
+/* ============================= */
+/* Skills: chip com pin colorido */
+/* ============================= */
 .tag.skill{ display:inline-flex; align-items:center; gap:8px; }
 .tag.skill::before{
   content:"";
@@ -188,7 +216,10 @@ main.section .actions{ margin:10px 0 20px; }
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--pin, currentColor) 35%, transparent);
 }
 
-/* Mapas de cores: definem apenas --pin para não alterar o fundo do chip */
+
+/* ============================= */
+/* Mapas de cores para skills    */
+/* ============================= */
 .indentificador.HTML       { --pin:#E34F26; }
 .indentificador.CSS        { --pin:#1572B6; }
 .indentificador.JavaScript { --pin:#F7DF1E; }
@@ -207,14 +238,20 @@ main.section .actions{ margin:10px 0 20px; }
 .indentificador.React      { --pin:#61DAFB; }
 .indentificador.Vite       { --pin:#646CFF; }
 
-/* Frameworks e outros (suporta classe com ponto ou duas classes, ex.: React + js) */
+
+/* ============================= */
+/* Frameworks e outros           */
+/* ============================= */
 .indentificador.React\.js, .indentificador.React.js         { --pin:#61DAFB; }
 .indentificador.React\.Native, .indentificador.React.Native { --pin:#61DAFB; }
 .indentificador.Node\.js,  .indentificador.Node.js          { --pin:#339933; }
 .indentificador\.NET,      .indentificador.NET              { --pin:#512BD4; }
 .indentificador.Next\.js,  .indentificador.Next.js          { --pin:#ffffff; --pin-ring: rgba(255,255,255,.35); }
 
-/* Footer – limpo, com contraste sem glow */
+
+/* ============================= */
+/* Rodapé                        */
+/* ============================= */
 .footer{
   padding:56px 0 28px;
   color:var(--text);
@@ -224,6 +261,7 @@ main.section .actions{ margin:10px 0 20px; }
     color-mix(in srgb, var(--bg) 96%, #000 4%) 100%);
 }
 
+/* Rodapé no tema claro */
 :root[data-theme="light"] .footer{
   background: linear-gradient(180deg, #ffffff 0%, color-mix(in srgb, #ffffff 92%, #000 8%) 100%);
 }
@@ -248,7 +286,7 @@ main.section .actions{ margin:10px 0 20px; }
 .footer .bottom a{ color:var(--text); text-decoration: none; }
 .footer .bottom a:hover{ color: var(--primary); }
 
-/* CTA button variant that contrasts on the footer */
+/* Botão CTA variante clara no rodapé */
 .btn.light{ background:#ffffff; color:#111111; border-color:#ffffff; }
 :root[data-theme="light"] .btn.light{ background:#111111; color:#ffffff; border-color:#111111; }
 
@@ -259,15 +297,24 @@ main.section .actions{ margin:10px 0 20px; }
   .footer .bottom{ flex-direction:column; gap:8px; text-align:center; }
 }
 
-/* Skip link (acessibilidade) */
+
+/* ============================= */
+/* Link de pular para acessibilidade */
+/* ============================= */
 .skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 .skip-link:focus{ left:16px; top:12px; width:auto; height:auto; padding:10px 14px; background:var(--primary); color:#111; border-radius:12px; z-index:1000; }
 
-/* Animations */
+
+/* ============================= */
+/* Animações                     */
+/* ============================= */
 .reveal{ opacity:0; transform: translateY(14px); transition: .6s ease; }
 .reveal.visible{ opacity:1; transform: none; }
 
-/* Custom cursor – menor e preto */
+
+/* ============================= */
+/* Cursor personalizado          */
+/* ============================= */
 .cursor-dot, .cursor-ring{ position: fixed; left:0; top:0; pointer-events:none; z-index:100; }
 .cursor-dot{
   width:6px; height:6px; border-radius:50%; background:#000; transform: translate(-50%,-50%);
@@ -280,32 +327,37 @@ main.section .actions{ margin:10px 0 20px; }
 [data-cursor="hover"] .cursor-ring{ transform: translate(-50%,-50%) scale(1.2); opacity:.55; }
 
 @media (pointer:fine){
-  /* Hide native cursor on desktops; show only custom cursor */
+  /* Esconde o cursor nativo em desktops, mostra apenas o personalizado */
   html, body, * { cursor: none !important; }
 }
 
-/* Project card */
-/* Use grid so the third row grows (1fr) and equalizes spacing. */
+
+/* ============================= */
+/* Card de projeto               */
+/* ============================= */
 .project-card{
   display:grid;
-  grid-template-rows: auto auto 1fr auto; /* img | title | filler | CTA */
+  grid-template-rows: auto auto 1fr auto; /* img | título | espaço | CTA */
   row-gap:16px;
   height:100%;
 }
 .project-card h3{ margin:0; }
 .project-card img{ width:100%; height:160px; object-fit:cover; border-radius:12px; border:1px solid var(--border); background:#0b0b0b; }
 .project-meta{ display:flex; gap:8px; flex-wrap:wrap; align-items:flex-start; align-content:flex-start; }
-/* Keep the call-to-action at the bottom without stretching width/height */
+/* Mantém o botão CTA no rodapé do card */
 .project-card .btn{
   justify-self:start;
   align-self:end;
   display:inline-flex;
 }
 
-/* Contact */
+
+/* ============================= */
+/* Formulário de contato         */
+/* ============================= */
 form .field{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
 input, textarea{
-  /* High‑contrast fields for melhor visualização */
+  /* Campos de alto contraste para melhor visualização */
   background:#ffffff; color:#111111;
   border:2px solid #111111; border-radius:12px; padding:12px 14px;
 }
@@ -315,29 +367,40 @@ input:focus, textarea:focus{ outline:none; border-color:#000; box-shadow:0 0 0 3
 .success{ color:#22c55e; }
 .error{ color:#ef4444; }
 
-/* Light/outlined style for cards and KPI boxes (modo claro/cinza ou contorno preto) */
+
+/* ============================= */
+/* Estilo claro para cards/KPI   */
+/* ============================= */
 :root[data-theme="light"] .card,
 :root[data-theme="light"] .kpi{
   background:#ffffff;
   border:2px solid #111111;
 }
 
-/* (removido o ajuste anterior para evitar duplicidade) */
+
+/* ============================= */
+/* Botão de ícone                */
+/* ============================= */
 .icon-btn{ display:inline-flex; align-items:center; justify-content:center; padding:0; line-height:0; background:none !important; border:0 !important; color:var(--text); border-radius:0; appearance:none; transition: color .2s ease; }
 .icon-btn:focus{ outline: none; }
 .icon-btn:focus-visible{ outline: 2px solid var(--border); outline-offset: 3px; }
 .icon-btn:hover{ transform: none; }
 .icon-btn:active{ transform: none; }
 
-/* Theme toggle icon animation */
+
+/* ============================= */
+/* Botão de alternância de tema  */
+/* ============================= */
 .theme-toggle svg{ width:22px; height:22px; transition: opacity .22s ease, transform .4s cubic-bezier(.2,.8,.2,1); transform-origin: 50% 50%; }
 /* Invertido: escuro mostra sol (próximo tema), claro mostra lua */
 .theme-toggle .sun{ opacity:1; transform: rotate(0deg); }
 .theme-toggle .moon{ opacity:0; transform: rotate(-90deg); }
 :root[data-theme="dark"] .theme-toggle{ color: var(--text); }
   .theme-toggle:hover{ color: var(--primary); }
- 
-/* Certificates */
+
+/* ============================= */
+/* Certificados                  */
+/* ============================= */
 .certs-grid{ display:grid; gap:16px; }
 @media (min-width: 780px){ .certs-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
 @media (min-width: 1040px){ .certs-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
@@ -346,15 +409,25 @@ input:focus, textarea:focus{ outline:none; border-color:#000; box-shadow:0 0 0 3
 :root[data-theme="light"] .theme-toggle .sun{ opacity:0; transform: rotate(90deg); }
 :root[data-theme="light"] .theme-toggle .moon{ opacity:1; transform: rotate(0deg); }
 
-/* Mobile toggle button visual matching */
+
+/* ============================= */
+/* Botão toggle mobile           */
+/* ============================= */
 .nav-toggle{ background: transparent; border:0; padding:8px 12px; border-radius:12px; transition: background .2s ease, transform .12s ease; }
 .nav-toggle:hover{ background: color-mix(in srgb, var(--bg-soft) 70%, transparent); transform: translateY(-1px); }
 .nav-toggle:active{ transform:none; }
 
-/* All buttons: mouse position highlight */
-.btn, .icon-btn{ --mx:50%; --my:50%; }
-.btn, .icon-btn{ } /* placeholder to keep grouping clear */
 
+
+/* ============================= */
+/* Variáveis para efeito de botão */
+/* ============================= */
+.btn, .icon-btn{ --mx:50%; --my:50%; }
+
+
+/* ============================= */
+/* Acessibilidade: reduz animações */
+/* ============================= */
 @media (prefers-reduced-motion: reduce){
   html, body { scroll-behavior: auto; }
   .btn, .icon-btn{ transition: none !important; }
@@ -363,7 +436,10 @@ input:focus, textarea:focus{ outline:none; border-color:#000; box-shadow:0 0 0 3
   .cursor-dot, .cursor-ring{ display:none !important; }
 }
 
-/* Certifications table */
+
+/* ============================= */
+/* Tabela de certificações       */
+/* ============================= */
 .table-card{ display:block; }
 .table-card .table-wrapper{ width:100%; overflow-x:auto; border-radius:12px; }
 .table-card .table-note{ display:block; margin-top:10px; color:var(--muted); }
