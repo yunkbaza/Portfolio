@@ -35,20 +35,26 @@
     modal.style.left = '0';
     modal.style.width = '100vw';
     modal.style.height = '100vh';
-    modal.style.background = 'rgba(0,0,0,0.45)';
+    modal.style.background = 'rgba(30,30,30,0.55)';
     modal.style.display = 'flex';
     modal.style.alignItems = 'center';
     modal.style.justifyContent = 'center';
-    modal.style.zIndex = '9999';
+    modal.style.zIndex = '10001';
+    modal.style.backdropFilter = 'blur(2px)';
     modal.innerHTML = `
-      <div style="background:var(--card);padding:32px 24px;border-radius:18px;max-width:380px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);text-align:center;">
-        <h2 style="margin-bottom:18px;">Adicionar Projeto</h2>
-        <input type="text" id="novoProjetoNome" placeholder="Nome do projeto" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <input type="text" id="novoProjetoTag" placeholder="Tags (ex: mobile, backend)" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <input type="text" id="novoProjetoImg" placeholder="URL da imagem" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <button id="confirmAddProject" class="btn" style="margin-top:10px;">Adicionar</button>
-        <button id="closeModalProject" class="btn secondary" style="margin-top:10px;">Cancelar</button>
+      <div style="background:var(--card);padding:38px 28px;border-radius:22px;max-width:400px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.38);text-align:center;position:relative;animation:modalFadeIn .32s cubic-bezier(.2,.8,.2,1);">
+        <h2 style="margin-bottom:22px;font-size:1.6rem;font-weight:800;letter-spacing:.5px;">Adicionar Projeto</h2>
+        <input type="text" id="novoProjetoNome" placeholder="Nome do projeto" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoProjetoTag" placeholder="Tags (ex: mobile, backend)" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoProjetoImg" placeholder="URL da imagem" style="width:100%;margin-bottom:18px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;">
+          <button id="confirmAddProject" class="btn" style="padding:12px 24px;font-size:1rem;font-weight:700;">Adicionar</button>
+          <button id="closeModalProject" class="btn secondary" style="padding:12px 24px;font-size:1rem;font-weight:700;">Cancelar</button>
+        </div>
       </div>
+      <style>
+        @keyframes modalFadeIn { from { opacity:0; transform:scale(.96); } to { opacity:1; transform:scale(1); } }
+      </style>
     `;
     document.body.appendChild(modal);
     document.getElementById('closeModalProject').onclick = function(){
@@ -105,23 +111,29 @@
     modal.style.left = '0';
     modal.style.width = '100vw';
     modal.style.height = '100vh';
-    modal.style.background = 'rgba(0,0,0,0.45)';
+    modal.style.background = 'rgba(30,30,30,0.55)';
     modal.style.display = 'flex';
     modal.style.alignItems = 'center';
     modal.style.justifyContent = 'center';
-  modal.style.zIndex = '10001';
+    modal.style.zIndex = '10001';
+    modal.style.backdropFilter = 'blur(2px)';
     modal.innerHTML = `
-      <div style="background:var(--card);padding:32px 24px;border-radius:18px;max-width:380px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);text-align:center;">
-        <h2 style="margin-bottom:18px;">Adicionar Certificado</h2>
-        <input type="text" id="novoCertTitulo" placeholder="Título do certificado" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <input type="text" id="novoCertEmissor" placeholder="Emissor" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <input type="text" id="novoCertEmitido" placeholder="Data de emissão" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <input type="text" id="novoCertCategorias" placeholder="Categorias (ex: Python, SQL)" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <input type="text" id="novoCertCodigo" placeholder="Código da credencial" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <input type="text" id="novoCertUrl" placeholder="URL da credencial" style="width:100%;margin-bottom:12px;padding:10px;border-radius:8px;border:1px solid var(--border);" />
-        <button id="confirmAddCert" class="btn" style="margin-top:10px;">Adicionar</button>
-        <button id="closeModalCert" class="btn secondary" style="margin-top:10px;">Cancelar</button>
+      <div style="background:var(--card);padding:38px 28px;border-radius:22px;max-width:400px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.38);text-align:center;position:relative;animation:modalFadeIn .32s cubic-bezier(.2,.8,.2,1);">
+        <h2 style="margin-bottom:22px;font-size:1.6rem;font-weight:800;letter-spacing:.5px;">Adicionar Certificado</h2>
+        <input type="text" id="novoCertTitulo" placeholder="Título do certificado" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoCertEmissor" placeholder="Emissor" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoCertEmitido" placeholder="Data de emissão" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoCertCategorias" placeholder="Categorias (ex: Python, SQL)" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoCertCodigo" placeholder="Código da credencial" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoCertUrl" placeholder="URL da credencial" style="width:100%;margin-bottom:18px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;">
+          <button id="confirmAddCert" class="btn" style="padding:12px 24px;font-size:1rem;font-weight:700;">Adicionar</button>
+          <button id="closeModalCert" class="btn secondary" style="padding:12px 24px;font-size:1rem;font-weight:700;">Cancelar</button>
+        </div>
       </div>
+      <style>
+        @keyframes modalFadeIn { from { opacity:0; transform:scale(.96); } to { opacity:1; transform:scale(1); } }
+      </style>
     `;
     document.body.appendChild(modal);
   document.getElementById('closeModalCert').onclick = function(){ window.location.href = 'certificados.html'; };
