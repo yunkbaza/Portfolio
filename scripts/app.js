@@ -181,7 +181,7 @@
   toggle?.addEventListener('click', () => (links?.classList.contains('open') ? closeMenu() : openMenu()));
   links?.addEventListener('click', () => closeMenu());
   document.addEventListener('click', (e) => {
-    if(links?.classList.contains('open') && !links.contains(e.target) && e.target !== toggle){
+        if(links?.classList.contains('open') && !links.contains(e.target) && !toggle?.contains(e.target)){
       closeMenu();
     }
   });
