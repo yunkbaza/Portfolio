@@ -3,6 +3,12 @@
   const btn = document.getElementById('add-project-btn');
   const grid = document.querySelector('.grid.cards');
   if(!btn || !grid) return;
+  const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  if (!isLocal) {
+    btn.remove();
+    return;
+  }
+  btn.style.display = '';
   // Carregar projetos do localStorage
   function loadProjects(){
     const saved = JSON.parse(localStorage.getItem('portfolio_projects')||'[]');
