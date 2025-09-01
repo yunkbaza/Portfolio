@@ -97,7 +97,7 @@ body{
 }
 
 /* Borda do botão de menu no tema claro */
-:root[data-theme="light"] .nav-toggle{ border:1px solid var(--border); }
+:root[data-theme="light"] .nav-toggle{ border:0x solid var(--border); color:#000; }
 
 
 
