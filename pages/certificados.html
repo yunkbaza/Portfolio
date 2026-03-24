@@ -11,11 +11,14 @@
   <link rel="icon" href="../assets/logo.svg"/>
   <link rel="manifest" href="../manifest.webmanifest"/>
   <meta name="color-scheme" content="light dark"/>
-  <link rel="preload" href="../styles/style.css" as="style" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="preload" href="../styles/style.css" as="style" />
   <link rel="stylesheet" href="../styles/style.css"/>
+  
   <title>Certificados — Allan Gabriel Baeza | Engenheiro de Software</title>
   <style>.card .actions{ margin-top: 10px; }</style>
 </head>
@@ -26,7 +29,7 @@
       <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="Logo" class="logo"/></a>
       <nav class="nav-links" id="nav-links">
         <a href="../index.html#inicio">Início</a>
-        <a href="../index.html#sobre">Sobre</a>
+        <a href="sobre.html">Sobre</a>
         <a href="projetos.html">Projetos</a>
         <a href="certificados.html" aria-current="page" class="active">Certificados</a>
         <a href="../index.html#contato">Contato</a>
@@ -37,17 +40,19 @@
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1 class="reveal">Certificados</h1>
-      <p class="sub reveal">Seleção de certificados e credenciais com código e link de verificação focado em Cloud, Back-end e Dados.</p>
-      <div class="certs-grid">
-        </div>
-      <div class="actions reveal" style="margin-top:18px;">
-        <button class="btn" id="add-cert-btn" type="button" style="display:none">Adicionar Certificado</button>
+<main class="section" id="certificados">
+  <div class="container">
+    <h1 class="reveal">Certificados</h1>
+    <p class="sub reveal">Seleção de certificados e credenciais com código e link de verificação focado em Cloud, Back-end e Dados.</p>
+    
+    <div class="certs-grid">
       </div>
+    
+    <div class="actions reveal" style="margin-top:18px;">
+      <button class="btn" id="add-cert-btn" type="button" style="display:none">Adicionar Certificado</button>
     </div>
-  </main>
+  </div>
+</main>
 
   <footer class="footer">
     <div class="container top">

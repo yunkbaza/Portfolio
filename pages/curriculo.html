@@ -11,11 +11,14 @@
   <link rel="icon" href="../assets/logo.svg"/>
   <link rel="manifest" href="../manifest.webmanifest"/>
   <meta name="color-scheme" content="light dark"/>
-  <link rel="preload" href="../styles/style.css" as="style" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="preload" href="../styles/style.css" as="style" />
   <link rel="stylesheet" href="../styles/style.css"/>
+  
   <title>CV — Allan Gabriel Baeza | Engenheiro de Software</title>
 </head>
 <body>
@@ -29,14 +32,14 @@
         <a href="projetos.html">Projetos</a>
         <a href="certificados.html">Certificados</a>
         <a href="../index.html#contato">Contato</a>
-        <a href="curriculo.html" aria-current="page">CV</a>
+        <a href="curriculo.html" aria-current="page" class="active">CV</a>
       </nav>
       <button id="theme-toggle" class="icon-btn theme-toggle" aria-label="Alternar tema"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
       <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </header>
 
-<main class="section">
+<main class="section" id="curriculo">
   <div class="container">
     <h1 class="reveal">Currículo</h1>
     <p class="sub reveal">Baixe o PDF ou navegue pelos destaques da minha trajetória na Engenharia de Software.</p>
@@ -45,17 +48,45 @@
     </div>
 
     <div id="cv-grid" class="grid cards">
-      <div class="card reveal formacao"><strong>Formação Acadêmica</strong><br/>FIAP — Faculdade de Informática e Administração Paulista (jan/2024 — dez/2025). Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (ADS). Foco em Engenharia de Software, Arquitetura de Sistemas, Banco de Dados, Big Data, Machine Learning e frameworks modernos (Java, .NET, Node.js).</div>
+      <div class="card reveal formacao">
+        <strong>Formação Acadêmica</strong><br/>
+        FIAP — Faculdade de Informática e Administração Paulista (jan/2024 — dez/2025). Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (ADS). Foco em Engenharia de Software, Arquitetura de Sistemas, Banco de Dados, Big Data, Machine Learning e frameworks modernos (Java, .NET, Node.js).
+      </div>
 
-      <div class="card reveal habilidades"><strong>Habilidades Técnicas</strong><br/>• Linguagens: Python, Node.js, Java, SQL, JavaScript, Swift, Kotlin.<br/>• Arquitetura & Nuvem: Microsserviços, Serverless, AWS, CQRS, Circuit Breaker, SAGA, DDD, Docker, Kubernetes, CI/CD.<br/>• Dados & Back-end: PostgreSQL, MongoDB, Express, FastAPI, ETL, Apache Airflow, Power BI.<br/>• Front-end & Interfaces: React.js, React Native, Vite, HTML/CSS.</div>
+      <div class="card reveal habilidades">
+        <strong>Habilidades Técnicas</strong><br/>
+        • Linguagens: Python, Node.js, Java, SQL, JavaScript, Swift, Kotlin.<br/>
+        • Arquitetura & Nuvem: Microsserviços, Serverless, AWS, CQRS, Circuit Breaker, SAGA, DDD, Docker, Kubernetes, CI/CD.<br/>
+        • Dados & Back-end: PostgreSQL, MongoDB, Express, FastAPI, ETL, Apache Airflow, Power BI.<br/>
+        • Front-end & Interfaces: React.js, React Native, Vite, HTML/CSS.
+      </div>
 
-      <div class="card reveal idiomas"><strong>Idiomas</strong><br/>Português (Nativo) • Inglês (B2 - Leitura de documentação técnica avançada) • Espanhol (Básico)</div>
+      <div class="card reveal idiomas">
+        <strong>Idiomas</strong><br/>
+        Português (Nativo) • Inglês (B2 - Leitura de documentação técnica avançada) • Espanhol (Básico)
+      </div>
 
-      <div class="card reveal projetos"><strong>Projetos Relevantes</strong><br/>• CarefulBaza (2026) — Arquitetura de Back-end para plataforma de dropshipping, construída em uma infraestrutura unificada (Node.js, PostgreSQL, Prisma) com foco em resiliência e alta disponibilidade.<br/>• API de Integração com iFood (2025) — Back-end comercial para automação de pedidos e cardápios (Python/FastAPI, PostgreSQL, ETL).<br/>• Challenge Porto Seguro (2024) — Sistema simulado com IA para triagem e atendimento. Desenvolvimento multi-camada (React, Java, Python, SQL).<br/>• BirdCare (2024) — Concepção e desenvolvimento de sistema com alertas de emergência geolocalizados em tempo real (iOS/Swift).</div>
+      <div class="card reveal projetos">
+        <strong>Projetos Relevantes</strong><br/>
+        • CarefulBaza (2026) — Arquitetura de Back-end para plataforma de dropshipping, construída em uma infraestrutura unificada (Node.js, PostgreSQL, Prisma) com foco em resiliência e alta disponibilidade.<br/>
+        • API de Integração com iFood (2025) — Back-end comercial para automação de pedidos e cardápios (Python/FastAPI, PostgreSQL, ETL).<br/>
+        • Challenge Porto Seguro (2024) — Sistema simulado com IA para triagem e atendimento. Desenvolvimento multi-camada (React, Java, Python, SQL).<br/>
+        • BirdCare (2024) — Concepção e desenvolvimento de sistema com alertas de emergência geolocalizados em tempo real (iOS/Swift).
+      </div>
 
-      <div class="card reveal certificacoes"><strong>Certificações e Cursos (+50 concluídos)</strong><br/>• Nuvem, Dados & Arquitetura: Bootcamp Santander 2025 - Ciência de Dados com Python, AWS Solutions Architect Associate (Alura).<br/>• Back-End & Engenharia: Santander Tech+ Back-End, Formação Engenharia de Dados (Apache Airflow, MongoDB, MySQL).<br/>• Desenvolvimento de Software: TDD, Clean Code, OOP, Modelagem de Banco de Dados Relacional e NoSQL.<br/>• Inovação: Machine Learning, IA Generativa, Transformação Digital, IoT.<br/>• Mobile (Diferencial): iOS (Swift/SwiftUI) e Android (Kotlin).</div>
+      <div class="card reveal certificacoes">
+        <strong>Certificações e Cursos (+50 concluídos)</strong><br/>
+        • Nuvem, Dados & Arquitetura: Bootcamp Santander 2025 - Ciência de Dados com Python, AWS Solutions Architect Associate (Alura).<br/>
+        • Back-End & Engenharia: Santander Tech+ Back-End, Formação Engenharia de Dados (Apache Airflow, MongoDB, MySQL).<br/>
+        • Desenvolvimento de Software: TDD, Clean Code, OOP, Modelagem de Banco de Dados Relacional e NoSQL.<br/>
+        • Inovação: Machine Learning, IA Generativa, Transformação Digital, IoT.<br/>
+        • Mobile (Diferencial): iOS (Swift/SwiftUI) e Android (Kotlin).
+      </div>
 
-      <div class="card reveal softskills"><strong>Soft Skills</strong><br/>Resolução de Problemas Críticos • Visão Sistêmica • Liderança e Autogestão • Boa Comunicação (Negócios/TI) • Pensamento Analítico e Criativo • Aprendizado Contínuo • Gestão de Tempo e Prioridades</div>
+      <div class="card reveal softskills">
+        <strong>Soft Skills</strong><br/>
+        Resolução de Problemas Críticos • Visão Sistêmica • Liderança e Autogestão • Boa Comunicação (Negócios/TI) • Pensamento Analítico e Criativo • Aprendizado Contínuo • Gestão de Tempo e Prioridades
+      </div>
     </div>
   </div>
 </main>
@@ -92,7 +123,7 @@
     </div>
   </footer>
 
-<script src="../scripts/app.js" defer></script>
-<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("../sw.js");}</script>
+  <script src="../scripts/app.js" defer></script>
+  <script>if("serviceWorker" in navigator){navigator.serviceWorker.register("../sw.js");}</script>
 </body>
 </html>
