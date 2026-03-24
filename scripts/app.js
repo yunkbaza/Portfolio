@@ -1,5 +1,4 @@
 "use strict";
-// app.js — consolidado: menu, tema, efeitos, projetos, contato, cursor, certificados
 
 // ========== Navegação móvel + ARIA ==========
 (() => {
@@ -104,8 +103,6 @@ document.querySelectorAll('[data-year]')
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     syncThemeButtonA11y();
-    themeBtn?.classList.add('switched');
-    setTimeout(() => themeBtn?.classList.remove('switched'), 320);
   };
   themeBtn?.addEventListener('click', toggleTheme);
 
@@ -161,31 +158,18 @@ document.querySelectorAll('[data-year]')
   }
   btn.addEventListener('click', function(){
     let modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100vw';
-    modal.style.height = '100vh';
-    modal.style.background = 'rgba(30,30,30,0.55)';
-    modal.style.display = 'flex';
-    modal.style.alignItems = 'center';
-    modal.style.justifyContent = 'center';
-    modal.style.zIndex = '10001';
-    modal.style.backdropFilter = 'blur(2px)';
+    modal.style.position = 'fixed'; modal.style.top = '0'; modal.style.left = '0'; modal.style.width = '100vw'; modal.style.height = '100vh'; modal.style.background = 'rgba(30,30,30,0.55)'; modal.style.display = 'flex'; modal.style.alignItems = 'center'; modal.style.justifyContent = 'center'; modal.style.zIndex = '10001'; modal.style.backdropFilter = 'blur(2px)';
     modal.innerHTML = `
-      <div style="background:var(--card);padding:38px 28px;border-radius:22px;max-width:400px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.38);text-align:center;position:relative;animation:modalFadeIn .32s cubic-bezier(.2,.8,.2,1);">
-        <h2 style="margin-bottom:22px;font-size:1.6rem;font-weight:800;letter-spacing:.5px;">Adicionar Projeto</h2>
-        <input type="text" id="novoProjetoNome" placeholder="Nome do projeto" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoProjetoTag" placeholder="Tags separadas por espaço (ex: mobile backend)" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoProjetoImg" placeholder="URL da imagem" style="width:100%;margin-bottom:18px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+      <div style="background:var(--card-bg);padding:38px 28px;border-radius:22px;max-width:400px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.38);text-align:center;position:relative;">
+        <h2 style="margin-bottom:22px;font-size:1.6rem;">Adicionar Projeto</h2>
+        <input type="text" id="novoProjetoNome" placeholder="Nome do projeto" style="width:100%;margin-bottom:14px;padding:12px;border-radius:10px;border:1px solid var(--border-light);background:transparent;color:var(--text-main);" />
+        <input type="text" id="novoProjetoTag" placeholder="Tags (ex: mobile backend)" style="width:100%;margin-bottom:14px;padding:12px;border-radius:10px;border:1px solid var(--border-light);background:transparent;color:var(--text-main);" />
+        <input type="text" id="novoProjetoImg" placeholder="URL da imagem" style="width:100%;margin-bottom:18px;padding:12px;border-radius:10px;border:1px solid var(--border-light);background:transparent;color:var(--text-main);" />
         <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;">
-          <button id="confirmAddProject" class="btn" style="padding:12px 24px;font-size:1rem;font-weight:700;">Adicionar</button>
-          <button id="closeModalProject" class="btn secondary" style="padding:12px 24px;font-size:1rem;font-weight:700;">Cancelar</button>
+          <button id="confirmAddProject" class="btn">Adicionar</button>
+          <button id="closeModalProject" class="btn secondary">Cancelar</button>
         </div>
       </div>
-      <style>
-        @keyframes modalFadeIn { from { opacity:0; transform:scale(.96); } to { opacity:1; transform:scale(1); } }
-      </style>
     `;
     document.body.appendChild(modal);
     document.getElementById('closeModalProject').onclick = function(){ modal.remove(); };
@@ -200,7 +184,6 @@ document.querySelectorAll('[data-year]')
   });
   loadProjects();
 })();
-
 
 // ========== Filtro de projetos ==========
 (() => {
@@ -223,7 +206,6 @@ document.querySelectorAll('[data-year]')
   });
   applyFilter('all');
 })();
-
 
 // ========== Contato (form + WhatsApp) ==========
 (() => {
@@ -306,25 +288,7 @@ document.querySelectorAll('[data-year]')
   });
 })();
 
-// ========== Cursor customizado (desktop) ==========
-(() => {
-  if(!matchMedia('(pointer:fine)').matches) return;
-  const dot = document.createElement('div');
-  const ring = document.createElement('div');
-  dot.className = 'cursor-dot'; ring.className = 'cursor-ring';
-  dot.style.zIndex = '10002'; ring.style.zIndex = '10002';
-  document.body.append(dot, ring);
-  window.addEventListener('mousemove', e => {
-    dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
-    ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
-  });
-  document.querySelectorAll('a,button,.btn,.project-card').forEach(el => {
-    el.addEventListener('mouseenter', () => document.documentElement.setAttribute('data-cursor','hover'));
-    el.addEventListener('mouseleave', () => document.documentElement.removeAttribute('data-cursor'));
-  });
-})();
-
-// ========== Certificados Fixos ==========
+// ========== Certificados Fixos (Formatação Premium Limpa) ==========
 (() => {
   const grid = document.querySelector('.certs-grid');
   if(!grid) return;
@@ -392,6 +356,8 @@ document.querySelectorAll('[data-year]')
     const el = document.createElement('article');
     el.className = 'card reveal visible';
     const tags = (c.categories||[]).map(t => `<span class="tag">${esc(t)}</span>`).join('');
+    
+    // HTML SEM ESTILOS INLINE (Deixando o CSS controlar os espaços via Flex Gaps)
     el.innerHTML = `
       <h3>${esc(c.title)}</h3>
       <div class="credential-meta">
