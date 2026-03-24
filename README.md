@@ -1,5 +1,7 @@
 # Portfólio Pessoal — Allan Gabriel Baeza
 
+
+
 <div align="center">
   <img src="./img/Portfolio.jpg" alt="Preview do Portfólio" width="860" />
 

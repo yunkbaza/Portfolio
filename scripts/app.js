@@ -1,162 +1,3 @@
-// ========== Adicionar Projeto (dinâmico) ==========
-(() => {
-  const btn = document.getElementById('add-project-btn');
-  const grid = document.querySelector('.grid.cards');
-  if(!btn || !grid) return;
-  const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-  if (!isLocal) {
-    btn.remove();
-    return;
-  }
-  btn.style.display = '';
-  // Carregar projetos do localStorage
-  function loadProjects(){
-    const saved = JSON.parse(localStorage.getItem('portfolio_projects')||'[]');
-    saved.forEach(p => addProjectCard(p, false));
-  }
-  // Adiciona card de projeto
-  function addProjectCard(data, save=true){
-    const el = document.createElement('article');
-    el.className = 'card project-card reveal visible';
-    el.setAttribute('data-project','');
-    el.setAttribute('data-tags', data.tags);
-    el.innerHTML = `
-      <img loading="lazy" decoding="async" width="400" height="160" src="${data.img}" alt="${data.nome}"/>
-      <h3>${data.nome}</h3>
-      <div class="project-meta">
-        ${(data.tags||'').split(',').map(t => `<span class="tag skill">${t.trim()}</span>`).join('')}
-      </div>
-      <a class="btn secondary" href="#" rel="noopener">Case</a>
-    `;
-    grid.appendChild(el);
-    if(save){
-      const arr = JSON.parse(localStorage.getItem('portfolio_projects')||'[]');
-      arr.push(data); localStorage.setItem('portfolio_projects', JSON.stringify(arr));
-    }
-  }
-  btn.addEventListener('click', function(){
-    let modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100vw';
-    modal.style.height = '100vh';
-    modal.style.background = 'rgba(30,30,30,0.55)';
-    modal.style.display = 'flex';
-    modal.style.alignItems = 'center';
-    modal.style.justifyContent = 'center';
-    modal.style.zIndex = '10001';
-    modal.style.backdropFilter = 'blur(2px)';
-    modal.innerHTML = `
-      <div style="background:var(--card);padding:38px 28px;border-radius:22px;max-width:400px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.38);text-align:center;position:relative;animation:modalFadeIn .32s cubic-bezier(.2,.8,.2,1);">
-        <h2 style="margin-bottom:22px;font-size:1.6rem;font-weight:800;letter-spacing:.5px;">Adicionar Projeto</h2>
-        <input type="text" id="novoProjetoNome" placeholder="Nome do projeto" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoProjetoTag" placeholder="Tags (ex: mobile, backend)" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoProjetoImg" placeholder="URL da imagem" style="width:100%;margin-bottom:18px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;">
-          <button id="confirmAddProject" class="btn" style="padding:12px 24px;font-size:1rem;font-weight:700;">Adicionar</button>
-          <button id="closeModalProject" class="btn secondary" style="padding:12px 24px;font-size:1rem;font-weight:700;">Cancelar</button>
-        </div>
-      </div>
-      <style>
-        @keyframes modalFadeIn { from { opacity:0; transform:scale(.96); } to { opacity:1; transform:scale(1); } }
-      </style>
-    `;
-    document.body.appendChild(modal);
-    document.getElementById('closeModalProject').onclick = function(){
-      modal.remove();
-    };
-    document.getElementById('confirmAddProject').onclick = function(){
-      const nome = document.getElementById('novoProjetoNome').value.trim();
-      const tags = document.getElementById('novoProjetoTag').value.trim();
-      const img = document.getElementById('novoProjetoImg').value.trim();
-      if(!nome || !tags || !img){ alert('Preencha todos os campos!'); return; }
-      addProjectCard({nome, tags, img});
-      modal.remove();
-    };
-  });
-  loadProjects();
-})();
-
-// ========== Adicionar Certificado (dinâmico) ==========
-(() => {
-  const btn = document.getElementById('add-cert-btn');
-  const grid = document.querySelector('.certs-grid');
-  if(!btn || !grid) return;
-  // Carregar certificados do localStorage
-  function loadCerts(){
-    const saved = JSON.parse(localStorage.getItem('portfolio_certs')||'[]');
-    saved.forEach(c => addCertCard(c, false));
-  }
-  // Adiciona card de certificado
-  function addCertCard(data, save=true){
-    const el = document.createElement('article');
-    el.className = 'card reveal visible';
-    el.innerHTML = `
-      <h3>${data.titulo}</h3>
-      <div class="credential-meta">
-        <span class="tag">Emissor: ${data.emissor}</span>
-        <span class="tag">Emitido: ${data.emitido}</span>
-        ${(data.categorias||'').split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('')}
-      </div>
-      <p class="credential-code">Código: ${data.codigo}</p>
-      <div class="actions">
-        <a class="btn secondary" href="${data.url}" target="_blank" rel="noopener">Exibir credencial</a>
-      </div>
-    `;
-    grid.appendChild(el);
-    if(save){
-      const arr = JSON.parse(localStorage.getItem('portfolio_certs')||'[]');
-      arr.push(data); localStorage.setItem('portfolio_certs', JSON.stringify(arr));
-    }
-  }
-  btn.addEventListener('click', function(){
-    let modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100vw';
-    modal.style.height = '100vh';
-    modal.style.background = 'rgba(30,30,30,0.55)';
-    modal.style.display = 'flex';
-    modal.style.alignItems = 'center';
-    modal.style.justifyContent = 'center';
-    modal.style.zIndex = '10001';
-    modal.style.backdropFilter = 'blur(2px)';
-    modal.innerHTML = `
-      <div style="background:var(--card);padding:38px 28px;border-radius:22px;max-width:400px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.38);text-align:center;position:relative;animation:modalFadeIn .32s cubic-bezier(.2,.8,.2,1);">
-        <h2 style="margin-bottom:22px;font-size:1.6rem;font-weight:800;letter-spacing:.5px;">Adicionar Certificado</h2>
-        <input type="text" id="novoCertTitulo" placeholder="Título do certificado" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoCertEmissor" placeholder="Emissor" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoCertEmitido" placeholder="Data de emissão" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoCertCategorias" placeholder="Categorias (ex: Python, SQL)" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoCertCodigo" placeholder="Código da credencial" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <input type="text" id="novoCertUrl" placeholder="URL da credencial" style="width:100%;margin-bottom:18px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
-        <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;">
-          <button id="confirmAddCert" class="btn" style="padding:12px 24px;font-size:1rem;font-weight:700;">Adicionar</button>
-          <button id="closeModalCert" class="btn secondary" style="padding:12px 24px;font-size:1rem;font-weight:700;">Cancelar</button>
-        </div>
-      </div>
-      <style>
-        @keyframes modalFadeIn { from { opacity:0; transform:scale(.96); } to { opacity:1; transform:scale(1); } }
-      </style>
-    `;
-    document.body.appendChild(modal);
-  document.getElementById('closeModalCert').onclick = function(){ window.location.href = 'certificados.html'; };
-    document.getElementById('confirmAddCert').onclick = function(){
-      const titulo = document.getElementById('novoCertTitulo').value.trim();
-      const emissor = document.getElementById('novoCertEmissor').value.trim();
-      const emitido = document.getElementById('novoCertEmitido').value.trim();
-      const categorias = document.getElementById('novoCertCategorias').value.trim();
-      const codigo = document.getElementById('novoCertCodigo').value.trim();
-      const url = document.getElementById('novoCertUrl').value.trim();
-      if(!titulo || !emissor || !emitido || !categorias || !codigo || !url){ alert('Preencha todos os campos!'); return; }
-      addCertCard({titulo, emissor, emitido, categorias, codigo, url});
-      modal.remove();
-    };
-  });
-  loadCerts();
-})();
 "use strict";
 // app.js — consolidado: menu, tema, efeitos, projetos, contato, cursor, certificados
 
@@ -169,16 +10,11 @@
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Abrir menu');
   }
-  /**
-   * Fecha o menu mobile e sincroniza rótulos ARIA.
-   * Side-effects: remove a classe ".open" e atualiza 'aria-*'.
-   */
   const closeMenu = () => {
     links?.classList.remove('open');
     toggle?.setAttribute('aria-expanded', 'false');
     toggle?.setAttribute('aria-label', 'Abrir menu');
   };
-  /** Abre o menu mobile e ajusta atributos ARIA. */
   const openMenu = () => {
     links?.classList.add('open');
     toggle?.setAttribute('aria-expanded', 'true');
@@ -253,10 +89,6 @@ document.querySelectorAll('[data-year]')
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
     document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
   }
-  /**
-   * Atualiza o label do botão de tema com o próximo estado (light/dark)
-   * para manter acessibilidade em leitores de tela.
-   */
   function syncThemeButtonA11y(){
     const cur = document.documentElement.getAttribute('data-theme') || 'dark';
     const next = cur === 'dark' ? 'light' : 'dark';
@@ -266,9 +98,6 @@ document.querySelectorAll('[data-year]')
     }
   }
   syncThemeButtonA11y();
-  /**
-   * Alterna o tema, persiste no localStorage e aplica uma micro animação.
-   */
   const toggleTheme = () => {
     const cur = document.documentElement.getAttribute('data-theme') || 'dark';
     const next = cur === 'dark' ? 'light' : 'dark';
@@ -280,7 +109,6 @@ document.querySelectorAll('[data-year]')
   };
   themeBtn?.addEventListener('click', toggleTheme);
 
-  // micro-glow nas .btn e .icon-btn
   let raf = 0, lastEvent = null;
   const handler = (e) => {
     lastEvent = e; if(raf) return;
@@ -297,14 +125,91 @@ document.querySelectorAll('[data-year]')
   }
 })();
 
-// ========== Filtro de projetos (se existir) ==========
+// ========== Adicionar Projeto (dinâmico via localStorage) ==========
+(() => {
+  const btn = document.getElementById('add-project-btn');
+  const grid = document.querySelector('.grid.cards');
+  if(!btn || !grid) return;
+  const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  if (!isLocal) {
+    btn.remove();
+    return;
+  }
+  btn.style.display = '';
+  function loadProjects(){
+    const saved = JSON.parse(localStorage.getItem('portfolio_projects')||'[]');
+    saved.forEach(p => addProjectCard(p, false));
+  }
+  function addProjectCard(data, save=true){
+    const el = document.createElement('article');
+    el.className = 'card project-card reveal visible';
+    el.setAttribute('data-project','');
+    el.setAttribute('data-tags', data.tags);
+    el.innerHTML = `
+      <img loading="lazy" decoding="async" width="400" height="160" src="${data.img}" alt="${data.nome}"/>
+      <h3>${data.nome}</h3>
+      <div class="project-meta">
+        ${(data.tags||'').split(' ').map(t => `<span class="tag skill">${t.trim()}</span>`).join('')}
+      </div>
+      <a class="btn secondary" href="#" rel="noopener">Case</a>
+    `;
+    grid.appendChild(el);
+    if(save){
+      const arr = JSON.parse(localStorage.getItem('portfolio_projects')||'[]');
+      arr.push(data); localStorage.setItem('portfolio_projects', JSON.stringify(arr));
+    }
+  }
+  btn.addEventListener('click', function(){
+    let modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.background = 'rgba(30,30,30,0.55)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '10001';
+    modal.style.backdropFilter = 'blur(2px)';
+    modal.innerHTML = `
+      <div style="background:var(--card);padding:38px 28px;border-radius:22px;max-width:400px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.38);text-align:center;position:relative;animation:modalFadeIn .32s cubic-bezier(.2,.8,.2,1);">
+        <h2 style="margin-bottom:22px;font-size:1.6rem;font-weight:800;letter-spacing:.5px;">Adicionar Projeto</h2>
+        <input type="text" id="novoProjetoNome" placeholder="Nome do projeto" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoProjetoTag" placeholder="Tags separadas por espaço (ex: mobile backend)" style="width:100%;margin-bottom:14px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <input type="text" id="novoProjetoImg" placeholder="URL da imagem" style="width:100%;margin-bottom:18px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:rgba(255,255,255,0.12);color:var(--text);font-size:1rem;" />
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:10px;">
+          <button id="confirmAddProject" class="btn" style="padding:12px 24px;font-size:1rem;font-weight:700;">Adicionar</button>
+          <button id="closeModalProject" class="btn secondary" style="padding:12px 24px;font-size:1rem;font-weight:700;">Cancelar</button>
+        </div>
+      </div>
+      <style>
+        @keyframes modalFadeIn { from { opacity:0; transform:scale(.96); } to { opacity:1; transform:scale(1); } }
+      </style>
+    `;
+    document.body.appendChild(modal);
+    document.getElementById('closeModalProject').onclick = function(){ modal.remove(); };
+    document.getElementById('confirmAddProject').onclick = function(){
+      const nome = document.getElementById('novoProjetoNome').value.trim();
+      const tags = document.getElementById('novoProjetoTag').value.trim();
+      const img = document.getElementById('novoProjetoImg').value.trim();
+      if(!nome || !tags || !img){ alert('Preencha todos os campos!'); return; }
+      addProjectCard({nome, tags, img});
+      modal.remove();
+    };
+  });
+  loadProjects();
+})();
+
+
+// ========== Filtro de projetos ==========
 (() => {
   const filterBar = document.querySelector('#project-filters');
   const items = [...document.querySelectorAll('[data-project]')];
   if(!filterBar || !items.length) return;
   function applyFilter(tag){
     items.forEach(el => {
-      const tags = (el.dataset.tags || '').split(',').map(s => s.trim().toLowerCase());
+      const tags = (el.dataset.tags || '').split(' ').map(s => s.trim().toLowerCase());
       const show = tag === 'all' || tags.includes(tag);
       el.style.display = show ? '' : 'none';
     });
@@ -319,55 +224,37 @@ document.querySelectorAll('[data-year]')
   applyFilter('all');
 })();
 
-// ========== Contato (form + WhatsApp) se existir ==========
+
+// ========== Contato (form + WhatsApp) ==========
 (() => {
   const form = document.querySelector('#contact-form');
   if(!form) return;
   const success = document.querySelector('.success');
   const error = document.querySelector('.error');
-  document.getElementById('whats-message')?.setAttribute('placeholder', 'Olá Allan, vim pelo portfólio e...');
+  document.getElementById('whats-message')?.setAttribute('placeholder', 'Olá Allan, vi o seu portfólio de Engenharia de Software e...');
 
   const SEND_MODE = 'auto'; // 'auto' | 'emailjs' | 'gas' | 'mailto'
   const EMAILJS_SERVICE_ID = '';
   const EMAILJS_TEMPLATE_ID = '';
   const EMAILJS_PUBLIC_KEY = '';
   const GAS_URL = '';
-  const CONTACT_EMAIL = 'seu-email@exemplo.com';
+  const CONTACT_EMAIL = 'allanbamirati@live.com';
 
-  /**
-   * Envia dados do formulário via EmailJS REST API.
-   * Lança erro caso a resposta HTTP não seja OK.
-   * @param {{name:string,email:string,message:string}} data
-   */
   async function sendEmailJS(data){
     const url = 'https://api.emailjs.com/api/v1.0/email/send';
     const payload = { service_id: EMAILJS_SERVICE_ID, template_id: EMAILJS_TEMPLATE_ID, user_id: EMAILJS_PUBLIC_KEY, template_params: data };
     const res = await fetch(url, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify(payload) });
     if(!res.ok) throw new Error('EmailJS error');
   }
-  /**
-   * Envia dados do formulário para um endpoint Google Apps Script.
-   * @param {Record<string,string>} data
-   */
   async function sendGAS(data){
     const res = await fetch(GAS_URL, { method:'POST', body: JSON.stringify(data) });
     if(!res.ok) throw new Error('GAS error');
   }
-  /**
-   * Obtém o e-mail de destino a partir do atributo data-email-to
-   * do formulário ou de window.CONTACT_CONFIG.emailTo (fallback).
-   * @returns {string}
-   */
   function getToEmail(){
     const attr = form?.getAttribute('data-email-to');
     const cfg = (typeof window !== 'undefined' && window.CONTACT_CONFIG) ? window.CONTACT_CONFIG.emailTo : '';
-    return attr || cfg || CONTACT_EMAIL || 'seu-email@exemplo.com';
+    return attr || cfg || CONTACT_EMAIL || 'allanbamirati@live.com';
   }
-  /**
-   * Fallback local: abre o cliente de e-mail via mailto: com
-   * assunto e corpo montados a partir dos dados do formulário.
-   * @param {{name?:string,email?:string,message?:string}} data
-   */
   function sendMailto(data){
     const to = getToEmail();
     const subject = encodeURIComponent(`Contato do Portfolio - ${data.name || ''}`.trim());
@@ -375,13 +262,9 @@ document.querySelectorAll('[data-year]')
     const href = `mailto:${to}?subject=${subject}&body=${encodeURIComponent(body)}`;
     window.location.href = href;
   }
-  /**
-   * Verifica se as credenciais do EmailJS estão configuradas.
-   */
   function isEmailJsReady(){
     return Boolean(EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY && !EMAILJS_SERVICE_ID.startsWith('YOUR_') && !EMAILJS_TEMPLATE_ID.startsWith('YOUR_') && !EMAILJS_PUBLIC_KEY.startsWith('YOUR_'));
   }
-  /** Retorna true se o endpoint do Google Apps Script estiver definido. */
   function isGasReady(){ return Boolean(GAS_URL); }
 
   form.addEventListener('submit', async (e) => {
@@ -390,11 +273,9 @@ document.querySelectorAll('[data-year]')
     if(error) error.style.display = 'none';
     const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries());
-    // a11y: reset aria-invalid
     ['name','email','message'].forEach(id => document.getElementById(id)?.setAttribute('aria-invalid','false'));
     if(!data.name || !data.email || !data.message){
       if(error){ error.textContent = 'Preencha todos os campos.'; error.style.display = 'block'; }
-      // a11y: marcar faltantes
       if(!data.name) document.getElementById('name')?.setAttribute('aria-invalid','true');
       if(!data.email) document.getElementById('email')?.setAttribute('aria-invalid','true');
       if(!data.message) document.getElementById('message')?.setAttribute('aria-invalid','true');
@@ -443,11 +324,13 @@ document.querySelectorAll('[data-year]')
   });
 })();
 
-// ========== Certificados (somente na página certificados) ==========
+// ========== Certificados Fixos ==========
 (() => {
   const grid = document.querySelector('.certs-grid');
   if(!grid) return;
   const CERTIFICATES = [
+    { title: 'Bootcamp Santander focado em AWS', issuer: 'Santander Brasil', issued: '2025', code: '-', categories: ['AWS', 'Cloud', 'Arquitetura'], url: '#' },
+    { title: 'Bootcamp Santander 2025 - Ciência de Dados com Python', issuer: 'Santander Brasil', issued: 'dez/2025', code: 'HUG5ZKNH', categories: ['Python', 'Machine Learning', 'AWS', 'SQL'], url: 'https://www.dio.me/certificate/HUG5ZKNH/share?utm_source=engagement&utm_medium=email&utm_campaign=santander-2025-ciencia-de-dados-com-python&utm_term=bootcamp-users&utm_content=graduation-certificate-link' },
     { title: 'Santander Tech+ | Fundamentos Tech', issuer: 'Santander', issued: 'jan/2025', code: '094cf9a-1157-8f0a-26b0-f0f08fa9d139', categories: ['Fundamentos Tech'], url: 'https://ada.tech/certificado?code=094cf49a-1157-8f0a-26b0-fd80f8a9d139?lang' },
     { title: 'AWS Certification: Solutions Architect Associate Parte 2', issuer: 'Alura', issued: 'dez/2024', code: 'c8c3ffba-b960-4497-8c5f-9b11925396e5', categories: ['Amazon Web Services'], url: 'https://cursos.alura.com.br/certificate/c8c3ffba-b960-4497-8c5f-9b1192539de5?lang' },
     { title: 'AWS Certification: Solutions Architect Associate Parte 3', issuer: 'Alura', issued: 'dez/2024', code: 'd454ed8a-5b44-4116-9c61-de15e3972d74', categories: ['Amazon Web Services'], url: 'https://cursos.alura.com.br/certificate/d454ed8a-5b44-4116-9c61-de15e3972d74?lang' },

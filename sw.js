@@ -5,7 +5,7 @@
  * (ex.: GitHub Pages). Os arquivos listados em ASSETS são pré-cacheados
  * na instalação; durante o fetch, tenta do cache antes da rede.
  */
-const CACHE = 'portfolio-v7';
+const CACHE = 'portfolio-v9-limpo'; // Versão atualizada para forçar o novo cache do rebranding
 const ASSETS = [
   'index.html',
   'styles/style.css',
@@ -37,4 +37,3 @@ self.addEventListener('fetch', e => {
     caches.match(e.request, { ignoreSearch: true }).then(r => r || fetch(e.request))
   );
 });
-

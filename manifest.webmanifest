@@ -1,6 +1,7 @@
 {
-  "name": "Portfólio — Allan Baeza",
-  "short_name": "Portfólio",
+  "name": "Allan Baeza — Engenheiro de Software",
+  "short_name": "Allan Baeza",
+  "description": "Portfólio de Allan Gabriel Baeza, Engenheiro de Software focado em sistemas escaláveis, microsserviços e nuvem (AWS).",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#1f1d0f",
