@@ -3,7 +3,8 @@
 
 
 <div align="center">
-  <img src="./img/Portfolio.jpg" alt="Preview do Portfólio" width="860" />
+  <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/43c269fd-facf-4621-bc52-b09bc8a65ff8" />
+
 
   <p>
     <a href="#-sobre">Sobre</a> •
@@ -23,16 +24,6 @@
 Site pessoal em HTML, CSS e JavaScript puro, com foco em performance, acessibilidade e experiência em mobile/desktop. É onde concentro meus projetos, currículo, certificados e formas de contato.
 
 ### Capturas do site
-
-<p align="center">
-  <img src="./img/Portfolio.jpg" alt="Home" width="720" />
-</p>
-
-<p align="center">
-  <img src="./img/Portfolio_projeto.jpg" alt="Projetos" width="320" />
-  <img src="./img/Portfolio_certificados.jpg" alt="Certificados" width="320" />
-  <img src="./img/Portfolio_curriculo.jpg" alt="Currículo" width="320" />
-</p>
 
 ## ✨ Funcionalidades
 
