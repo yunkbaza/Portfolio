@@ -150,21 +150,21 @@
 
   <section id="sobre" class="section" aria-labelledby="sobre-title">
     <div class="container">
-      <h2 id="sobre-title" class="reveal">Sobre mim</h2>
-      <p class="sub reveal">Apaixonado por resolver problemas complexos através de código limpo e arquiteturas robustas. O meu objetivo é projetar sistemas escaláveis e atuar como Engenheiro de Software Sênior no mercado global.</p>
+      <h2 id="sobre-title" class="reveal" data-i18n="home-about-title">Sobre mim</h2>
+      <p class="sub reveal" data-i18n="home-about-subtitle">Apaixonado por resolver problemas complexos através de código limpo e arquiteturas robustas. O meu objetivo é projetar sistemas escaláveis e atuar como Engenheiro de Software Sênior no mercado global.</p>
       
       <div class="grid cards">
         <div class="card reveal">
-          <strong>Formação Acadêmica</strong>
-          <p>Análise e Desenvolvimento de Sistemas (FIAP). Foco profundo em Engenharia de Software, Data Science, Machine Learning e Big Data. Mais de 50 certificações complementares em Cloud, DevOps e Back-End.</p>
+          <strong data-i18n="home-about-c1-title">Formação Acadêmica</strong>
+          <p data-i18n="home-about-c1-desc">Análise e Desenvolvimento de Sistemas (FIAP). Foco profundo em Engenharia de Software, Data Science, Machine Learning e Big Data. Mais de 50 certificações complementares em Cloud, DevOps e Back-End.</p>
         </div>
         <div class="card reveal">
-          <strong>Backend & Nuvem</strong>
-          <p>Domínio em Java, Python, Node.js e SQL. Desenho de soluções utilizando Microsserviços, Serverless, AWS, CQRS, Circuit Breaker, SAGA e Event-Driven Architecture. Gestão de dados em PostgreSQL e MongoDB.</p>
+          <strong data-i18n="home-about-c2-title">Backend & Nuvem</strong>
+          <p data-i18n="home-about-c2-desc">Domínio em Java, Python, Node.js e SQL. Desenho de soluções utilizando Microsserviços, Serverless, AWS, CQRS, Circuit Breaker, SAGA e Event-Driven Architecture. Gestão de dados em PostgreSQL e MongoDB.</p>
         </div>
         <div class="card reveal">
-          <strong>DevOps & Metodologias</strong>
-          <p>Experiência com Docker, Kubernetes, CI/CD (GitHub Actions), Apache Airflow. Forte adoção de TDD, Clean Architecture, Git flow avançado e metodologias ágeis (Scrum/Kanban).</p>
+          <strong data-i18n="home-about-c3-title">DevOps & Metodologias</strong>
+          <p data-i18n="home-about-c3-desc">Experiência com Docker, Kubernetes, CI/CD (GitHub Actions), Apache Airflow. Forte adoção de TDD, Clean Architecture, Git flow avançado e metodologias ágeis (Scrum/Kanban).</p>
         </div>
       </div>
     </div>
@@ -172,15 +172,15 @@
 
   <section id="projetos" class="section" aria-labelledby="projetos-title">
     <div class="container">
-      <h2 id="projetos-title" class="reveal">Projetos em Destaque</h2>
-      <p class="sub reveal">Uma seleção das minhas arquiteturas de back-end mais complexas e integrações de dados.</p>
+      <h2 id="projetos-title" class="reveal" data-i18n="home-proj-title">Projetos em Destaque</h2>
+      <p class="sub reveal" data-i18n="home-proj-subtitle">Uma seleção das minhas arquiteturas de back-end mais complexas e integrações de dados.</p>
       
       <div class="grid cards">
         
         <article class="card project-card reveal" data-project data-tags="backend architecture">
           <img src="./img/Baza_Bank.png" alt="BazaBank Core Banking" loading="lazy" decoding="async" width="400" height="160" style="background:#111; object-fit:cover;"/>
           <h3>BazaBank Core</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Arquitetura core bancária distribuída com Spring Boot e Mensageria (Kafka), projetada para processar transações financeiras garantindo resiliência e concorrência.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-baza-desc">Arquitetura core bancária distribuída com Spring Boot e Mensageria (Kafka), projetada para processar transações financeiras garantindo resiliência e concorrência.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Java">Java</span>
             <span class="tag skill indentificador Docker">Docker</span>
@@ -188,15 +188,15 @@
             <span class="tag skill indentificador Microsserviços">Microsserviços</span>
           </div>
           <div class="actions">
-            <a class="btn" href="https://bazabank.onrender.com" target="_blank" rel="noopener noreferrer">Acessar Deploy</a>
-            <a class="btn secondary" href="https://github.com/yunkbaza/BazaBank" target="_blank" rel="noopener noreferrer">Repositório</a>
+            <a class="btn" href="https://bazabank.onrender.com" target="_blank" rel="noopener noreferrer" data-i18n="btn-deploy">Acessar Deploy</a>
+            <a class="btn secondary" href="https://github.com/yunkbaza/BazaBank" target="_blank" rel="noopener noreferrer" data-i18n="btn-repo">Repositório</a>
           </div>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="backend architecture">
           <img src="./img/CarefulBaza.jpg" alt="CarefulBaza — E-commerce Dropshipping" loading="lazy" decoding="async" width="400" height="160" style="background:#111; object-fit:cover;"/>
           <h3>CarefulBaza (E-commerce)</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Arquitetura de Back-end para plataforma de dropshipping, construída em uma infraestrutura unificada com foco em alta disponibilidade e segurança.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-careful-desc">Arquitetura de Back-end para plataforma de dropshipping, construída em uma infraestrutura unificada com foco em alta disponibilidade e segurança.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Node js">Node.js</span>
             <span class="tag skill indentificador PostgreSQL">PostgreSQL</span>
@@ -204,15 +204,15 @@
             <span class="tag skill indentificador Microsserviços">Microsserviços</span>
           </div>
           <div class="actions">
-            <a class="btn" href="https://carefulbaza.vercel.app/" target="_blank" rel="noopener noreferrer">Acessar Site</a>
-            <a class="btn secondary" href="https://github.com/yunkbaza/CarefulBaza" target="_blank" rel="noopener noreferrer">Repositório</a>
+            <a class="btn" href="https://carefulbaza.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="btn-site">Acessar Site</a>
+            <a class="btn secondary" href="https://github.com/yunkbaza/CarefulBaza" target="_blank" rel="noopener noreferrer" data-i18n="btn-repo">Repositório</a>
           </div>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="data backend">
           <img src="./img/Dashboard_IFood.jpg" alt="API de Integração com iFood" loading="lazy" decoding="async" width="400" height="160" style="object-fit:cover;"/>
           <h3>API de Integração iFood</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Pipeline de engenharia de dados e integração comercial para automação inteligente de pedidos e gestão síncrona de cardápios.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-ifood-desc">Pipeline de engenharia de dados e integração comercial para automação inteligente de pedidos e gestão síncrona de cardápios.</p>
           <div class="project-meta">
              <span class="tag skill indentificador Python">Python</span>
              <span class="tag skill indentificador PostgreSQL">PostgreSQL</span>
@@ -220,28 +220,28 @@
              <span class="tag skill">ETL</span>
           </div>
           <div class="actions">
-            <a class="btn" href="https://ifood-dashboard-rework.vercel.app/" target="_blank" rel="noopener noreferrer">Acessar Deploy</a>
-            <a class="btn secondary" href="https://github.com/yunkbaza/IfoodDashboard" target="_blank" rel="noopener noreferrer">Repositório</a>
+            <a class="btn" href="https://ifood-dashboard-rework.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="btn-deploy">Acessar Deploy</a>
+            <a class="btn secondary" href="https://github.com/yunkbaza/IfoodDashboard-Rework" target="_blank" rel="noopener noreferrer" data-i18n="btn-repo">Repositório</a>
           </div>
         </article>
 
       </div>
        <div class="actions project-actions">
-        <a class="btn secondary" href="pages/projetos.html">Ver portfólio completo de projetos</a>
+        <a class="btn secondary" href="pages/projetos.html" data-i18n="home-proj-btn-all">Ver portfólio completo de projetos</a>
       </div>
     </div>
   </section>
 
   <section id="contato" class="section" aria-labelledby="contato-title">
     <div class="container">
-      <h2 id="contato-title" class="reveal">Contato</h2>
-      <p class="sub reveal">Precisa de um engenheiro dedicado para a sua equipa ou projeto? Vamos conversar.</p>
+      <h2 id="contato-title" class="reveal" data-i18n="home-contact-title">Contato</h2>
+      <p class="sub reveal" data-i18n="home-contact-subtitle">Precisa de um engenheiro dedicado para a sua equipa ou projeto? Vamos conversar.</p>
       
       <div class="contact-grid reveal">
         <aside class="card contact-card" id="whats-card" data-whatsapp="5511947573410">
           <div class="content">
-            <h3>Ligação Direta</h3>
-            <p class="desc">Envie uma mensagem direta pelo WhatsApp para uma resposta imediata.</p>
+            <h3 data-i18n="home-contact-wpp-title">Ligação Direta</h3>
+            <p class="desc" data-i18n="home-contact-wpp-desc">Envie uma mensagem direta pelo WhatsApp para uma resposta imediata.</p>
             <div class="field">
               <label for="whats-message">Sua Mensagem</label>
               <textarea id="whats-message" rows="9" placeholder="Olá Allan, vi o seu portfólio e gostaria de agendar uma entrevista..."></textarea>
@@ -250,30 +250,32 @@
           <div class="actions">
             <button class="btn" id="whats-send" type="button" aria-label="Enviar mensagem via WhatsApp">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-              Enviar no WhatsApp
+              <span data-i18n="home-contact-wpp-btn">Enviar no WhatsApp</span>
             </button>
           </div>
         </aside>
 
         <form id="contact-form" class="card contact-card reveal" novalidate data-email-to="allanbamirati@live.com" aria-label="Formulário de Contato">
           <div class="content">
-            <h3>Via E-mail</h3>
-            <p class="desc">Prefere a formalidade do e-mail? Preencha os campos abaixo.</p>
+            <h3 data-i18n="home-contact-email-title">Via E-mail</h3>
+            <p class="desc" data-i18n="home-contact-email-desc">Prefere a formalidade do e-mail? Preencha os campos abaixo.</p>
             <div class="field">
-              <label for="name">Nome Completo</label>
+              <label for="name" data-i18n="home-contact-lbl-name">Nome Completo</label>
               <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" aria-invalid="false" aria-describedby="contact-error" placeholder="Ex: Maria Silva"/>
             </div>
             <div class="field">
-              <label for="email">Endereço de E-mail</label>
+              <label for="email" data-i18n="home-contact-lbl-email">Endereço de E-mail</label>
               <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" aria-invalid="false" aria-describedby="contact-error" placeholder="maria@empresa.com"/>
             </div>
             <div class="field">
-              <label for="message">Detalhes da Oportunidade</label>
+              <label for="message" data-i18n="home-contact-lbl-msg">Detalhes da Oportunidade</label>
               <textarea id="message" name="message" rows="3" required aria-required="true" aria-invalid="false" aria-describedby="contact-error" placeholder="Como posso agregar valor à sua equipa?"></textarea>
             </div>
           </div>
           <div class="actions">
-            <button class="btn" type="submit" aria-label="Enviar formulário de email">Enviar E-mail</button>
+            <button class="btn" type="submit" aria-label="Enviar formulário de email">
+              <span data-i18n="home-contact-btn-send">Enviar E-mail</span>
+            </button>
             <div class="status">
               <div class="success" id="contact-success" role="status" aria-live="polite">Excelente! Mensagem encaminhada com sucesso.</div>
               <div class="error" id="contact-error" role="alert">Por favor, verifique se todos os campos estão preenchidos corretamente.</div>
@@ -291,16 +293,16 @@
         <h3 data-i18n="footer-title">Vamos construir o futuro juntos?</h3>
         <p data-i18n="footer-desc">Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
         <div class="links">
-          <a class="btn light" href="#contato">Iniciar Conversa</a>
-          <a class="btn secondary" href="pages/curriculo.html">Analisar Currículo</a>
+          <a class="btn light" href="#contato" data-i18n="footer-btn-talk">Iniciar Conversa</a>
+          <a class="btn secondary" href="pages/curriculo.html" data-i18n="footer-btn-cv">Analisar Currículo</a>
         </div>
       </div>
       
       <nav class="sitemap" aria-label="Mapa do site de navegação do rodapé">
-        <a href="#sobre">Sobre Mim</a>
-        <a href="pages/projetos.html">Projetos & Cases</a>
-        <a href="pages/certificados.html">Credenciais Acadêmicas</a>
-        <a href="pages/curriculo.html">Download CV</a>
+        <a href="#sobre" data-i18n="nav-about">Sobre Mim</a>
+        <a href="pages/projetos.html" data-i18n="nav-projects">Projetos & Cases</a>
+        <a href="pages/certificados.html" data-i18n="nav-certs">Credenciais Acadêmicas</a>
+        <a href="pages/curriculo.html" data-i18n="nav-cv">Download CV</a>
       </nav>
       
       <div class="social" aria-label="Meus perfis nas redes sociais">
@@ -314,8 +316,8 @@
     </div>
     
     <div class="container bottom">
-      <small>© <span data-year></span> Allan Gabriel Baeza Amirati Silva — Desenvolvido com código limpo (HTML/CSS/JS puros).</small>
-      <small><a href="#inicio" class="back-top" aria-label="Voltar ao topo da página">Voltar ao topo</a></small>
+      <small>© <span data-year></span> Allan Gabriel Baeza Amirati Silva — <span data-i18n="footer-copy">Desenvolvido com código limpo (HTML/CSS/JS puros).</span></small>
+      <small><a href="#inicio" class="back-top" aria-label="Voltar ao topo da página" data-i18n="footer-back-top">Voltar ao topo</a></small>
     </div>
   </footer>
 

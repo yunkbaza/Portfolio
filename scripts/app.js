@@ -104,7 +104,33 @@ const i18nDict = {
     "btn-repo": "Repositório",
     "btn-site": "Acessar Site",
     "btn-view-repo": "Ver Repositório",
-    "btn-view-case": "Ver Case"
+    "btn-view-case": "Ver Case",
+    "home-about-title": "Sobre mim",
+    "home-about-subtitle": "Apaixonado por resolver problemas complexos através de código limpo e arquiteturas robustas. O meu objetivo é projetar sistemas escaláveis e atuar como Engenheiro de Software Sênior no mercado global.",
+    "home-about-c1-title": "Formação Acadêmica",
+    "home-about-c1-desc": "Análise e Desenvolvimento de Sistemas (FIAP). Foco profundo em Engenharia de Software, Data Science, Machine Learning e Big Data. Mais de 50 certificações complementares em Cloud, DevOps e Back-End.",
+    "home-about-c2-title": "Backend & Nuvem",
+    "home-about-c2-desc": "Domínio em Java, Python, Node.js e SQL. Desenho de soluções utilizando Microsserviços, Serverless, AWS, CQRS, Circuit Breaker, SAGA e Event-Driven Architecture. Gestão de dados em PostgreSQL e MongoDB.",
+    "home-about-c3-title": "DevOps & Metodologias",
+    "home-about-c3-desc": "Experiência com Docker, Kubernetes, CI/CD (GitHub Actions), Apache Airflow. Forte adoção de TDD, Clean Architecture, Git flow avançado e metodologias ágeis (Scrum/Kanban).",
+    
+    "home-proj-title": "Projetos em Destaque",
+    "home-proj-subtitle": "Uma seleção das minhas arquiteturas de back-end mais complexas e integrações de dados.",
+    "home-proj-btn-all": "Ver portfólio completo de projetos",
+    
+    "home-contact-title": "Contato",
+    "home-contact-subtitle": "Precisa de um engenheiro dedicado para a sua equipa ou projeto? Vamos conversar.",
+    "home-contact-wpp-title": "Ligação Direta",
+    "home-contact-wpp-desc": "Envie uma mensagem direta pelo WhatsApp para uma resposta imediata.",
+    "home-contact-wpp-btn": "Enviar no WhatsApp",
+    "home-contact-email-title": "Via E-mail",
+    "home-contact-email-desc": "Prefere a formalidade do e-mail? Preencha os campos abaixo.",
+    "home-contact-lbl-name": "Nome Completo",
+    "home-contact-lbl-email": "Endereço de E-mail",
+    "home-contact-lbl-msg": "Detalhes da Oportunidade",
+    "home-contact-btn-send": "Enviar E-mail",
+    "footer-copy": "Desenvolvido com código limpo (HTML/CSS/JS puros).",
+    "footer-back-top": "Voltar ao topo"
   },
   en: {
     "nav-home": "Home",
@@ -205,7 +231,33 @@ const i18nDict = {
     "btn-repo": "Repository",
     "btn-site": "Visit Site",
     "btn-view-repo": "View Repository",
-    "btn-view-case": "View Case"
+    "btn-view-case": "View Case",
+    "home-about-title": "About me",
+    "home-about-subtitle": "Passionate about solving complex problems through clean code and robust architectures. My goal is to design scalable systems and work as a Senior Software Engineer in the global market.",
+    "home-about-c1-title": "Academic Education",
+    "home-about-c1-desc": "Systems Analysis and Development (FIAP). Deep focus on Software Engineering, Data Science, Machine Learning, and Big Data. Over 50 complementary certifications in Cloud, DevOps, and Back-End.",
+    "home-about-c2-title": "Backend & Cloud",
+    "home-about-c2-desc": "Proficiency in Java, Python, Node.js, and SQL. Designing solutions using Microservices, Serverless, AWS, CQRS, Circuit Breaker, SAGA, and Event-Driven Architecture. Data management in PostgreSQL and MongoDB.",
+    "home-about-c3-title": "DevOps & Methodologies",
+    "home-about-c3-desc": "Experience with Docker, Kubernetes, CI/CD (GitHub Actions), Apache Airflow. Strong adoption of TDD, Clean Architecture, advanced Git flow, and agile methodologies (Scrum/Kanban).",
+    
+    "home-proj-title": "Featured Projects",
+    "home-proj-subtitle": "A selection of my most complex back-end architectures and data integrations.",
+    "home-proj-btn-all": "View full project portfolio",
+    
+    "home-contact-title": "Contact",
+    "home-contact-subtitle": "Need a dedicated engineer for your team or project? Let's talk.",
+    "home-contact-wpp-title": "Direct Line",
+    "home-contact-wpp-desc": "Send a direct message via WhatsApp for an immediate response.",
+    "home-contact-wpp-btn": "Send on WhatsApp",
+    "home-contact-email-title": "Via E-mail",
+    "home-contact-email-desc": "Prefer the formality of e-mail? Fill out the fields below.",
+    "home-contact-lbl-name": "Full Name",
+    "home-contact-lbl-email": "E-mail Address",
+    "home-contact-lbl-msg": "Opportunity Details",
+    "home-contact-btn-send": "Send E-mail",
+    "footer-copy": "Developed with clean code (Pure HTML/CSS/JS).",
+    "footer-back-top": "Back to top"
   }
 };
 
@@ -260,8 +312,7 @@ class PortfolioApp {
       currentLang = lang;
       localStorage.setItem('language', lang);
       
-      // O botão mostra a opção oposta (Se estou em PT, mostra EN)
-      langBtn.textContent = lang === 'pt' ? 'EN' : 'PT';
+      langBtn.textContent = lang === 'pt' ? '🇧🇷' : '🇺🇸';
       this.DOM.html.lang = lang === 'pt' ? 'pt-br' : 'en';
 
       // Altera todos os textos fixos marcados com data-i18n
