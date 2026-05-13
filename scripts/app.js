@@ -241,10 +241,10 @@ class PortfolioApp {
     document.getElementById('whats-message')?.setAttribute('placeholder', 'Olá Allan, vi o seu portfólio de Engenharia de Software e...');
 
     const CONFIG = {
-      SEND_MODE: 'auto', // 'auto' | 'emailjs' | 'gas' | 'mailto'
-      EMAILJS_SERVICE_ID: '',
-      EMAILJS_TEMPLATE_ID: '',
-      EMAILJS_PUBLIC_KEY: '',
+      SEND_MODE: 'emailjs', // 'auto' | 'emailjs' | 'gas' | 'mailto'
+      EMAILJS_SERVICE_ID: 'service_xk4sbkx',
+      EMAILJS_TEMPLATE_ID: 'template_kebelwh',
+      EMAILJS_PUBLIC_KEY: 'jDkz7HbrEe779bCuH',
       GAS_URL: '',
       CONTACT_EMAIL: 'allanbamirati@live.com'
     };
