@@ -90,14 +90,16 @@
       <a class="brand" href="index.html" aria-label="Ir para a página inicial"><img src="assets/logo.svg" alt="Logo de Allan Baeza" class="logo"/></a>
       
       <nav class="nav-links" id="nav-links" aria-label="Navegação Principal">
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="pages/projetos.html">Projetos</a>
-        <a href="pages/certificados.html">Certificados</a>
-        <a href="#contato">Contato</a>
-        <a href="pages/curriculo.html">CV</a>
+        <a href="#inicio" data-i18n="nav-home">Início</a>
+        <a href="#sobre" data-i18n="nav-about">Sobre</a>
+        <a href="pages/projetos.html" data-i18n="nav-projects">Projetos</a>
+        <a href="pages/certificados.html" data-i18n="nav-certs">Certificados</a>
+        <a href="#contato" data-i18n="nav-contact">Contato</a>
+        <a href="pages/curriculo.html" data-i18n="nav-cv">CV</a>
       </nav>
       
+      <button id="lang-toggle" class="btn secondary" style="padding: 6px 12px; margin-left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;" aria-label="Alternar Idioma">EN</button>
+
       <button id="theme-toggle" class="icon-btn theme-toggle" aria-label="Alternar tema" type="button">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -114,10 +116,10 @@
     <div class="reveal intro">
       <span class="tag" style="margin-bottom: 16px; display: inline-flex; align-items: center; gap: 8px;">
         <span style="display:block; width:8px; height:8px; background:#3ECF8E; border-radius:50%; box-shadow: 0 0 8px #3ECF8E;"></span>
-        Disponível para novos desafios
+        <span data-i18n="hero-badge">Disponível para novos desafios</span>
       </span>
-      <h1>Engenheiro de Software</h1>
-      <p>Estudante de ADS na FIAP (conclusão em 2025), focado em <strong>arquitetura de software</strong>, <strong>sistemas distribuídos</strong> e <strong>infraestrutura em nuvem</strong>. Experiência prática na construção de APIs resilientes, microsserviços e pipelines de dados visando alta performance e escalabilidade.</p>
+      <h1 data-i18n="hero-title">Engenheiro de Software</h1>
+      <p data-i18n="hero-desc">Estudante de ADS na FIAP (conclusão em 2025), focado em <strong>arquitetura de software</strong>, <strong>sistemas distribuídos</strong> e <strong>infraestrutura em nuvem</strong>. Experiência prática na construção de APIs resilientes, microsserviços e pipelines de dados visando alta performance e escalabilidade.</p>
       
       <div class="kpis" style="margin-top: 24px;">
         <span class="kpi">Arquitetura & Nuvem</span>
@@ -126,8 +128,8 @@
       </div>
 
       <div class="hero-ctas">
-        <a class="btn" href="#contato">Fale Comigo</a>
-        <a class="btn secondary" href="pages/curriculo.html">Ver Currículo Completo</a>
+        <a class="btn" href="#contato" data-i18n="hero-btn-talk">Fale Comigo</a>
+        <a class="btn secondary" href="pages/curriculo.html" data-i18n="hero-btn-cv">Ver Currículo Completo</a>
       </div>
     </div>
     
@@ -286,8 +288,8 @@
   <footer class="footer" role="contentinfo">
     <div class="container top">
       <div class="cta">
-        <h3>Vamos construir o futuro juntos?</h3>
-        <p>Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
+        <h3 data-i18n="footer-title">Vamos construir o futuro juntos?</h3>
+        <p data-i18n="footer-desc">Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
         <div class="links">
           <a class="btn light" href="#contato">Iniciar Conversa</a>
           <a class="btn secondary" href="pages/curriculo.html">Analisar Currículo</a>

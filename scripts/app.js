@@ -1,6 +1,215 @@
 "use strict";
 
 /**
+ * Dicionário de Traduções (i18n)
+ * Mantém todos os textos centrais da aplicação.
+ */
+const i18nDict = {
+  pt: {
+    "nav-home": "Início",
+    "nav-about": "Sobre",
+    "nav-projects": "Projetos",
+    "nav-certs": "Certificados",
+    "nav-contact": "Contato",
+    "nav-cv": "CV",
+    
+    "hero-badge": "Disponível para novos desafios",
+    "hero-title": "Engenheiro de Software",
+    "hero-desc": "Estudante de ADS na FIAP (conclusão em 2025), focado em <strong>arquitetura de software</strong>, <strong>sistemas distribuídos</strong> e <strong>infraestrutura em nuvem</strong>. Experiência prática na construção de APIs resilientes, microsserviços e pipelines de dados visando alta performance e escalabilidade.",
+    "hero-btn-talk": "Fale Comigo",
+    "hero-btn-cv": "Ver Currículo Completo",
+    
+    "footer-title": "Vamos construir o futuro juntos?",
+    "footer-desc": "Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.",
+    
+    "about-title": "Engenharia com Propósito",
+    "about-subtitle": "Sou o Allan Gabriel Baeza, um Engenheiro de Software apaixonado por resolver problemas de negócio através de arquiteturas distribuídas, código limpo e infraestrutura resiliente.",
+    "about-phil-title": "Filosofia de Arquitetura",
+    "about-phil-subtitle": "Acredito que o verdadeiro desafio da engenharia não é apenas fazer o código funcionar, mas garantir que ele seja manutenível, escalável e alinhado aos objetivos do produto.",
+    "about-phil-card1-title": "⚙️ Sistemas Distribuídos",
+    "about-phil-card1-desc": "Foco na conceção de microsserviços, utilizando padrões como CQRS, SAGA e Event-Driven Architecture para garantir alta disponibilidade e consistência eventual.",
+    "about-phil-card2-title": "🛡️ Qualidade & Resiliência",
+    "about-phil-card2-desc": "Adoção estrita de Clean Architecture, SOLID e TDD. Implementação de Circuit Breakers e orquestração madura para tolerância a falhas.",
+    "about-phil-card3-title": "☁️ Cloud Native",
+    "about-phil-card3-desc": "Mentalidade \"Infrastructure as Code\". Proficiência em AWS, conteinerização com Docker e orquestração com Kubernetes e CI/CD automatizado.",
+    "about-timeline-title": "Trajetória & Formação",
+    "about-time1-date": "2024 — 2025",
+    "about-time1-title": "Análise e Desenvolvimento de Sistemas — FIAP",
+    "about-time1-desc": "Graduação com foco prático em Engenharia de Software corporativa, Big Data, Machine Learning e modelagem complexa de banco de dados. Destaque académico e recomendação para docência.",
+    "about-time2-date": "2024 — Present",
+    "about-time2-title": "Especialização em Nuvem e Dados",
+    "about-time2-desc": "Conclusão de mais de 50 certificações de peso, incluindo AWS Solutions Architect (Alura), Ciência de Dados com Python e Back-End (Bootcamps Santander Open Academy).",
+    "about-time3-date": "Projetos & Consultoria",
+    "about-time3-title": "Desenvolvimento de Soluções Core",
+    "about-time3-desc": "Criação de ecossistemas complexos do zero, incluindo o motor de core bancário BazaBank (Java/Kafka), plataformas de e-commerce e pipelines de ETL para análise de dados.",
+    "about-tech-back": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg> Back-End & APIs",
+    "about-tech-cloud": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"></path></svg> Cloud & DevOps",
+    "about-tech-data": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"></ellipse><path d=\"M21 12c0 1.66-4 3-9 3s-9-1.34-9-3\"></path><path d=\"M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5\"></path></svg> Dados & Filas",
+    "about-tech-front": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"2\" width=\"14\" height=\"20\" rx=\"2\" ry=\"2\"></rect><line x1=\"12\" y1=\"18\" x2=\"12.01\" y2=\"18\"></line></svg> Front-End & Mobile",
+    
+    "footer-btn-talk": "Iniciar Conversa",
+    "footer-btn-cv": "Analisar Currículo",
+    "cv-btn-download": "Baixar PDF Oficial",
+    "cv-btn-print": "Imprimir / Salvar",
+    "cv-loc-remote": "🌍 Disponível para Remoto (Compatível US/EST)",
+    "cv-job-title": "Engenheiro de Software & Arquiteto Back-end",
+    "cv-section-profile": "Perfil Profissional",
+    "cv-profile-desc": "Engenheiro de Software com imersão no setor tecnológico desde os 15 anos de idade. Especializado em arquitetura de sistemas distribuídos, desenvolvimento back-end de alta performance e infraestrutura em nuvem (Cloud Native). Combina uma base técnica profunda obtida através de projetos arquiteturais complexos com a visão de negócios adquirida atuando como Consultor de TI corporativo. Proficiente na resolução de desafios de virtualização, concorrência de dados e na entrega de ecossistemas escaláveis para clientes globais.",
+    "cv-section-exp": "Experiência Profissional",
+    "cv-exp1-title": "Consultor de TI & Desenvolvedor de Software",
+    "cv-exp1-sub": "Atuação Independente / Projetos B2B",
+    "cv-exp1-date": "Presente",
+    "cv-exp1-desc": "Fornecimento de serviços de consultoria tecnológica especializada para múltiplas empresas, atuando no desenho e auditoria de arquiteturas de software. Resolução de conflitos críticos de infraestrutura (incluindo gestão avançada de virtualização de containers e troubleshooting de Docker Engine/WSL2). Desenvolvimento de soluções back-end resilientes focadas na otimização de performance empresarial.",
+    "cv-section-proj": "Arquiteturas & Projetos Principais",
+    "cv-proj1-title": "BazaBank — Core Banking System",
+    "cv-proj1-desc": "Conceção e desenvolvimento de um motor bancário core desenhado para alta concorrência. Arquitetura distribuída construída com Spring Boot (Java), orquestração de mensageria via Kafka para processamento assíncrono de transações e deploy resiliente via Kubernetes e Docker.",
+    "cv-proj2-title": "Ecossistema CarefulBaza",
+    "cv-proj2-desc": "Consolidação arquitetural de uma plataforma global de e-commerce e dropshipping. Projeto unificado integrando um back-end robusto (Node.js, PostgreSQL, Prisma), programação orientada a eventos e consumo de APIs externas globais, garantindo alta disponibilidade e resiliência no processamento de pedidos.",
+    "cv-proj3-title": "Motores de Dados: Workflow & Análise de Risco",
+    "cv-proj3-desc": "Construção de motores de orquestração de processos (Java) e pipelines de mitigação de fraudes e análise de crédito. Utilização de workers distribuídos (TypeScript, BullMQ, Redis) para processamento em background de alto volume e baixa latência.",
+    "cv-section-edu": "Formação Acadêmica",
+    "cv-edu1-title": "Análise e Desenvolvimento de Sistemas (CST)",
+    "cv-edu1-sub": "FIAP — Faculdade de Informática e Administração Paulista",
+    "cv-edu1-date": "Jan 2024 — Dez 2025",
+    "cv-edu1-desc": "Formação orientada a desafios do mercado, com foco profundo em Engenharia de Software, Arquitetura de Sistemas, Modelagem de Bancos de Dados (SQL/NoSQL) e Big Data.",
+    "cv-section-skills": "Stack & Certificações (Resumo)",
+    "cv-skill-title": "Competências Técnicas Principais",
+    "cv-cert-title": "Credenciais e Especializações (+50 Concluídas)",
+    "cv-cert-desc": "• <strong>Arquitetura & Nuvem:</strong> AWS Solutions Architect Associate (Alura).<br>• <strong>Engenharia de Dados:</strong> Apache Airflow, ETL, Power BI, Python para Data Science (Santander 2025).<br>• <strong>Engenharia de Software:</strong> Clean Code, TDD, Modelagem Relacional, Microsserviços e Back-End (Santander Tech+).",
+    
+    "certs-title": "Certificados & Credenciais",
+    "certs-desc": "Seleção de mais de 50 certificações com código e link de verificação, comprovando aprendizagem contínua em Cloud, Back-end e Engenharia de Dados.",
+    "certs-btn-add": "Adicionar Certificado (Ambiente Local)",
+    
+    "projects-title": "Todos os Projetos",
+    "projects-subtitle": "Aplicações práticas e acadêmicas com foco profundo em arquitetura de software, APIs robustas, pipelines de dados e mobile nativo.",
+    "filter-all": "Todos",
+    "filter-arch": "Arquitetura",
+    "filter-back": "Back-End",
+    "filter-data": "Dados",
+    "filter-mobile": "Mobile",
+    "filter-front": "Front-End",
+    "proj-baza-desc": "Sistema core bancário simulado focado no processamento seguro de operações financeiras utilizando microsserviços e mensageria distribuída.",
+    "proj-careful-desc": "Arquitetura de Back-end unificada para plataforma de dropshipping com foco em resiliência e alta disponibilidade.",
+    "proj-ifood-desc": "Pipeline de dados e integração comercial para automação de pedidos e gerenciamento de cardápios.",
+    "proj-porto-desc": "Simulação de sistema de atendimento e triagem utilizando inteligência artificial e modelagem de banco de dados.",
+    "proj-ocean-desc": "Arquitetura de sistema para monitoramento ambiental e integração de hardware focado na preservação oceânica.",
+    "proj-bird-desc": "Concepção e desenvolvimento de sistema com alertas de emergência geolocalizados em tempo real.",
+    "proj-work-desc": "Sistema de orquestração focado no gerenciamento de fluxos de trabalho estruturados, contando com APIs protegidas e processamento de templates.",
+    "proj-risk-desc": "Pipeline de processamento e validação de dados críticos focado em segurança financeira, com suporte a workers distribuídos para garantir baixa latência.",
+    "proj-excel-desc": "Solução automatizada para leitura, processamento e consolidação de dados em planilhas.",
+    "proj-csv-desc": "Pipeline de processamento e ingestão de dados para leitura otimizada de grandes arquivos CSV.",
+    "proj-softtek-desc": "Aplicação focada em saúde mental com back-end em Supabase (BaaS) e interface nativa.",
+    "btn-deploy": "Acessar Deploy",
+    "btn-repo": "Repositório",
+    "btn-site": "Acessar Site",
+    "btn-view-repo": "Ver Repositório",
+    "btn-view-case": "Ver Case"
+  },
+  en: {
+    "nav-home": "Home",
+    "nav-about": "About",
+    "nav-projects": "Projects",
+    "nav-certs": "Certifications",
+    "nav-contact": "Contact",
+    "nav-cv": "Resume",
+    
+    "hero-badge": "Available for new challenges",
+    "hero-title": "Software Engineer",
+    "hero-desc": "Systems Analysis student at FIAP (graduating 2025), focused on <strong>software architecture</strong>, <strong>distributed systems</strong>, and <strong>cloud infrastructure</strong>. Practical experience building resilient APIs, microservices, and data pipelines aimed at high performance and scalability.",
+    "hero-btn-talk": "Let's Talk",
+    "hero-btn-cv": "View Full Resume",
+    
+    "footer-title": "Let's build the future together?",
+    "footer-desc": "I'm open to challenges that require robust architecture and complex problem-solving.",
+    
+    "about-title": "Engineering with Purpose",
+    "about-subtitle": "I'm Allan Gabriel Baeza, a Software Engineer passionate about solving business problems through distributed architectures, clean code, and resilient infrastructure.",
+    "about-phil-title": "Architecture Philosophy",
+    "about-phil-subtitle": "I believe the true challenge of engineering isn't just making the code work, but ensuring it is maintainable, scalable, and aligned with product goals.",
+    "about-phil-card1-title": "⚙️ Distributed Systems",
+    "about-phil-card1-desc": "Focus on microservices design, using patterns like CQRS, SAGA, and Event-Driven Architecture to ensure high availability and eventual consistency.",
+    "about-phil-card2-title": "🛡️ Quality & Resilience",
+    "about-phil-card2-desc": "Strict adoption of Clean Architecture, SOLID, and TDD. Implementation of Circuit Breakers and mature orchestration for fault tolerance.",
+    "about-phil-card3-title": "☁️ Cloud Native",
+    "about-phil-card3-desc": "\"Infrastructure as Code\" mindset. Proficiency in AWS, containerization with Docker, and orchestration with Kubernetes and automated CI/CD.",
+    "about-timeline-title": "Trajectory & Education",
+    "about-time1-date": "2024 — 2025",
+    "about-time1-title": "Systems Analysis and Development — FIAP",
+    "about-time1-desc": "Degree with a practical focus on corporate Software Engineering, Big Data, Machine Learning, and complex database modeling. Academic excellence and recommendation for teaching.",
+    "about-time2-date": "2024 — Present",
+    "about-time2-title": "Cloud and Data Specialization",
+    "about-time2-desc": "Completion of over 50 heavyweight certifications, including AWS Solutions Architect (Alura), Data Science with Python, and Back-End (Santander Open Academy Bootcamps).",
+    "about-time3-date": "Projects & Consulting",
+    "about-time3-title": "Core Solutions Development",
+    "about-time3-desc": "Creation of complex ecosystems from scratch, including the BazaBank core banking engine (Java/Kafka), e-commerce platforms, and ETL pipelines for data analysis.",
+    "about-tech-back": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg> Back-End & APIs",
+    "about-tech-cloud": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"></path></svg> Cloud & DevOps",
+    "about-tech-data": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"></ellipse><path d=\"M21 12c0 1.66-4 3-9 3s-9-1.34-9-3\"></path><path d=\"M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5\"></path></svg> Data & Queues",
+    "about-tech-front": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"2\" width=\"14\" height=\"20\" rx=\"2\" ry=\"2\"></rect><line x1=\"12\" y1=\"18\" x2=\"12.01\" y2=\"18\"></line></svg> Front-End & Mobile",
+    
+    "footer-btn-talk": "Start a Conversation",
+    "footer-btn-cv": "Review Resume",
+    "cv-btn-download": "Download Official PDF",
+    "cv-btn-print": "Print / Save",
+    "cv-loc-remote": "🌍 Available for Remote Work (US/EST Compatible)",
+    "cv-job-title": "Software Engineer & Back-end Architect",
+    "cv-section-profile": "Professional Profile",
+    "cv-profile-desc": "Software Engineer immersed in the tech sector since age 15. Specialized in distributed systems architecture, high-performance back-end development, and cloud infrastructure (Cloud Native). Combines deep technical expertise gained through complex architectural projects with business acumen acquired as a corporate IT Consultant. Proficient in resolving virtualization challenges, data concurrency, and delivering scalable ecosystems for global clients.",
+    "cv-section-exp": "Professional Experience",
+    "cv-exp1-title": "IT Consultant & Software Developer",
+    "cv-exp1-sub": "Independent Contractor / B2B Projects",
+    "cv-exp1-date": "Present",
+    "cv-exp1-desc": "Providing specialized technological consulting services for multiple companies, designing and auditing software architectures. Resolving critical infrastructure conflicts (including advanced container virtualization management and Docker Engine/WSL2 troubleshooting). Developing resilient back-end solutions focused on enterprise performance optimization.",
+    "cv-section-proj": "Main Architectures & Projects",
+    "cv-proj1-title": "BazaBank — Core Banking System",
+    "cv-proj1-desc": "Design and development of a core banking engine built for high concurrency. Distributed architecture built with Spring Boot (Java), messaging orchestration via Kafka for asynchronous transaction processing, and resilient deployment via Kubernetes and Docker.",
+    "cv-proj2-title": "CarefulBaza Ecosystem",
+    "cv-proj2-desc": "Architectural consolidation of a global e-commerce and dropshipping platform. Unified project integrating a robust back-end (Node.js, PostgreSQL, Prisma), event-driven programming, and consumption of global external APIs, ensuring high availability and resilience in order processing.",
+    "cv-proj3-title": "Data Engines: Workflow & Risk Analysis",
+    "cv-proj3-desc": "Construction of process orchestration engines (Java) and pipelines for fraud mitigation and credit analysis. Utilization of distributed workers (TypeScript, BullMQ, Redis) for high-volume, low-latency background processing.",
+    "cv-section-edu": "Education",
+    "cv-edu1-title": "Systems Analysis and Development (Degree)",
+    "cv-edu1-sub": "FIAP — Paulista Faculty of Informatics and Administration",
+    "cv-edu1-date": "Jan 2024 — Dec 2025",
+    "cv-edu1-desc": "Market-driven education with a deep focus on Software Engineering, Systems Architecture, Database Modeling (SQL/NoSQL), and Big Data.",
+    "cv-section-skills": "Stack & Certifications (Summary)",
+    "cv-skill-title": "Core Technical Competencies",
+    "cv-cert-title": "Credentials and Specializations (50+ Completed)",
+    "cv-cert-desc": "• <strong>Architecture & Cloud:</strong> AWS Solutions Architect Associate (Alura).<br>• <strong>Data Engineering:</strong> Apache Airflow, ETL, Power BI, Python for Data Science (Santander 2025).<br>• <strong>Software Engineering:</strong> Clean Code, TDD, Relational Modeling, Microservices, and Back-End (Santander Tech+).",
+    
+    "certs-title": "Certifications & Credentials",
+    "certs-desc": "Selection of over 50 certifications with official verification codes and links, demonstrating continuous learning in Cloud, Back-end, and Data Engineering.",
+    "certs-btn-add": "Add Certificate (Local Environment)",
+    
+    "projects-title": "All Projects",
+    "projects-subtitle": "Practical and academic applications with a deep focus on software architecture, robust APIs, data pipelines, and native mobile.",
+    "filter-all": "All",
+    "filter-arch": "Architecture",
+    "filter-back": "Back-End",
+    "filter-data": "Data",
+    "filter-mobile": "Mobile",
+    "filter-front": "Front-End",
+    "proj-baza-desc": "Simulated core banking system focused on secure processing of financial operations using microservices and distributed messaging.",
+    "proj-careful-desc": "Unified Back-end architecture for a dropshipping platform with a focus on resilience and high availability.",
+    "proj-ifood-desc": "Data pipeline and commercial integration for order automation and menu management.",
+    "proj-porto-desc": "Simulation of an attendance and triage system using artificial intelligence and database modeling.",
+    "proj-ocean-desc": "System architecture for environmental monitoring and hardware integration focused on ocean preservation.",
+    "proj-bird-desc": "Design and development of a system with real-time geolocated emergency alerts.",
+    "proj-work-desc": "Orchestration system focused on managing structured workflows, featuring protected APIs and template processing.",
+    "proj-risk-desc": "Processing and validation pipeline for critical data focused on financial security, supporting distributed workers to ensure low latency.",
+    "proj-excel-desc": "Automated solution for reading, processing, and consolidating spreadsheet data.",
+    "proj-csv-desc": "Data ingestion and processing pipeline for optimized reading of large CSV files.",
+    "proj-softtek-desc": "Application focused on mental health with a Supabase (BaaS) back-end and native interface.",
+    "btn-deploy": "View Deploy",
+    "btn-repo": "Repository",
+    "btn-site": "Visit Site",
+    "btn-view-repo": "View Repository",
+    "btn-view-case": "View Case"
+  }
+};
+
+/**
  * Portfolio App Logic - Senior Architecture
  * Autor: Allan Gabriel Baeza
  */
@@ -25,6 +234,7 @@ class PortfolioApp {
 
   init() {
     this.initTheme();
+    this.initI18n(); // Inicia o motor de traduções
     this.initNavigation();
     this.initScrollReveal();
     this.initSmoothScroll();
@@ -32,9 +242,52 @@ class PortfolioApp {
     this.initProjectFilters();
     this.initContactHandling();
     this.initMagneticButtons();
-    this.initCertificates();
     this.initLocalDevFeatures();
     this.setupDynamicYears();
+    // NOTA: A initCertificates() é agora chamada dentro de setLanguage() para garantir a tradução imediata.
+  }
+
+  // ==========================================
+  // Internacionalização (i18n) PT/EN
+  // ==========================================
+  initI18n() {
+    const langBtn = document.getElementById('lang-toggle');
+    if (!langBtn) return;
+
+    let currentLang = localStorage.getItem('language') || 'pt';
+
+    const setLanguage = (lang) => {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
+      
+      // O botão mostra a opção oposta (Se estou em PT, mostra EN)
+      langBtn.textContent = lang === 'pt' ? 'EN' : 'PT';
+      this.DOM.html.lang = lang === 'pt' ? 'pt-br' : 'en';
+
+      // Altera todos os textos fixos marcados com data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18nDict[lang] && i18nDict[lang][key]) {
+          el.innerHTML = i18nDict[lang][key]; 
+        }
+      });
+
+      // Troca dinamicamente o link de Download do Currículo
+      document.querySelectorAll('a[download]').forEach(link => {
+        link.href = lang === 'pt' ? '../assets/Curriculo_Allan.pdf' : '../assets/Curriculo_Allan_EN.pdf';
+      });
+
+      // Reconstrói a grelha de certificados com o idioma atualizado
+      this.initCertificates(lang);
+    };
+
+    // Aplica no carregamento
+    setLanguage(currentLang);
+
+    // Alterna no clique
+    langBtn.addEventListener('click', () => {
+      setLanguage(currentLang === 'pt' ? 'en' : 'pt');
+    });
   }
 
   // ==========================================
@@ -159,24 +412,19 @@ class PortfolioApp {
       const btn = e.target.closest('button[data-tag]');
       if (!btn) return;
 
-      // Atualiza o estado ativo dos botões
       this.DOM.filterBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const tag = btn.dataset.tag.toLowerCase();
 
-      // Aplica a filtragem com animação
       this.DOM.projectCards.forEach(card => {
         const tags = (card.dataset.tags || '').split(' ').map(s => s.trim().toLowerCase());
         const isMatch = tag === 'all' || tags.includes(tag);
         
-        // Injeta a transição dinâmica para a animação
         card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
 
         if (isMatch) {
-          // Usa 'important' no JS para vencer a regra estática do CSS
           card.style.setProperty('display', 'flex', 'important');
-          // Um pequeno delay para o navegador processar o display antes do fade-in
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
@@ -184,9 +432,7 @@ class PortfolioApp {
         } else {
           card.style.opacity = '0';
           card.style.transform = 'scale(0.95)';
-          // Aguarda o fim da animação visual (400ms) para retirar o elemento do layout
           setTimeout(() => {
-            // Verifica se ainda deve estar invisível (evita bugs de cliques rápidos)
             if (card.style.opacity === '0') {
               card.style.setProperty('display', 'none', 'important');
             }
@@ -230,7 +476,7 @@ class PortfolioApp {
   }
 
   // ==========================================
-  // Gestão de Contactos (Form & WhatsApp)
+  // Gestão de Contactos (EmailJS & WhatsApp)
   // ==========================================
   initContactHandling() {
     const form = this.DOM.contactForm;
@@ -238,10 +484,9 @@ class PortfolioApp {
 
     const success = document.querySelector('.success');
     const error = document.querySelector('.error');
-    document.getElementById('whats-message')?.setAttribute('placeholder', 'Olá Allan, vi o seu portfólio de Engenharia de Software e...');
 
     const CONFIG = {
-      SEND_MODE: 'emailjs', // 'auto' | 'emailjs' | 'gas' | 'mailto'
+      SEND_MODE: 'emailjs',
       EMAILJS_SERVICE_ID: 'service_xk4sbkx',
       EMAILJS_TEMPLATE_ID: 'template_kebelwh',
       EMAILJS_PUBLIC_KEY: 'jDkz7HbrEe779bCuH',
@@ -250,7 +495,6 @@ class PortfolioApp {
     };
 
     const isEmailJsReady = () => Boolean(CONFIG.EMAILJS_SERVICE_ID && CONFIG.EMAILJS_TEMPLATE_ID && CONFIG.EMAILJS_PUBLIC_KEY && !CONFIG.EMAILJS_SERVICE_ID.startsWith('YOUR_'));
-    const isGasReady = () => Boolean(CONFIG.GAS_URL);
     
     const getToEmail = () => form.getAttribute('data-email-to') || CONFIG.CONTACT_EMAIL;
 
@@ -259,11 +503,6 @@ class PortfolioApp {
       const payload = { service_id: CONFIG.EMAILJS_SERVICE_ID, template_id: CONFIG.EMAILJS_TEMPLATE_ID, user_id: CONFIG.EMAILJS_PUBLIC_KEY, template_params: data };
       const res = await fetch(url, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify(payload) });
       if(!res.ok) throw new Error('EmailJS error');
-    };
-
-    const sendGAS = async (data) => {
-      const res = await fetch(CONFIG.GAS_URL, { method:'POST', body: JSON.stringify(data) });
-      if(!res.ok) throw new Error('GAS error');
     };
 
     const sendMailto = (data) => {
@@ -289,17 +528,25 @@ class PortfolioApp {
       }
 
       try {
-        if(CONFIG.SEND_MODE === 'emailjs' || (CONFIG.SEND_MODE === 'auto' && isEmailJsReady())){
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = "Enviando...";
+        btn.disabled = true;
+
+        if(CONFIG.SEND_MODE === 'emailjs' && isEmailJsReady()){
           await sendEmailJS(data);
-        } else if(CONFIG.SEND_MODE === 'gas' || (CONFIG.SEND_MODE === 'auto' && !isEmailJsReady() && isGasReady())){
-          await sendGAS(data);
         } else {
           sendMailto(data);
         }
+        
         form.reset(); 
-        if(success){ success.textContent = 'Mensagem enviada com sucesso!'; success.style.display = 'block'; }
+        if(success){ success.style.display = 'block'; }
+        btn.textContent = originalText;
+        btn.disabled = false;
+
       } catch(err) { 
-        if(error){ error.textContent = 'Não foi possível enviar. Tente novamente.'; error.style.display = 'block'; } 
+        if(error){ error.textContent = 'Erro de servidor. Tente conectar via WhatsApp.'; error.style.display = 'block'; } 
+        form.querySelector('button[type="submit"]').disabled = false;
       }
     });
 
@@ -311,7 +558,7 @@ class PortfolioApp {
       const email = (document.getElementById('email')?.value || '').trim();
       const msgForm = (document.getElementById('message')?.value || '').trim();
       
-      const finalMsg = [ msgWa || msgForm || 'Olá Allan, vim pelo portfólio.', '', name && `Nome: ${name}`, email && `Email: ${email}` ].filter(Boolean).join('\n');
+      const finalMsg = [ msgWa || msgForm || 'Olá Allan, vim pelo portfólio e gostaria de conversar!', '', name && `Nome: ${name}`, email && `Email: ${email}` ].filter(Boolean).join('\n');
       window.open(`https://wa.me/${number}?text=${encodeURIComponent(finalMsg)}`, '_blank');
     });
   }
@@ -387,7 +634,7 @@ class PortfolioApp {
   // ==========================================
   // Renderização Dinâmica de Certificados
   // ==========================================
-  initCertificates() {
+  initCertificates(lang = localStorage.getItem('language') || 'pt') {
     if(!this.DOM.certsGrid) return;
 
     const CERTIFICATES = [
@@ -452,28 +699,34 @@ class PortfolioApp {
     const escapeHTML = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     const fragment = document.createDocumentFragment();
 
+    // Textos baseados no Idioma Atual
+    const lblIssuer = lang === 'pt' ? 'Emissor:' : 'Issuer:';
+    const lblIssued = lang === 'pt' ? 'Emitido:' : 'Issued:';
+    const lblCode   = lang === 'pt' ? 'Código:' : 'Code:';
+    const lblBtn    = lang === 'pt' ? 'Exibir credencial' : 'View credential';
+
     CERTIFICATES.forEach(c => {
       const el = document.createElement('article');
-      el.className = 'card reveal visible';
+      el.className = 'card reveal visible'; // Removido o translateY inicial para transição imediata no i18n
       
       const tags = (c.categories||[]).map(t => `<span class="tag">${escapeHTML(t)}</span>`).join('');
       
       el.innerHTML = `
         <h3>${escapeHTML(c.title)}</h3>
         <div class="credential-meta">
-          <span class="tag">Emissor: ${escapeHTML(c.issuer)}</span>
-          ${c.issued ? `<span class=\"tag\">Emitido: ${escapeHTML(c.issued)}</span>` : ''}
+          <span class="tag">${lblIssuer} ${escapeHTML(c.issuer)}</span>
+          ${c.issued ? `<span class=\"tag\">${lblIssued} ${escapeHTML(c.issued)}</span>` : ''}
           ${tags}
         </div>
-        <p class="credential-code">Código: ${escapeHTML(c.code)}</p>
+        <p class="credential-code">${lblCode} ${escapeHTML(c.code)}</p>
         <div class="actions">
-          <a class="btn secondary" href="${c.url ? escapeHTML(c.url) : '#'}" target="_blank" rel="noopener">Exibir credencial</a>
+          <a class="btn secondary" href="${c.url ? escapeHTML(c.url) : '#'}" target="_blank" rel="noopener">${lblBtn}</a>
         </div>`;
       fragment.appendChild(el);
     });
 
-    this.DOM.certsGrid.textContent = '';
-    this.DOM.certsGrid.appendChild(fragment);
+    this.DOM.certsGrid.textContent = ''; // Limpa a grelha antiga
+    this.DOM.certsGrid.appendChild(fragment); // Injeta a nova traduzida
   }
 }
 

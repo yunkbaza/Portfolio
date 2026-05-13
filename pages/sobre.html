@@ -89,14 +89,18 @@
   <header class="navbar" role="banner">
     <div class="container inner">
       <a class="brand" href="../index.html" aria-label="Ir para a página inicial"><img src="../assets/logo.svg" alt="Logo de Allan Baeza" class="logo"/></a>
+      
       <nav class="nav-links" id="nav-links" aria-label="Navegação Principal">
-        <a href="../index.html#inicio">Início</a>
-        <a href="sobre.html" aria-current="page" class="active">Sobre</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="certificados.html">Certificados</a>
-        <a href="../index.html#contato">Contato</a>
-        <a href="curriculo.html">CV</a>
+        <a href="../index.html#inicio" data-i18n="nav-home">Início</a>
+        <a href="sobre.html" aria-current="page" class="active" data-i18n="nav-about">Sobre</a>
+        <a href="projetos.html" data-i18n="nav-projects">Projetos</a>
+        <a href="certificados.html" data-i18n="nav-certs">Certificados</a>
+        <a href="../index.html#contato" data-i18n="nav-contact">Contato</a>
+        <a href="curriculo.html" data-i18n="nav-cv">CV</a>
       </nav>
+      
+      <button id="lang-toggle" class="btn secondary" style="padding: 6px 12px; margin-left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;" aria-label="Alternar Idioma">EN</button>
+
       <button id="theme-toggle" class="icon-btn theme-toggle" aria-label="Alternar tema" type="button">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -112,46 +116,46 @@
     
     <div class="about-layout">
       <div class="main-column">
-        <h1 class="reveal">Engenharia com Propósito</h1>
-        <p class="sub reveal" style="font-size: 1.15rem; margin-bottom: 32px !important;">Sou o Allan Gabriel Baeza, um Engenheiro de Software apaixonado por resolver problemas de negócio através de arquiteturas distribuídas, código limpo e infraestrutura resiliente.</p>
+        <h1 class="reveal" data-i18n="about-title">Engenharia com Propósito</h1>
+        <p class="sub reveal" style="font-size: 1.15rem; margin-bottom: 32px !important;" data-i18n="about-subtitle">Sou o Allan Gabriel Baeza, um Engenheiro de Software apaixonado por resolver problemas de negócio através de arquiteturas distribuídas, código limpo e infraestrutura resiliente.</p>
         
         <section class="reveal" aria-labelledby="philosophy-title" style="margin-bottom: 60px;">
-          <h2 id="philosophy-title" style="font-size: 1.75rem;">Filosofia de Arquitetura</h2>
-          <p style="color: var(--text-muted);">Acredito que o verdadeiro desafio da engenharia não é apenas fazer o código funcionar, mas garantir que ele seja manutenível, escalável e alinhado aos objetivos do produto.</p>
+          <h2 id="philosophy-title" style="font-size: 1.75rem;" data-i18n="about-phil-title">Filosofia de Arquitetura</h2>
+          <p style="color: var(--text-muted);" data-i18n="about-phil-subtitle">Acredito que o verdadeiro desafio da engenharia não é apenas fazer o código funcionar, mas garantir que ele seja manutenível, escalável e alinhado aos objetivos do produto.</p>
           
           <div class="philosophy-grid">
             <div class="card">
-              <h3>⚙️ Sistemas Distribuídos</h3>
-              <p>Foco na conceção de microsserviços, utilizando padrões como CQRS, SAGA e Event-Driven Architecture para garantir alta disponibilidade e consistência eventual.</p>
+              <h3 data-i18n="about-phil-card1-title">⚙️ Sistemas Distribuídos</h3>
+              <p data-i18n="about-phil-card1-desc">Foco na conceção de microsserviços, utilizando padrões como CQRS, SAGA e Event-Driven Architecture para garantir alta disponibilidade e consistência eventual.</p>
             </div>
             <div class="card">
-              <h3>🛡️ Qualidade & Resiliência</h3>
-              <p>Adoção estrita de Clean Architecture, SOLID e TDD. Implementação de Circuit Breakers e orquestração madura para tolerância a falhas.</p>
+              <h3 data-i18n="about-phil-card2-title">🛡️ Qualidade & Resiliência</h3>
+              <p data-i18n="about-phil-card2-desc">Adoção estrita de Clean Architecture, SOLID e TDD. Implementação de Circuit Breakers e orquestração madura para tolerância a falhas.</p>
             </div>
             <div class="card">
-              <h3>☁️ Cloud Native</h3>
-              <p>Mentalidade "Infrastructure as Code". Proficiência em AWS, conteinerização com Docker e orquestração com Kubernetes e CI/CD automatizado.</p>
+              <h3 data-i18n="about-phil-card3-title">☁️ Cloud Native</h3>
+              <p data-i18n="about-phil-card3-desc">Mentalidade "Infrastructure as Code". Proficiência em AWS, conteinerização com Docker e orquestração com Kubernetes e CI/CD automatizado.</p>
             </div>
           </div>
         </section>
 
         <section class="reveal" aria-labelledby="timeline-title">
-          <h2 id="timeline-title" style="font-size: 1.75rem;">Trajetória & Formação</h2>
+          <h2 id="timeline-title" style="font-size: 1.75rem;" data-i18n="about-timeline-title">Trajetória & Formação</h2>
           <div class="timeline">
             <div class="timeline-item">
-              <time datetime="2024">2024 — 2025</time>
-              <h4>Análise e Desenvolvimento de Sistemas — FIAP</h4>
-              <p style="color: var(--text-muted); font-size: 0.95rem;">Graduação com foco prático em Engenharia de Software corporativa, Big Data, Machine Learning e modelagem complexa de banco de dados. Destaque académico e recomendação para docência.</p>
+              <time datetime="2024" data-i18n="about-time1-date">2024 — 2025</time>
+              <h4 data-i18n="about-time1-title">Análise e Desenvolvimento de Sistemas — FIAP</h4>
+              <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="about-time1-desc">Graduação com foco prático em Engenharia de Software corporativa, Big Data, Machine Learning e modelagem complexa de banco de dados. Destaque académico e recomendação para docência.</p>
             </div>
             <div class="timeline-item">
-              <time datetime="2024">2024 — Presente</time>
-              <h4>Especialização em Nuvem e Dados</h4>
-              <p style="color: var(--text-muted); font-size: 0.95rem;">Conclusão de mais de 50 certificações de peso, incluindo AWS Solutions Architect (Alura), Ciência de Dados com Python e Back-End (Bootcamps Santander Open Academy).</p>
+              <time datetime="2024" data-i18n="about-time2-date">2024 — Presente</time>
+              <h4 data-i18n="about-time2-title">Especialização em Nuvem e Dados</h4>
+              <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="about-time2-desc">Conclusão de mais de 50 certificações de peso, incluindo AWS Solutions Architect (Alura), Ciência de Dados com Python e Back-End (Bootcamps Santander Open Academy).</p>
             </div>
             <div class="timeline-item">
-              <time datetime="2024">Projetos & Consultoria</time>
-              <h4>Desenvolvimento de Soluções Core</h4>
-              <p style="color: var(--text-muted); font-size: 0.95rem;">Criação de ecossistemas complexos do zero, incluindo o motor de core bancário BazaBank (Java/Kafka), plataformas de e-commerce e pipelines de ETL para análise de dados.</p>
+              <time datetime="2024" data-i18n="about-time3-date">Projetos & Consultoria</time>
+              <h4 data-i18n="about-time3-title">Desenvolvimento de Soluções Core</h4>
+              <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="about-time3-desc">Criação de ecossistemas complexos do zero, incluindo o motor de core bancário BazaBank (Java/Kafka), plataformas de e-commerce e pipelines de ETL para análise de dados.</p>
             </div>
           </div>
         </section>
@@ -161,7 +165,7 @@
         <div class="card" style="position: sticky; top: 100px;">
           <h2 style="font-size: 1.4rem; margin-bottom: 24px !important; border-bottom: 1px solid var(--border-light); padding-bottom: 16px;">Tech Radar</h2>
           
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Back-End & APIs</h3>
+          <h3 data-i18n="about-tech-back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Back-End & APIs</h3>
           <div class="tags-wrapper" style="margin-bottom: 24px;">
             <span class="tag skill indentificador Java">Java / Spring</span>
             <span class="tag skill indentificador Node js">Node.js</span>
@@ -170,7 +174,7 @@
             <span class="tag skill indentificador FastAPI">FastAPI</span>
           </div>
 
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg> Cloud & DevOps</h3>
+          <h3 data-i18n="about-tech-cloud"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg> Cloud & DevOps</h3>
           <div class="tags-wrapper" style="margin-bottom: 24px;">
             <span class="tag skill indentificador AWS">AWS</span>
             <span class="tag skill indentificador Docker">Docker</span>
@@ -178,7 +182,7 @@
             <span class="tag skill">CI/CD Actions</span>
           </div>
 
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg> Dados & Filas</h3>
+          <h3 data-i18n="about-tech-data"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg> Dados & Filas</h3>
           <div class="tags-wrapper" style="margin-bottom: 24px;">
             <span class="tag skill indentificador PostgreSQL">PostgreSQL</span>
             <span class="tag skill">Kafka / BullMQ</span>
@@ -187,7 +191,7 @@
             <span class="tag skill">Apache Airflow</span>
           </div>
 
-          <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg> Front-End & Mobile</h3>
+          <h3 data-i18n="about-tech-front"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg> Front-End & Mobile</h3>
           <div class="tags-wrapper">
             <span class="tag skill indentificador Swift">Swift (iOS)</span>
             <span class="tag skill indentificador Kotlin">Kotlin (Android)</span>
@@ -203,19 +207,19 @@
   <footer class="footer" role="contentinfo">
     <div class="container top">
       <div class="cta">
-        <h3>Vamos construir o futuro juntos?</h3>
-        <p>Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
+        <h3 data-i18n="footer-title">Vamos construir o futuro juntos?</h3>
+        <p data-i18n="footer-desc">Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
         <div class="links">
-          <a class="btn light" href="../index.html#contato">Iniciar Conversa</a>
-          <a class="btn secondary" href="curriculo.html">Analisar Currículo</a>
+          <a class="btn light" href="../index.html#contato" data-i18n="footer-btn-talk">Iniciar Conversa</a>
+          <a class="btn secondary" href="curriculo.html" data-i18n="footer-btn-cv">Analisar Currículo</a>
         </div>
       </div>
       
       <nav class="sitemap" aria-label="Mapa do site de navegação do rodapé">
-        <a href="sobre.html" aria-current="page">Sobre Mim</a>
-        <a href="projetos.html">Projetos & Cases</a>
-        <a href="certificados.html">Credenciais Acadêmicas</a>
-        <a href="curriculo.html">Download CV</a>
+        <a href="sobre.html" aria-current="page" data-i18n="nav-about">Sobre Mim</a>
+        <a href="projetos.html" data-i18n="nav-projects">Projetos & Cases</a>
+        <a href="certificados.html" data-i18n="nav-certs">Credenciais Acadêmicas</a>
+        <a href="curriculo.html" data-i18n="nav-cv">Download CV</a>
       </nav>
       
       <div class="social" aria-label="Meus perfis nas redes sociais">

@@ -80,14 +80,18 @@
   <header class="navbar" role="banner">
     <div class="container inner">
       <a class="brand" href="../index.html" aria-label="Ir para a página inicial"><img src="../assets/logo.svg" alt="Logo de Allan Baeza" class="logo" /></a>
+      
       <nav class="nav-links" id="nav-links" aria-label="Navegação Principal">
-        <a href="../index.html#inicio">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="projetos.html" aria-current="page" class="active">Projetos</a>
-        <a href="certificados.html">Certificados</a>
-        <a href="../index.html#contato">Contato</a>
-        <a href="curriculo.html">CV</a>
+        <a href="../index.html#inicio" data-i18n="nav-home">Início</a>
+        <a href="sobre.html" data-i18n="nav-about">Sobre</a>
+        <a href="projetos.html" aria-current="page" class="active" data-i18n="nav-projects">Projetos</a>
+        <a href="certificados.html" data-i18n="nav-certs">Certificados</a>
+        <a href="../index.html#contato" data-i18n="nav-contact">Contato</a>
+        <a href="curriculo.html" data-i18n="nav-cv">CV</a>
       </nav>
+      
+      <button id="lang-toggle" class="btn secondary" style="padding: 6px 12px; margin-left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;" aria-label="Alternar Idioma">EN</button>
+
       <button id="theme-toggle" class="icon-btn theme-toggle" aria-label="Alternar tema" type="button">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="4" />
@@ -109,16 +113,16 @@
 
   <main class="section" id="projetos-content" role="main" aria-labelledby="projetos-title">
     <div class="container">
-      <h1 id="projetos-title" class="reveal">Todos os Projetos</h1>
-      <p class="sub reveal">Aplicações práticas e acadêmicas com foco profundo em arquitetura de software, APIs robustas, pipelines de dados e mobile nativo.</p>
+      <h1 id="projetos-title" class="reveal" data-i18n="projects-title">Todos os Projetos</h1>
+      <p class="sub reveal" data-i18n="projects-subtitle">Aplicações práticas e acadêmicas com foco profundo em arquitetura de software, APIs robustas, pipelines de dados e mobile nativo.</p>
 
       <div id="project-filters" class="actions reveal" role="group" aria-label="Filtro de categorias de projetos">
-        <button class="btn secondary active" data-tag="all">Todos</button>
-        <button class="btn secondary" data-tag="architecture">Arquitetura</button>
-        <button class="btn secondary" data-tag="backend">Back-End</button>
-        <button class="btn secondary" data-tag="data">Dados</button>
-        <button class="btn secondary" data-tag="mobile">Mobile</button>
-        <button class="btn secondary" data-tag="frontend">Front-End</button>
+        <button class="btn secondary active" data-tag="all" data-i18n="filter-all">Todos</button>
+        <button class="btn secondary" data-tag="architecture" data-i18n="filter-arch">Arquitetura</button>
+        <button class="btn secondary" data-tag="backend" data-i18n="filter-back">Back-End</button>
+        <button class="btn secondary" data-tag="data" data-i18n="filter-data">Dados</button>
+        <button class="btn secondary" data-tag="mobile" data-i18n="filter-mobile">Mobile</button>
+        <button class="btn secondary" data-tag="frontend" data-i18n="filter-front">Front-End</button>
       </div>
 
       <div class="grid cards" aria-live="polite">
@@ -126,7 +130,7 @@
         <article class="card project-card reveal" data-project data-tags="backend architecture">
           <img decoding="sync" fetchpriority="high" width="400" height="160" src="../img/Baza_Bank.png" alt="Arquitetura do BazaBank" style="background: #111; object-fit: cover" />
           <h3>BazaBank</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Sistema core bancário simulado focado no processamento seguro de operações financeiras utilizando microsserviços e mensageria distribuída.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-baza-desc">Sistema core bancário simulado focado no processamento seguro de operações financeiras utilizando microsserviços e mensageria distribuída.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Java">Java</span>
             <span class="tag skill indentificador Docker">Docker</span>
@@ -134,15 +138,15 @@
             <span class="tag skill indentificador Microsserviços">Microsserviços</span>
           </div>
           <div class="actions">
-            <a class="btn" href="https://bazabank.onrender.com" target="_blank" rel="noopener noreferrer">Acessar Deploy</a>
-            <a class="btn secondary" href="https://github.com/yunkbaza/BazaBank" target="_blank" rel="noopener noreferrer">Repositório</a>
+            <a class="btn" href="https://bazabank.onrender.com" target="_blank" rel="noopener noreferrer" data-i18n="btn-deploy">Acessar Deploy</a>
+            <a class="btn secondary" href="https://github.com/yunkbaza/BazaBank" target="_blank" rel="noopener noreferrer" data-i18n="btn-repo">Repositório</a>
           </div>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="backend architecture">
           <img loading="lazy" decoding="async" width="400" height="160" src="../img/CarefulBaza.jpg?v=3" alt="Interface CarefulBaza" style="background: #111; object-fit: cover" />
           <h3>CarefulBaza (E-commerce)</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Arquitetura de Back-end unificada para plataforma de dropshipping com foco em resiliência e alta disponibilidade.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-careful-desc">Arquitetura de Back-end unificada para plataforma de dropshipping com foco em resiliência e alta disponibilidade.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Node js">Node.js</span>
             <span class="tag skill indentificador PostgreSQL">PostgreSQL</span>
@@ -150,15 +154,15 @@
             <span class="tag skill indentificador Microsserviços">Microsserviços</span>
           </div>
           <div class="actions">
-            <a class="btn" href="https://carefulbaza.vercel.app/" target="_blank" rel="noopener noreferrer">Acessar Site</a>
-            <a class="btn secondary" href="https://github.com/yunkbaza/CarefulBaza" target="_blank" rel="noopener noreferrer">Repositório</a>
+            <a class="btn" href="https://carefulbaza.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="btn-site">Acessar Site</a>
+            <a class="btn secondary" href="https://github.com/yunkbaza/CarefulBaza" target="_blank" rel="noopener noreferrer" data-i18n="btn-repo">Repositório</a>
           </div>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="backend data">
           <img loading="lazy" decoding="async" width="400" height="160" src="../img/Dashboard_IFood.jpg" alt="Dashboard API iFood" style="object-fit: cover" />
           <h3>API de Integração iFood</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Pipeline de dados e integração comercial para automação de pedidos e gerenciamento de cardápios.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-ifood-desc">Pipeline de dados e integração comercial para automação de pedidos e gerenciamento de cardápios.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Python">Python</span>
             <span class="tag skill indentificador PostgreSQL">PostgreSQL</span>
@@ -166,46 +170,46 @@
             <span class="tag skill">ETL</span>
           </div>
           <div class="actions">
-            <a class="btn" href="https://ifood-dashboard-rework.vercel.app/" target="_blank" rel="noopener noreferrer">Acessar Deploy</a>
-            <a class="btn secondary" href="https://github.com/yunkbaza/IfoodDashboard" target="_blank" rel="noopener noreferrer">Repositório</a>
+            <a class="btn" href="https://ifood-dashboard-rework.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="btn-deploy">Acessar Deploy</a>
+            <a class="btn secondary" href="https://github.com/yunkbaza/IfoodDashboard-Rework" target="_blank" rel="noopener noreferrer" data-i18n="btn-repo">Repositório</a>
           </div>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="frontend backend">
           <img loading="lazy" decoding="async" width="400" height="160" src="../img/Porto_Projeto.jpg" alt="Challenge Porto Seguro" style="object-fit: cover" />
           <h3>Challenge Porto Seguro</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Simulação de sistema de atendimento e triagem utilizando inteligência artificial e modelagem de banco de dados.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-porto-desc">Simulação de sistema de atendimento e triagem utilizando inteligência artificial e modelagem de banco de dados.</p>
           <div class="project-meta">
             <span class="tag skill indentificador React js">React.js</span>
             <span class="tag skill indentificador TypeScript">Typescript</span>
             <span class="tag skill indentificador Vite">Vite</span>
             <span class="tag skill indentificador SQL">SQL</span>
           </div>
-          <a class="btn secondary" href="https://github.com/yunkbaza/projeto-react-porto" target="_blank" rel="noopener noreferrer">Ver Repositório</a>
+          <a class="btn secondary" href="https://github.com/yunkbaza/projeto-react-porto" target="_blank" rel="noopener noreferrer" data-i18n="btn-view-repo">Ver Repositório</a>
         </article>
 
-        <article class="card project-card reveal" data-project data-tags="frontend backend">
+        <article class="card project-card reveal" data-project data-tags="architecture backend">
           <img loading="lazy" decoding="async" width="400" height="160" src="../img/ProOcean.jpg" alt="Projeto IoT ProOcean" style="object-fit: cover" />
           <h3>ProOcean (IoT)</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Arquitetura de sistema para monitoramento ambiental e integração de hardware focado na preservação oceânica.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-ocean-desc">Arquitetura de sistema para monitoramento ambiental e integração de hardware focado na preservação oceânica.</p>
           <div class="project-meta">
-            <span class="tag skill indentificador HTML">HTML</span>
-            <span class="tag skill indentificador CSS">CSS</span>
-            <span class="tag skill indentificador JavaScript">JavaScript</span>
+            <span class="tag skill indentificador Java">Java</span>
+            <span class="tag skill">IoT</span>
+            <span class="tag skill">Arquitetura</span>
           </div>
-          <a class="btn secondary" href="https://github.com/yunkbaza/Global_Solution_ProOcean" target="_blank" rel="noopener noreferrer">Ver Repositório</a>
+          <a class="btn secondary" href="https://github.com/yunkbaza/Global_Solution_ProOcean" target="_blank" rel="noopener noreferrer" data-i18n="btn-view-repo">Ver Repositório</a>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="mobile">
           <img loading="lazy" decoding="async" width="400" height="160" src="../img/App_Emergencia.jpg" alt="Aplicativo BirdCare" style="object-fit: cover" />
           <h3>BirdCare (Emergência)</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Concepção e desenvolvimento de sistema com alertas de emergência geolocalizados em tempo real.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-bird-desc">Concepção e desenvolvimento de sistema com alertas de emergência geolocalizados em tempo real.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Swift">Swift</span>
             <span class="tag skill indentificador SwiftUI">SwiftUI</span>
             <span class="tag skill">UI/UX</span>
           </div>
-          <a class="btn secondary" href="#" rel="noopener noreferrer">Ver Case</a>
+          <a class="btn secondary" href="#" rel="noopener noreferrer" data-i18n="btn-view-case">Ver Case</a>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="backend architecture">
@@ -215,14 +219,14 @@
             </svg>
           </div>
           <h3>Motor de Workflow</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Sistema de orquestração focado no gerenciamento de fluxos de trabalho estruturados, contando com APIs protegidas e processamento de templates.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-work-desc">Sistema de orquestração focado no gerenciamento de fluxos de trabalho estruturados, contando com APIs protegidas e processamento de templates.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Java">Java</span>
             <span class="tag skill indentificador Docker">Docker</span>
             <span class="tag skill">Backend</span>
             <span class="tag skill">Arquitetura</span>
           </div>
-          <a class="btn secondary" href="https://github.com/yunkbaza/MotorDeWorkflow" target="_blank" rel="noopener noreferrer">Ver Repositório</a>
+          <a class="btn secondary" href="https://github.com/yunkbaza/MotorDeWorkflow" target="_blank" rel="noopener noreferrer" data-i18n="btn-view-repo">Ver Repositório</a>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="backend data">
@@ -232,14 +236,14 @@
             </svg>
           </div>
           <h3>Análise de Risco</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Pipeline de processamento e validação de dados críticos focado em segurança financeira, com suporte a workers distribuídos para garantir baixa latência.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-risk-desc">Pipeline de processamento e validação de dados críticos focado em segurança financeira, com suporte a workers distribuídos para garantir baixa latência.</p>
           <div class="project-meta">
             <span class="tag skill indentificador TypeScript">TypeScript</span>
             <span class="tag skill indentificador PostgreSQL">PostgreSQL</span>
             <span class="tag skill indentificador Docker">Docker</span>
             <span class="tag skill">BullMQ</span>
           </div>
-          <a class="btn secondary" href="https://github.com/yunkbaza/AnaliseDeRisco" target="_blank" rel="noopener noreferrer">Ver Repositório</a>
+          <a class="btn secondary" href="https://github.com/yunkbaza/AnaliseDeRisco" target="_blank" rel="noopener noreferrer" data-i18n="btn-view-repo">Ver Repositório</a>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="backend data">
@@ -249,13 +253,13 @@
             </svg>
           </div>
           <h3>Dashboard Excel</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Solução automatizada para leitura, processamento e consolidação de dados em planilhas.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-excel-desc">Solução automatizada para leitura, processamento e consolidação de dados em planilhas.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Python">Python</span>
             <span class="tag skill">Dados</span>
             <span class="tag skill">Automação</span>
           </div>
-          <a class="btn secondary" href="https://github.com/yunkbaza/DashboardExcel" target="_blank" rel="noopener noreferrer">Ver Repositório</a>
+          <a class="btn secondary" href="https://github.com/yunkbaza/DashboardExcel" target="_blank" rel="noopener noreferrer" data-i18n="btn-view-repo">Ver Repositório</a>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="backend data">
@@ -265,12 +269,12 @@
             </svg>
           </div>
           <h3>Motor de Leitura CSV</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Pipeline de processamento e ingestão de dados para leitura otimizada de grandes arquivos CSV.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-csv-desc">Pipeline de processamento e ingestão de dados para leitura otimizada de grandes arquivos CSV.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Python">Python</span>
             <span class="tag skill">Engenharia de Dados</span>
           </div>
-          <a class="btn secondary" href="https://github.com/yunkbaza/LeitorDeCSV" target="_blank" rel="noopener noreferrer">Ver Repositório</a>
+          <a class="btn secondary" href="https://github.com/yunkbaza/LeitorDeCSV" target="_blank" rel="noopener noreferrer" data-i18n="btn-view-repo">Ver Repositório</a>
         </article>
 
         <article class="card project-card reveal" data-project data-tags="mobile backend">
@@ -280,12 +284,12 @@
             </svg>
           </div>
           <h3>Softtek Challenge</h3>
-          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;">Aplicação focada em saúde mental com back-end em Supabase (BaaS) e interface nativa.</p>
+          <p style="color: var(--muted); font-size: 0.9em; margin-bottom: 12px; flex-grow: 1;" data-i18n="proj-softtek-desc">Aplicação focada em saúde mental com back-end em Supabase (BaaS) e interface nativa.</p>
           <div class="project-meta">
             <span class="tag skill indentificador Swift">Swift</span>
             <span class="tag skill indentificador Supabase">Supabase</span>
           </div>
-          <a class="btn secondary" href="https://github.com/yunkbaza/Softtek" target="_blank" rel="noopener noreferrer">Ver Repositório</a>
+          <a class="btn secondary" href="https://github.com/yunkbaza/Softtek" target="_blank" rel="noopener noreferrer" data-i18n="btn-view-repo">Ver Repositório</a>
         </article>
 
       </div>
@@ -295,18 +299,18 @@
   <footer class="footer" role="contentinfo">
     <div class="container top">
       <div class="cta">
-        <h3>Vamos construir o futuro juntos?</h3>
-        <p>Aberto a desafios arquiteturais e grandes projetos. Respondo rapidinho.</p>
+        <h3 data-i18n="footer-title">Vamos construir o futuro juntos?</h3>
+        <p data-i18n="footer-desc">Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
         <div class="links">
-          <a class="btn light" href="../index.html#contato">Fale comigo</a>
-          <a class="btn secondary" href="curriculo.html">Ver CV Completo</a>
+          <a class="btn light" href="../index.html#contato" data-i18n="footer-btn-talk">Iniciar Conversa</a>
+          <a class="btn secondary" href="curriculo.html" data-i18n="footer-btn-cv">Analisar Currículo</a>
         </div>
       </div>
-      <nav class="sitemap" aria-label="Mapa do site">
-        <a href="../index.html#sobre">Sobre Mim</a>
-        <a href="projetos.html" aria-current="page">Projetos & Cases</a>
-        <a href="certificados.html">Credenciais Acadêmicas</a>
-        <a href="curriculo.html">Download CV</a>
+      <nav class="sitemap" aria-label="Mapa do site de navegação do rodapé">
+        <a href="../index.html#sobre" data-i18n="nav-about">Sobre Mim</a>
+        <a href="projetos.html" aria-current="page" data-i18n="nav-projects">Projetos & Cases</a>
+        <a href="certificados.html" data-i18n="nav-certs">Credenciais Acadêmicas</a>
+        <a href="curriculo.html" data-i18n="nav-cv">Download CV</a>
       </nav>
       <div class="social" aria-label="Redes sociais">
         <a href="https://github.com/yunkbaza" target="_blank" rel="noopener noreferrer" aria-label="Acessar meu perfil no GitHub" title="GitHub Profile">

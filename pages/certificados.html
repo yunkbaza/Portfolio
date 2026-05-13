@@ -66,14 +66,16 @@
       <a class="brand" href="../index.html" aria-label="Ir para a página inicial"><img src="../assets/logo.svg" alt="Logo de Allan Baeza" class="logo"/></a>
       
       <nav class="nav-links" id="nav-links" aria-label="Navegação Principal">
-        <a href="../index.html#inicio">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="certificados.html" aria-current="page" class="active">Certificados</a>
-        <a href="../index.html#contato">Contato</a>
-        <a href="curriculo.html">CV</a>
+        <a href="../index.html#inicio" data-i18n="nav-home">Início</a>
+        <a href="sobre.html" data-i18n="nav-about">Sobre</a>
+        <a href="projetos.html" data-i18n="nav-projects">Projetos</a>
+        <a href="certificados.html" aria-current="page" class="active" data-i18n="nav-certs">Certificados</a>
+        <a href="../index.html#contato" data-i18n="nav-contact">Contato</a>
+        <a href="curriculo.html" data-i18n="nav-cv">CV</a>
       </nav>
       
+      <button id="lang-toggle" class="btn secondary" style="padding: 6px 12px; margin-left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;" aria-label="Alternar Idioma">EN</button>
+
       <button id="theme-toggle" class="icon-btn theme-toggle" aria-label="Alternar tema" type="button">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
@@ -87,8 +89,8 @@
 
 <main class="section" id="certificados-content" role="main" aria-labelledby="page-title">
   <div class="container">
-    <h1 id="page-title" class="reveal">Certificados & Credenciais</h1>
-    <p class="sub reveal">Seleção de mais de 50 certificações com código e link de verificação, comprovando aprendizagem contínua em Cloud, Back-end e Engenharia de Dados.</p>
+    <h1 id="page-title" class="reveal" data-i18n="certs-title">Certificados & Credenciais</h1>
+    <p class="sub reveal" data-i18n="certs-desc">Seleção de mais de 50 certificações com código e link de verificação, comprovando aprendizagem contínua em Cloud, Back-end e Engenharia de Dados.</p>
     
     <div class="certs-grid" aria-live="polite">
       <noscript>
@@ -103,7 +105,7 @@
     </div>
     
     <div class="actions reveal" style="margin-top: 32px; justify-content: center;">
-      <button class="btn secondary" id="add-cert-btn" type="button" style="display:none" aria-label="Adicionar novo certificado localmente">Adicionar Certificado (Ambiente Local)</button>
+      <button class="btn secondary" id="add-cert-btn" type="button" style="display:none" aria-label="Adicionar novo certificado localmente" data-i18n="certs-btn-add">Adicionar Certificado (Ambiente Local)</button>
     </div>
   </div>
 </main>
@@ -111,19 +113,19 @@
   <footer class="footer" role="contentinfo">
     <div class="container top">
       <div class="cta">
-        <h3>Vamos construir o futuro juntos?</h3>
-        <p>Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
+        <h3 data-i18n="footer-title">Vamos construir o futuro juntos?</h3>
+        <p data-i18n="footer-desc">Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
         <div class="links">
-          <a class="btn light" href="../index.html#contato">Iniciar Conversa</a>
-          <a class="btn secondary" href="curriculo.html">Analisar Currículo</a>
+          <a class="btn light" href="../index.html#contato" data-i18n="footer-btn-talk">Iniciar Conversa</a>
+          <a class="btn secondary" href="curriculo.html" data-i18n="footer-btn-cv">Analisar Currículo</a>
         </div>
       </div>
       
       <nav class="sitemap" aria-label="Mapa do site de navegação do rodapé">
-        <a href="../index.html#sobre">Sobre Mim</a>
-        <a href="projetos.html">Projetos & Cases</a>
-        <a href="certificados.html" aria-current="page">Credenciais Acadêmicas</a>
-        <a href="curriculo.html">Download CV</a>
+        <a href="../index.html#sobre" data-i18n="nav-about">Sobre Mim</a>
+        <a href="projetos.html" data-i18n="nav-projects">Projetos & Cases</a>
+        <a href="certificados.html" aria-current="page" data-i18n="nav-certs">Credenciais Acadêmicas</a>
+        <a href="curriculo.html" data-i18n="nav-cv">Download CV</a>
       </nav>
       
       <div class="social" aria-label="Meus perfis nas redes sociais">
