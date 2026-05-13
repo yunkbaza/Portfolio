@@ -12,7 +12,7 @@ Portfólio profissional desenvolvido de raiz com **HTML, CSS e JavaScript puros 
 
 ---
 
-## ✨ Funcionalidades e Práticas "Master/Sênior"
+## ✨ Funcionalidades e Práticas
 
 Este projeto não é apenas um site estático; é uma aplicação web (PWA) de alto desempenho que implementa as seguintes práticas:
 
@@ -116,7 +116,7 @@ python -m http.server 8000
 
 ---
 
-## 📬 Contacto
+## 📬 Contato
 
 Projeto desenhado e desenvolvido por **Allan Gabriel Baeza Amirati Silva**.
 Aberto a oportunidades, desafios de arquitetura e conversas técnicas.
