@@ -4,122 +4,302 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#FACC15"/>
-  <meta name="description" content="Currículo de Allan Gabriel Baeza — Engenheiro de Software. Formação, habilidades em arquitetura, cloud, projetos e certificações."/>
+  
+  <title>Currículo — Allan Gabriel Baeza | Engenheiro de Software</title>
+  <meta name="description" content="Currículo de Allan Gabriel Baeza. Engenheiro de Software especializado em back-end (Java, Node.js), sistemas distribuídos, Cloud (AWS) e consultoria em TI."/>
+  <meta name="author" content="Allan Gabriel Baeza Amirati Silva">
+  <meta name="robots" content="index, follow"/>
+  
   <meta property="og:title" content="CV — Allan Gabriel Baeza (Engenheiro de Software)"/>
-  <meta property="og:description" content="Engenheiro de Software (FIAP - ADS), focado em Back-end, Arquitetura e AWS. Habilidades e certificações."/>
-  <meta property="og:type" content="website"/>
-  <link rel="icon" href="../assets/logo.svg"/>
+  <meta property="og:description" content="Experiência em arquitetura de software, consultoria em TI e desenvolvimento de microsserviços. Veja o currículo completo."/>
+  <meta property="og:type" content="profile"/>
+  <meta property="og:image" content="../img/Portfolio_curriculo.jpg"/>
+
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml"/>
   <link rel="manifest" href="../manifest.webmanifest"/>
   <meta name="color-scheme" content="light dark"/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  
+  <link rel="preload" href="../scripts/app.js" as="script">
   <link rel="preload" href="../styles/style.css" as="style" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/style.css"/>
   
-  <title>CV — Allan Gabriel Baeza | Engenheiro de Software</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Allan Gabriel Baeza Amirati Silva",
+    "jobTitle": "Software Engineer & IT Consultant",
+    "homeLocation": {
+      "@type": "Place",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "alumniOf": "FIAP",
+    "knowsAbout": ["Software Architecture", "Backend Development", "AWS", "Docker", "Consulting", "Microservices"]
+  }
+  </script>
+
+  <style>
+    /* Estilos Premium para o Currículo (Web & Impressão) */
+    .cv-wrapper {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: var(--shadow-base);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .cv-header {
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+    }
+    .cv-header h2 { font-size: 2.2rem; margin-bottom: 8px; }
+    .cv-header p { color: var(--text-muted); display: flex; gap: 12px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;}
+    
+    .cv-section { margin-bottom: 40px; }
+    .cv-section h3 { 
+      font-size: 1.4rem; 
+      color: var(--primary); 
+      margin-bottom: 20px; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      display: flex; 
+      align-items: center; 
+      gap: 8px;
+    }
+    
+    .cv-item { margin-bottom: 24px; }
+    .cv-item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .cv-item-title { font-weight: 700; font-size: 1.15rem; color: var(--text-main); }
+    .cv-item-subtitle { font-weight: 500; color: var(--text-muted); }
+    .cv-item-date { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--primary); }
+    .cv-item-desc { line-height: 1.6; color: var(--text-muted); margin-top: 8px; }
+    
+    .cv-skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+    /* Otimização para Impressão (Ctrl+P) */
+    @media print {
+      body { background: #fff !important; color: #000 !important; }
+      .navbar, .footer, .theme-toggle, .actions.reveal, .skip-link { display: none !important; }
+      .cv-wrapper { border: none; box-shadow: none; padding: 0; }
+      .cv-section h3 { color: #000 !important; border-bottom: 2px solid #000; padding-bottom: 4px; }
+      .tag { border: 1px solid #666 !important; color: #000 !important; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+  </style>
 </head>
 <body>
 
-  <header class="navbar">
+  <noscript>
+    <div style="background: #ef4444; color: #fff; text-align: center; padding: 12px; font-weight: 600;">
+      Aviso: O JavaScript está desativado.
+    </div>
+  </noscript>
+
+  <a class="skip-link" href="#curriculo">Pular para o currículo</a>
+
+  <header class="navbar" role="banner">
     <div class="container inner">
-      <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="Logo" class="logo"/></a>
+      <a class="brand" href="../index.html"><img src="../assets/logo.svg" alt="Logo"/></a>
       <nav class="nav-links" id="nav-links">
         <a href="../index.html#inicio">Início</a>
-        <a href="../index.html#sobre">Sobre</a>
+        <a href="sobre.html">Sobre</a>
         <a href="projetos.html">Projetos</a>
         <a href="certificados.html">Certificados</a>
         <a href="../index.html#contato">Contato</a>
         <a href="curriculo.html" aria-current="page" class="active">CV</a>
       </nav>
-      <button id="theme-toggle" class="icon-btn theme-toggle" aria-label="Alternar tema"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
-      <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <button id="theme-toggle" class="icon-btn theme-toggle" aria-label="Alternar tema" type="button">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </header>
 
-<main class="section" id="curriculo">
+<main class="section" id="curriculo" role="main">
   <div class="container">
-    <h1 class="reveal">Currículo</h1>
-    <p class="sub reveal">Baixe o PDF ou navegue pelos destaques da minha trajetória na Engenharia de Software.</p>
-    <div class="actions reveal">
-      <a class="btn" href="../assets/Curriculo_Allan.pdf" download>Baixar PDF</a>
+    <div class="actions reveal" style="justify-content: flex-end; margin-bottom: 24px;">
+      <a class="btn" href="../assets/Curriculo_Allan.pdf" download aria-label="Baixar currículo em PDF">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Baixar PDF Oficial
+      </a>
+      <button class="btn secondary" onclick="window.print()" aria-label="Imprimir currículo">Imprimir / Salvar</button>
     </div>
 
-    <div id="cv-grid" class="grid cards">
-      <div class="card reveal formacao">
-        <strong>Formação Acadêmica</strong><br/>
-        FIAP — Faculdade de Informática e Administração Paulista (jan/2024 — dez/2025). Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (ADS). Foco em Engenharia de Software, Arquitetura de Sistemas, Banco de Dados, Big Data, Machine Learning e frameworks modernos (Java, .NET, Node.js).
-      </div>
+    <div class="cv-wrapper reveal">
+      
+      <header class="cv-header">
+        <div>
+          <h2>Allan Gabriel Baeza</h2>
+          <p>
+            <span>📍 São Paulo, SP, Brasil</span>
+            <span>🌍 Disponível para Remoto (Compatível US/EST)</span>
+          </p>
+        </div>
+        <div style="text-align: right;">
+          <p><strong>Engenheiro de Software & Arquiteto Back-end</strong></p>
+          <p><a href="mailto:allanbamirati@live.com" style="color: var(--primary);">allanbamirati@live.com</a></p>
+        </div>
+      </header>
 
-      <div class="card reveal habilidades">
-        <strong>Habilidades Técnicas</strong><br/>
-        • Linguagens: Python, Node.js, Java, SQL, JavaScript, Swift, Kotlin.<br/>
-        • Arquitetura & Nuvem: Microsserviços, Serverless, AWS, CQRS, Circuit Breaker, SAGA, DDD, Docker, Kubernetes, CI/CD.<br/>
-        • Dados & Back-end: PostgreSQL, MongoDB, Express, FastAPI, ETL, Apache Airflow, Power BI.<br/>
-        • Front-end & Interfaces: React.js, React Native, Vite, HTML/CSS.
-      </div>
+      <section class="cv-section">
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> Perfil Profissional</h3>
+        <p class="cv-item-desc">
+          Engenheiro de Software com imersão no setor tecnológico desde os 15 anos de idade. Especializado em arquitetura de sistemas distribuídos, desenvolvimento back-end de alta performance e infraestrutura em nuvem (Cloud Native). Combina uma base técnica profunda obtida através de projetos arquiteturais complexos com a visão de negócios adquirida atuando como Consultor de TI corporativo. Proficiente na resolução de desafios de virtualização, concorrência de dados e na entrega de ecossistemas escaláveis para clientes globais.
+        </p>
+      </section>
 
-      <div class="card reveal idiomas">
-        <strong>Idiomas</strong><br/>
-        Português (Nativo) • Inglês (B2 - Leitura de documentação técnica avançada) • Espanhol (Básico)
-      </div>
+      <section class="cv-section">
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> Experiência Profissional</h3>
+        
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div>
+              <div class="cv-item-title">Consultor de TI & Desenvolvedor de Software</div>
+              <div class="cv-item-subtitle">Atuação Independente / Projetos B2B</div>
+            </div>
+            <div class="cv-item-date">Presente</div>
+          </div>
+          <p class="cv-item-desc">
+            Fornecimento de serviços de consultoria tecnológica especializada para múltiplas empresas, atuando no desenho e auditoria de arquiteturas de software. Resolução de conflitos críticos de infraestrutura (incluindo gestão avançada de virtualização de containers e troubleshooting de Docker Engine/WSL2). Desenvolvimento de soluções back-end resilientes focadas na otimização de performance empresarial.
+          </p>
+        </div>
+      </section>
 
-      <div class="card reveal projetos">
-        <strong>Projetos Relevantes</strong><br/>
-        • CarefulBaza (2026) — Arquitetura de Back-end para plataforma de dropshipping, construída em uma infraestrutura unificada (Node.js, PostgreSQL, Prisma) com foco em resiliência e alta disponibilidade.<br/>
-        • API de Integração com iFood (2025) — Back-end comercial para automação de pedidos e cardápios (Python/FastAPI, PostgreSQL, ETL).<br/>
-        • Challenge Porto Seguro (2024) — Sistema simulado com IA para triagem e atendimento. Desenvolvimento multi-camada (React, Java, Python, SQL).<br/>
-        • BirdCare (2024) — Concepção e desenvolvimento de sistema com alertas de emergência geolocalizados em tempo real (iOS/Swift).
-      </div>
+      <section class="cv-section">
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Arquiteturas & Projetos Principais</h3>
+        
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">BazaBank — Core Banking System</div>
+            <div class="cv-item-date">2026</div>
+          </div>
+          <p class="cv-item-desc">
+            Conceção e desenvolvimento de um motor bancário core desenhado para alta concorrência. Arquitetura distribuída construída com Spring Boot (Java), orquestração de mensageria via Kafka para processamento assíncrono de transações e deploy resiliente via Kubernetes e Docker.
+          </p>
+          <div class="cv-skills">
+            <span class="tag skill indentificador Java">Java</span>
+            <span class="tag skill indentificador Docker">Docker</span>
+            <span class="tag skill indentificador Kubernetes">Kubernetes</span>
+            <span class="tag skill">Apache Kafka</span>
+          </div>
+        </div>
 
-      <div class="card reveal certificacoes">
-        <strong>Certificações e Cursos (+50 concluídos)</strong><br/>
-        • Nuvem, Dados & Arquitetura: Bootcamp Santander 2025 - Ciência de Dados com Python, AWS Solutions Architect Associate (Alura).<br/>
-        • Back-End & Engenharia: Santander Tech+ Back-End, Formação Engenharia de Dados (Apache Airflow, MongoDB, MySQL).<br/>
-        • Desenvolvimento de Software: TDD, Clean Code, OOP, Modelagem de Banco de Dados Relacional e NoSQL.<br/>
-        • Inovação: Machine Learning, IA Generativa, Transformação Digital, IoT.<br/>
-        • Mobile (Diferencial): iOS (Swift/SwiftUI) e Android (Kotlin).
-      </div>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Ecossistema CarefulBaza</div>
+            <div class="cv-item-date">2026</div>
+          </div>
+          <p class="cv-item-desc">
+            Consolidação arquitetural de uma plataforma global de e-commerce e dropshipping. Projeto unificado integrando um back-end robusto (Node.js, PostgreSQL, Prisma), programação orientada a eventos e consumo de APIs externas globais, garantindo alta disponibilidade e resiliência no processamento de pedidos.
+          </p>
+          <div class="cv-skills">
+            <span class="tag skill indentificador Node js">Node.js</span>
+            <span class="tag skill indentificador PostgreSQL">PostgreSQL</span>
+            <span class="tag skill indentificador Prisma">Prisma</span>
+            <span class="tag skill indentificador Microsserviços">Microsserviços</span>
+          </div>
+        </div>
 
-      <div class="card reveal softskills">
-        <strong>Soft Skills</strong><br/>
-        Resolução de Problemas Críticos • Visão Sistêmica • Liderança e Autogestão • Boa Comunicação (Negócios/TI) • Pensamento Analítico e Criativo • Aprendizado Contínuo • Gestão de Tempo e Prioridades
-      </div>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div class="cv-item-title">Motores de Dados: Workflow & Análise de Risco</div>
+            <div class="cv-item-date">2026</div>
+          </div>
+          <p class="cv-item-desc">
+            Construção de motores de orquestração de processos (Java) e pipelines de mitigação de fraudes e análise de crédito. Utilização de workers distribuídos (TypeScript, BullMQ, Redis) para processamento em background de alto volume e baixa latência.
+          </p>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Formação Acadêmica</h3>
+        
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div>
+              <div class="cv-item-title">Análise e Desenvolvimento de Sistemas (CST)</div>
+              <div class="cv-item-subtitle">FIAP — Faculdade de Informática e Administração Paulista</div>
+            </div>
+            <div class="cv-item-date">Jan 2024 — Dez 2025</div>
+          </div>
+          <p class="cv-item-desc">
+            Formação orientada a desafios do mercado, com foco profundo em Engenharia de Software, Arquitetura de Sistemas, Modelagem de Bancos de Dados (SQL/NoSQL) e Big Data.
+          </p>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Stack & Certificações (Resumo)</h3>
+        
+        <div class="cv-item">
+          <div class="cv-item-title" style="margin-bottom: 12px;">Competências Técnicas Principais</div>
+          <div class="cv-skills" style="margin-bottom: 24px;">
+            <span class="tag skill indentificador Java">Java (Spring)</span>
+            <span class="tag skill indentificador Python">Python</span>
+            <span class="tag skill indentificador Node js">Node.js (TypeScript)</span>
+            <span class="tag skill indentificador PostgreSQL">PostgreSQL / MongoDB</span>
+            <span class="tag skill indentificador AWS">AWS Cloud</span>
+            <span class="tag skill indentificador Docker">Docker / Kubernetes</span>
+            <span class="tag skill">Arquitetura CQRS/SAGA</span>
+            <span class="tag skill indentificador Swift">Swift (iOS)</span>
+          </div>
+          
+          <div class="cv-item-title" style="margin-bottom: 8px;">Credenciais e Especializações (+50 Concluídas)</div>
+          <p class="cv-item-desc">
+            • <strong>Arquitetura & Nuvem:</strong> AWS Solutions Architect Associate (Alura).<br>
+            • <strong>Engenharia de Dados:</strong> Apache Airflow, ETL, Power BI, Python para Data Science (Santander 2025).<br>
+            • <strong>Engenharia de Software:</strong> Clean Code, TDD, Modelagem Relacional, Microsserviços e Back-End (Santander Tech+).
+          </p>
+        </div>
+      </section>
+
     </div>
   </div>
 </main>
 
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container top">
       <div class="cta">
-        <h3>Vamos trabalhar juntos?</h3>
-        <p>Aberto a projetos e oportunidades. Respondo rapidinho.</p>
+        <h3>Vamos construir o futuro juntos?</h3>
+        <p>Estou aberto a desafios que exijam arquitetura robusta e resolução de problemas complexos.</p>
         <div class="links">
-          <a class="btn light" href="../index.html#contato">Fale comigo</a>
-          <a class="btn secondary" href="curriculo.html" aria-current="page">Ver CV</a>
+          <a class="btn light" href="../index.html#contato">Iniciar Conversa</a>
         </div>
       </div>
       <nav class="sitemap" aria-label="Mapa do site">
-        <a href="../index.html#sobre">Sobre</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="certificados.html">Certificados</a>
-        <a href="curriculo.html" aria-current="page">CV</a>
-        <a href="../index.html#contato">Contato</a>
+        <a href="../index.html#sobre">Sobre Mim</a>
+        <a href="projetos.html">Projetos & Cases</a>
+        <a href="certificados.html">Credenciais</a>
+        <a href="curriculo.html" aria-current="page">CV Profissional</a>
       </nav>
       <div class="social" aria-label="Redes sociais">
-        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        <a href="https://github.com/yunkbaza" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.79-1.35-1.79-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.86 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.9 0-1.3.47-2.36 1.25-3.19-.13-.3-.54-1.52.12-3.16 0 0 1.02-.33 3.34 1.22a11.6 11.6 0 0 1 6.08 0c2.31-1.55 3.33-1.22 3.33-1.22.67 1.64.26 2.86.13 3.16.78.83 1.25 1.89 1.25 3.19 0 4.58-2.81 5.59-5.49 5.89.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/allan-gabriel-baeza-a281b1233" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.84v2.18h.05c.54-1.02 1.87-2.18 3.86-2.18 4.13 0 4.89 2.72 4.89 6.27V24h-4v-7.15c0-1.7-.03-3.9-2.38-3.9-2.39 0-2.76 1.86-2.76 3.78V24h-4V8z"/></svg>
         </a>
       </div>
     </div>
     <div class="container bottom">
-      <small>© <span data-year></span> Allan Gabriel Baeza Amirati Silva — Feito com HTML, CSS e JS puro.</small>
-      <small><a href="#inicio" class="back-top">Voltar ao topo</a></small>
+      <small>© <span data-year></span> Allan Gabriel Baeza Amirati Silva — HTML, CSS e JS puros.</small>
+      <small><a href="#curriculo" class="back-top">Voltar ao topo</a></small>
     </div>
   </footer>
 

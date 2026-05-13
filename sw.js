@@ -1,66 +1,101 @@
 /* ========================================================= */
-/* SERVICE WORKER - Força a atualização do cache (V8)        */
+/* SERVICE WORKER - ARQUITETURA SÊNIOR (Stale-While-Revalidate) */
 /* ========================================================= */
 
-// Mudamos o nome do cache para 'v8'. Isso avisa ao navegador 
-// que há novos arquivos (como suas fotos) e ele deve recarregar tudo.
-const CACHE = 'portfolio-v8-premium-fixed-images'; 
+const CACHE_NAME = 'portfolio-allan-baeza-v9';
 
-// Lista de arquivos que serão salvos para funcionar offline
-const ASSETS = [
-  '/',
-  '/index.html',
-  '/pages/projetos.html',
-  '/pages/curriculo.html',
-  '/pages/certificados.html',
-  '/styles/style.css',
-  '/scripts/app.js',
-  '/manifest.webmanifest',
-  '/assets/logo.svg',
-  '/sw.js',
-  // Seus certificados (adicione todos que estão na pasta)
-  '/certificates/challenge-porto-seguro.pdf',
-  '/certificates/api-ifood.pdf',
-  // Suas fotos de projetos (garanta que elas existam na pasta img/)
-  '/img/CarefulBaza.jpg',
-  '/img/ProOcean.jpg',
-  '/img/Porto_Projeto.jpg',
-  '/img/Dashboard_IFood.jpg',
-  '/img/App_Emergencia.jpg'
+// 1. Core Assets: Ficheiros críticos cacheados logo na instalação
+const CORE_ASSETS = [
+  './',
+  './index.html',
+  './pages/projetos.html',
+  './pages/sobre.html',
+  './pages/curriculo.html',
+  './pages/certificados.html',
+  './styles/style.css',
+  './scripts/app.js',
+  './manifest.webmanifest',
+  './assets/logo.svg',
+  // Imagens essenciais para a Home e Projetos
+  './img/Foto_Allan.jpg',
+  './img/Baza_Bank.png',
+  './img/CarefulBaza.jpg',
+  './img/Dashboard_IFood.jpg',
+  './img/Porto_Projeto.jpg',
+  './img/ProOcean.jpg',
+  './img/App_Emergencia.jpg'
 ];
 
-// Instalação do Service Worker
+// ==========================================
+// INSTALAÇÃO: Faz o download inicial (Pre-cache)
+// ==========================================
 self.addEventListener('install', (event) => {
-  self.skipWaiting(); // Força o SW a se tornar ativo imediatamente
+  // skipWaiting força o SW a instalar imediatamente, sem esperar que as abas fechem
+  self.skipWaiting(); 
+  
   event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('[Service Worker] Fazendo pre-cache dos Core Assets');
+      return cache.addAll(CORE_ASSETS);
+    })
   );
 });
 
-// Ativação e limpeza de caches antigos
+// ==========================================
+// ATIVAÇÃO: Limpa caches antigos e assume controlo
+// ==========================================
 self.addEventListener('activate', (event) => {
+  // clients.claim() garante que o SW assuma o controlo da página imediatamente
+  event.waitUntil(self.clients.claim());
+
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(
-      // Se o cache antigo não tiver o nome 'portfolio-v8-premium-fixed-images', ele é apagado
-      keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))
-    ))
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            console.log(`[Service Worker] Limpando cache antigo: ${cacheName}`);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
   );
 });
 
-// Responde às requisições com cache ou rede
+// ==========================================
+// FETCH: Estratégia Stale-While-Revalidate (SWR)
+// ==========================================
 self.addEventListener('fetch', (event) => {
+  // Ignora requisições que não sejam GET (ex: POST do formulário de contato)
+  if (event.request.method !== 'GET') return;
+
+  // Ignora extensões do Chrome e chamadas a APIs externas
+  if (!event.request.url.startsWith(self.location.origin)) return;
+
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      // Retorna do cache se encontrar, senão busca na rede
-      return response || fetch(event.request).then((fetchResponse) => {
-        // Opcionalmente, pode-se salvar arquivos novos no cache dinamicamente aqui
-        return fetchResponse;
+    caches.open(CACHE_NAME).then(async (cache) => {
+      // 1. Tenta encontrar a resposta no cache imediatamente
+      const cachedResponse = await cache.match(event.request);
+
+      // 2. Faz o fetch na rede em background para atualizar o cache
+      const fetchPromise = fetch(event.request).then((networkResponse) => {
+        // Se a resposta for válida, guarda um clone no cache dinamicamente
+        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+          cache.put(event.request, networkResponse.clone());
+        }
+        return networkResponse;
+      }).catch(() => {
+        // 3. Fallback Offline (Quando a rede falha)
+        // Se for um pedido de navegação (HTML) e não estiver no cache, devolve o index
+        if (event.request.mode === 'navigate') {
+          return cache.match('./index.html');
+        }
+        // Se for uma imagem que falhou, poderias retornar uma imagem de placeholder genérica aqui
       });
-    }).catch(() => {
-      // Se a rede falhar, retorna a página inicial (se estiver no cache)
-      if (event.request.mode === 'navigate') {
-        return caches.match('/index.html');
-      }
+
+      // Retorna o Cache INSTANTANEAMENTE (se existir). 
+      // Em pano de fundo, o 'fetchPromise' atualiza os ficheiros para a próxima visita.
+      return cachedResponse || fetchPromise;
     })
   );
 });
