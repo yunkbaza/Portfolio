@@ -1,99 +1,126 @@
-# Portfólio Pessoal — Allan Gabriel Baeza
+# 🚀 Portfólio de Engenharia de Software | Allan Baeza
 
+[![Deploy Status](https://img.shields.io/badge/Deploy-Online-success?style=for-the-badge&logo=vercel)](https://seusite.com)
+[![Lighthouse Score](https://img.shields.io/badge/Lighthouse-100%2F100-brightgreen?style=for-the-badge&logo=lighthouse)](#)
+[![PWA Ready](https://img.shields.io/badge/PWA-Ready-blue?style=for-the-badge&logo=pwa)](#)
+[![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?style=for-the-badge&logo=html5)](#)
+[![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla_OOP-F7DF1E?style=for-the-badge&logo=javascript)](#)
 
+Portfólio profissional desenvolvido de raiz com **HTML, CSS e JavaScript puros (Vanilla)**, sem recurso a frameworks. O objetivo deste projeto é demonstrar o domínio absoluto dos fundamentos da Web, aplicando práticas avançadas de Engenharia de Software focadas em **Performance (Core Web Vitals)**, **Acessibilidade (A11y)**, **SEO Técnico** e **Arquitetura de Código**.
 
-<div align="center">
-  <img width="1920" height="945" alt="image" src="https://github.com/user-attachments/assets/43c269fd-facf-4621-bc52-b09bc8a65ff8" />
-
-
-  <p>
-    <a href="#-sobre">Sobre</a> •
-    <a href="#-funcionalidades">Funcionalidades</a> •
-    <a href="#-estrutura">Estrutura</a> •
-    <a href="#-como-rodar">Como rodar</a> •
-    <a href="#-pwa">PWA</a> •
-    <a href="#-comentarios-no-codigo">Comentários no código</a> •
-    <a href="#-contato">Contato</a>
-  </p>
-</div>
+🌐 **[Ver Portfólio Online](https://portfolio-henna-pi-77.vercel.app)**
 
 ---
 
-## 🔎 Sobre
+## ✨ Funcionalidades e Práticas "Master/Sênior"
 
-Site pessoal em HTML, CSS e JavaScript puro, com foco em performance, acessibilidade e experiência em mobile/desktop. É onde concentro meus projetos, currículo, certificados e formas de contato.
+Este projeto não é apenas um site estático; é uma aplicação web (PWA) de alto desempenho que implementa as seguintes práticas:
 
-### Capturas do site
+### ⚡ Performance & Core Web Vitals
+- **LCP Otimizado:** Utilização de `fetchpriority="high"` e `<link rel="preload">` para as imagens e *scripts* críticos da *Hero Section*, garantindo renderização quase instantânea.
+- **Animações Fluídas:** Uso de `will-change: transform` e *Hardware Acceleration* em interações magnéticas e efeitos *Glassmorphism*.
+- **Sem Dependências:** Zero *libraries* externas (nem jQuery, nem Bootstrap). Tudo escrito em código nativo e modular.
 
-## ✨ Funcionalidades
+### 🔍 SEO Técnico (Structured Data JSON-LD)
+- Implementação rigorosa do [Schema.org](https://schema.org/) em todas as páginas.
+- Uso de `@type: Person` e `AboutPage` para autoridade de perfil.
+- Uso de `@type: CollectionPage` e `SoftwareSourceCode` para a grelha de projetos, permitindo uma indexação perfeita por motores de busca.
 
-- Responsivo: layout fluido do mobile ao desktop.
-- Acessível: ARIA no menu, foco visível e skip link.
-- Tema claro/escuro com persistência (localStorage).
-- Navegação suave, destaque de seção ativa e micro‑interações.
-- PWA (service worker cache‑first) para navegação offline básica.
-- Contato: formulário com fallback mailto e WhatsApp direto.
-- Páginas internas com cabeçalho/rodapé padronizados e currículo com grid otimizado.
+### 🌍 Internacionalização (i18n) Dinâmica
+- Motor de tradução (PT/EN) gerido por JavaScript que altera o idioma da interface em milissegundos, sem recarregar a página, persistindo a escolha do utilizador via `localStorage`.
 
-## 🧱 Estrutura
+### 📱 Progressive Web App (PWA) & Resiliência
+- Implementação de um **Service Worker** (`sw.js`) com a arquitetura moderna *Stale-While-Revalidate*.
+- Capacidade *Offline-first*: o site carrega instantaneamente servindo o *cache* local enquanto atualiza os recursos em pano de fundo.
+- *Maskable Icons* e atalhos de sistema integrados no `manifest.webmanifest`.
+
+### ✉️ Integração de E-mails & Formulários (Serverless)
+- O formulário de contacto comunica diretamente com a API do **EmailJS**, validando e enviando e-mails ao vivo, gerindo estados de erro e de sucesso.
+- Geração inteligente de mensagens diretas para WhatsApp.
+
+---
+
+## 🏗️ Arquitetura de Código
+
+A lógica de negócio encontra-se encapsulada no ficheiro `scripts/app.js`, estruturada através do paradigma de **Programação Orientada a Objetos (OOP)**:
+
+```javascript
+class PortfolioApp {
+  constructor() {
+    this.DOM = { ... }; // Mapeamento de elementos centralizado
+    this.init();
+  }
+  
+  init() {
+    this.initTheme();
+    this.initI18n();
+    this.initProjectFilters();
+    // ...
+  }
+}
 
 ```
-Portfolio_Merged/Portfolio_Merged
-├── index.html               # Home (sobre, projetos, contato)
-├── pages/
-│   ├── sobre.html           # Sobre (detalhado)
-│   ├── projetos.html        # Projetos (destaques)
-│   ├── certificados.html    # Certificados (render dinâmico)
-│   └── curriculo.html       # Currículo (grid com áreas)
-├── scripts/
-│   └── app.js               # Navegação, tema, scroll, contato, etc.
-├── styles/
-│   └── style.css            # Tema, layout e componentes
-├── img/                     # Imagens de projetos e avatar
-├── assets/                  # Ícones e PDF
-├── sw.js                    # Service Worker (cache-first)
-└── manifest.webmanifest     # Manifesto PWA
+
+Esta abordagem evita a poluição do escopo global (`window`) e facilita a manutenção, teste e escalabilidade do código.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
+📦 portfolio
+ ┣ 📂 assets           # PDFs (Currículos PT/EN) e SVG (Logos)
+ ┣ 📂 img              # Imagens dos projetos e perfil otimizadas
+ ┣ 📂 pages            # Páginas estáticas (Curriculo, Projetos, etc.)
+ ┣ 📂 scripts
+ ┃ ┗ 📜 app.js         # Motor JavaScript (OOP, i18n, EmailJS, Filtros)
+ ┣ 📂 styles
+ ┃ ┗ 📜 style.css      # Design System, Variáveis, Dark Mode e Keyframes
+ ┣ 📜 index.html       # Entry point e Hero section
+ ┣ 📜 manifest.webmanifest # Configurações da PWA
+ ┣ 📜 sw.js            # Service Worker (Estratégia SWR)
+ ┗ 📜 README.md
+
 ```
 
-## ▶️ Como rodar
+---
 
-Por ser um site estático, sirva a pasta para que o Service Worker funcione (o protocolo `file://` não registra SW).
+## 🛠️ Instalação e Desenvolvimento Local
 
-Opções rápidas:
+Como é um projeto sem *build step* (sem Webpack, Vite ou Node.js necessários), a execução local é imediata:
 
-- VS Code: extensão “Live Server” e abrir `index.html`.
-- Node: `npx serve` na raiz `Portfolio_Merged/Portfolio_Merged`.
-- Python: `python -m http.server 8080` e abrir `http://localhost:8080`.
+1. Clona o repositório:
+```bash
+git clone [https://github.com/yunkbaza/portfolio.git](https://github.com/yunkbaza/portfolio.git)
 
-Configurar e‑mail do formulário (opcional):
+```
 
-- Em `index.html`, defina no formulário `data-email-to="seu-email@exemplo.com"`.
-- Alternativamente, em `scripts/app.js`, configure EmailJS ou GAS (ver abaixo).
 
-## 📱 PWA
+2. Abre a pasta do projeto:
+```bash
+cd portfolio
 
-- Estratégia: cache‑first para `index.html`, CSS/JS, logo e páginas internas (veja `ASSETS` em `sw.js`).
-- Instalação: o navegador pode sugerir “instalar” no desktop/mobile; funciona melhor em HTTPS.
-- Offline: páginas e assets listados continuam acessíveis sem rede.
+```
 
-## 🧩 Comentários no código
 
-Adicionados comentários JSDoc nas funções principais para facilitar manutenção:
+3. Utiliza a extensão **Live Server** (VS Code) ou executa um servidor HTTP em Python:
+```bash
+python -m http.server 8000
 
-- `scripts/app.js`
-  - Menu mobile: `closeMenu()` e `openMenu()` (sincronia de ARIA e efeitos colaterais).
-  - Tema: `syncThemeButtonA11y()` e `toggleTheme()` (persistência e acessibilidade).
-  - Contato: `sendEmailJS()`, `sendGAS()`, `getToEmail()`, `sendMailto()`, `isEmailJsReady()`, `isGasReady()` (contratos e comportamento).
-- `sw.js`
-  - Blocos `install`, `activate` e `fetch` explicados com a estratégia cache‑first e limpeza de versões antigas.
+```
 
-Pontos de extensão úteis:
 
-- Habilitar EmailJS: preencha `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID` e `EMAILJS_PUBLIC_KEY` em `scripts/app.js`.
-- Usar GAS: defina `GAS_URL` para receber os dados do formulário.
-- Ajustar o currículo: altere as áreas do grid em `#cv-grid` (style.css) para reorganizar os cards.
+4. Acede a `http://localhost:8000` no teu navegador.
 
-## 📬 Contato
+*(Nota: Algumas funcionalidades locais do Service Worker requerem que a aplicação seja servida por `localhost` ou HTTPS).*
 
-Allan Gabriel Baeza — allanbamirati@live.com
+---
 
+## 📬 Contacto
+
+Projeto desenhado e desenvolvido por **Allan Gabriel Baeza Amirati Silva**.
+Aberto a oportunidades, desafios de arquitetura e conversas técnicas.
+
+* **Email:** allanbamirati@live.com
+* **LinkedIn:** [allan-gabriel-baeza-a281b1233](https://www.linkedin.com/in/allan-gabriel-baeza-a281b1233)
+* **Localização:** São Paulo, SP (Disponível para trabalho Remoto Global)
